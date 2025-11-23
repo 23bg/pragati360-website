@@ -4,6 +4,7 @@ import {
     updateUserProfile,
     resetUserState,
     clearUserMessages,
+    fetchAllUsers,
 } from "../slices/userSlice";
 
 export const useUser = () => {
@@ -20,6 +21,7 @@ export const useUser = () => {
     // ------------------------------
     // Actions / Thunks
     // ------------------------------
+    const getUsers = () => dispatch(fetchAllUsers());
     const getCurrentUser = (id: string) => dispatch(fetchUserById({ id }));
     const updateProfile = (id: string, payload: Partial<typeof currentUser>) =>
         dispatch(updateUserProfile({ id, payload }));
@@ -39,6 +41,7 @@ export const useUser = () => {
         loading,
         error,
         successMessage,
+        getUsers,
         getCurrentUser,
         updateProfile,
         resetState,

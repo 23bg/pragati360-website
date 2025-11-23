@@ -4,13 +4,13 @@ import React from "react";
 import { ListPageWrapper } from "@/components/custom/list-page-wrapper";
 import { Button } from "@/components/ui/button";
 import { UserRoundPlus, Users } from "lucide-react";
-import { useUser } from "../hooks/useGooglePosts";
 import { getUserColumns } from "../utils/userColunms";
 import { User } from "@/shared/types";
 import { CommonTableComponent } from "@/components/common/common-table-component";
 import PaginationControls from "@/components/common/PaginationControls";
+import { useUser } from "@/features/templates/hooks/useUser";
 
-export default function UserListPage() {
+export default function GooglePostListPage() {
     const {
         users,
         loading,

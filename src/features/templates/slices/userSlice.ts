@@ -36,7 +36,7 @@ export const fetchUserById = createAsyncThunk<
     { rejectValue: string }
 >("user/fetchCurrentUser", async ({ id }, { rejectWithValue }) => {
     try {
-        const response = await api.get(API.USER.GET(id));
+        const response = await api.get(API.USERS.GET(id));
         console.log(response.data.data)
         return response.data.data as User;
     } catch (error: any) {
@@ -54,7 +54,7 @@ export const updateUserProfile = createAsyncThunk<
     { rejectValue: string }
 >("user/updateUserProfile", async ({ id, payload }, { rejectWithValue }) => {
     try {
-        const response = await api.put(API.USER.UPDATE(id), payload);
+        const response = await api.put(API.USERS.UPDATE(id), payload);
         return response.data as User;
     } catch (error: any) {
         console.error("Update user error:", error);
@@ -71,8 +71,8 @@ export const fetchAllUsers = createAsyncThunk<
     { rejectValue: string }
 >("user/fetchAllUsers", async (_, { rejectWithValue }) => {
     try {
-        const response = await api.get(API.USER.ALL);
-        return response.data.data as User[];
+        const response = await api.get(API.USERS.ALL);
+        return response.data.data.users;
     } catch (error: any) {
         console.error("Fetch all users error:", error);
         const message =

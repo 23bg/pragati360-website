@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/reduxHooks";
-import { loginUser, signupUser, resetPassword, forgotPassword } from "../slices/authSlice";
+import { loginUser, signupUser, verifyOtp } from "../slices/authSlice";
 
 export const useAuth = () => {
     const dispatch = useAppDispatch();
@@ -7,13 +7,12 @@ export const useAuth = () => {
         (state) => state.auth
     );
 
-    const login = (data: { email: string; password: string }) =>
+    const login = (data: { email: string; }) =>
         dispatch(loginUser(data));
-    const signup = (data: { name: string; email: string; password: string }) =>
+    const signup = (data: { name: string; email: string; phoneNumber: string }) =>
         dispatch(signupUser(data));
-    const forgot = (data: { email: string }) => dispatch(forgotPassword(data));
-    const reset = (data: { token: string; newPassword: string }) =>
-        dispatch(resetPassword(data));
+    const verifyOTP = (data: { email: string, otp: string }) => dispatch(verifyOtp(data));
 
-    return { user, loading, error, isAuthenticated, login, signup, forgot, reset };
+
+    return { user, loading, error, isAuthenticated, login, signup, verifyOTP };
 };

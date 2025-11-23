@@ -48,8 +48,8 @@ export function NavMain({
                 <SidebarMenuButton
                   asChild
                   tooltip={item.title}
-                  className={`hover:rounded-full hover:text-white hover:bg-blue-500 text-muted-foreground 
-          ${item.isActive ? "rounded-full text-white bg-blue-500" : ""}`}
+                  className={`hover:rounded-full hover:text-white hover:bg-blue-600 text-muted-foreground 
+          ${item.isActive ? "rounded-full text-white bg-blue-600" : ""}`}
                 >
                   <Link href={item.url}>
                     {item.icon && <item.icon className="shrink-0" />}

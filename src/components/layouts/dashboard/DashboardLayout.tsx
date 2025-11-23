@@ -7,6 +7,7 @@ import {
     SunIcon,
     MoonIcon,
     HelpCircle,
+    Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardAppSidebar } from "@/components/dashboard/side-bar";
@@ -28,6 +29,7 @@ import {
     TooltipContent,
     TooltipProvider,
 } from "@/components/ui/tooltip";
+import { Separator } from "@/components/ui/separator";
 
 
 
@@ -81,13 +83,12 @@ export default function DashboardLayout({
             <SidebarInset>
                 {/* Header */}
                 <header className="flex h-16 shrink-0 items-center justify-between px-4
-             border-b border-white/10 backdrop-blur-xl bg-white/10 dark:bg-zinc-900/20
-             z-40 rounded-t-2xl ">
+      border-b bg-background dark:bg-zinc-900/40 backdrop-blur-sm rounded-t-2xl">
                     {/* Left: Sidebar + Breadcrumb */}
                     <div className="flex items-center gap-2 justify-center">
                         <SidebarTrigger className="dark:text-white text-black" />
 
-                        <Breadcrumb className="hidden md:block mt-0.5">
+                        {/* <Breadcrumb className="hidden md:block mt-0.5">
                             <BreadcrumbList>
                                 {pathSegments.map((segment, index) => {
                                     const href = `/${pathSegments
@@ -114,7 +115,7 @@ export default function DashboardLayout({
                                                 <Link href={href}>
                                                     <Button
                                                         size="sm"
-                                                        variant='secondary'
+                                                        variant='link'
                                                         className="dark:text-zinc-400 text-zinc-700"
                                                     >
                                                         {formattedSegment}
@@ -126,7 +127,14 @@ export default function DashboardLayout({
                                     );
                                 })}
                             </BreadcrumbList>
-                        </Breadcrumb>
+                        </Breadcrumb> */}
+                        <div className="h-5 w-10">
+                            <Separator orientation="vertical" className="m-0 p-0" />
+                        </div>
+                        <Button variant='ghost' className="text-muted-foreground m-0">
+                            <Search />
+                            <span> Type of Search...</span>
+                        </Button>
                     </div>
 
                     {/* Right: Controls */}
@@ -171,9 +179,31 @@ export default function DashboardLayout({
 
                 {/* Main content */}
                 <main className="overflow-hidden">
-                    <ScrollArea className="h-screen">{children}</ScrollArea>
+
+
+                    <div className="h-screen">
+                        <ScrollArea className=" h-full">
+                            {children}
+                        </ScrollArea>
+                    </div>
+
+
                 </main>
+                {/* FOOTER */}
+                <footer className="border-t bg-background dark:bg-zinc-900/40 backdrop-blur-sm rounded-b-2xl">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-2 px-6 py-3 text-xs text-muted-foreground">
+                        <span>©2025 Pragati360, Made for better you brand.</span>
+                        <div className="flex gap-3">
+                            <Link href="#" className="hover:text-primary transition">License</Link>
+                            <Link href="#" className="hover:text-primary transition">More Themes</Link>
+                            <Link href="#" className="hover:text-primary transition">Documentation</Link>
+                            <Link href="#" className="hover:text-primary transition">Support</Link>
+                        </div>
+                    </div>
+                </footer>
             </SidebarInset>
+
         </SidebarProvider>
     );
 }
+

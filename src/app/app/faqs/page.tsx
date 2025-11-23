@@ -14,14 +14,14 @@ export default function FAQsPage() {
             // backHref="/dashboard"
             backLabel="Back to Dashboard"
             showInitialLoadingOnly={false}        >
-            <div className="max-w-3xl mx-auto space-y-6">
+            <div className=" mx-auto space-y-6">
 
                 <h2 className="text-2xl font-semibold">General Questions</h2>
 
                 <Accordion type="single" collapsible className="w-full space-y-2">
 
                     {/* FAQ 1 */}
-                    <AccordionItem value="q1" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="q1" className="border  rounded-lg px-4">
                         <AccordionTrigger className="text-left">
                             What is Pragati360?
                         </AccordionTrigger>
@@ -32,7 +32,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* FAQ 2 */}
-                    <AccordionItem value="q2" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="q2" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             How does Google Review Automation work?
                         </AccordionTrigger>
@@ -43,7 +43,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* FAQ 3 */}
-                    <AccordionItem value="q3" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="q3" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             Do I need technical knowledge to use this platform?
                         </AccordionTrigger>
@@ -54,7 +54,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* FAQ 4 */}
-                    <AccordionItem value="q4" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="q4" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             Is my Google account safe with Pragati360?
                         </AccordionTrigger>
@@ -71,7 +71,7 @@ export default function FAQsPage() {
                 <Accordion type="single" collapsible className="w-full space-y-2">
 
                     {/* Billing 1 */}
-                    <AccordionItem value="b1" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="b1" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             What payment methods do you support?
                         </AccordionTrigger>
@@ -81,7 +81,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* Billing 2 */}
-                    <AccordionItem value="b2" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="b2" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             Can I cancel my subscription anytime?
                         </AccordionTrigger>
@@ -92,7 +92,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* Billing 3 */}
-                    <AccordionItem value="b3" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="b3" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             Will I get a refund?
                         </AccordionTrigger>
@@ -109,7 +109,7 @@ export default function FAQsPage() {
                 <Accordion type="single" collapsible className="w-full space-y-2">
 
                     {/* Google 1 */}
-                    <AccordionItem value="g1" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="g1" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             How do I connect my Google Business Profile?
                         </AccordionTrigger>
@@ -120,7 +120,7 @@ export default function FAQsPage() {
                     </AccordionItem>
 
                     {/* Google 2 */}
-                    <AccordionItem value="g2" className="border border-white/10 rounded-lg px-4">
+                    <AccordionItem value="g2" className="border  rounded-lg px-4">
                         <AccordionTrigger>
                             Why are some of my locations not visible?
                         </AccordionTrigger>
@@ -130,16 +130,6 @@ export default function FAQsPage() {
                         </AccordionContent>
                     </AccordionItem>
 
-                    {/* Google 3
-                    <AccordionItem value="g3" className="border border-white/10 rounded-lg px-4">
-                        <AccordionTrigger>
-                            How often does the system sync with Google?
-                        </AccordionTrigger>
-                        <AccordionContent>
-                            The system syncs automatically every few hours, and you can also manually refresh from the
-                            Google Business page.
-                        </AccordionContent>
-                    </AccordionContent> */}
 
                 </Accordion>
             </div>

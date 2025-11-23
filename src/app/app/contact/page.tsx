@@ -1,12 +1,22 @@
 'use client'
 
+import PageWrapper from "@/components/custom/page-wrapper"
 import { CreateTicketForm } from "@/features/tickets/components/CreateTicketForm"
 
 
 export default function page() {
     return (
-        <div className="p-10">
+        <PageWrapper
+            title="Contact"
+            subtitle="Frequently Asked Questions"
+            showBackButton
+            // backHref="/dashboard"
+            backLabel="Back to Dashboard"
+            showInitialLoadingOnly={false}
+        >
+
             <CreateTicketForm />
-        </div>
+        </PageWrapper>
+
     )
 }

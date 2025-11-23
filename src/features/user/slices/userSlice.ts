@@ -64,6 +64,22 @@ export const updateUserProfile = createAsyncThunk<
     }
 });
 
+// ✅ Fetch All Users (Admin only)
+export const fetchAllUsers = createAsyncThunk<
+    User[],
+    void,
+    { rejectValue: string }
+>("user/fetchAllUsers", async (_, { rejectWithValue }) => {
+    try {
+        const response = await api.get(API.USERS.ALL);
+        return response.data.data.users;
+    } catch (error: any) {
+        console.error("Fetch all users error:", error);
+        const message =
+            error?.response?.data?.message || "Failed to fetch users list.";
+        return rejectWithValue(message);
+    }
+});
 
 
 // ------------------------------
@@ -128,7 +144,24 @@ const userSlice = createSlice({
                 }
             )
 
-
+            // ------------------------------
+            // FETCH ALL USERS
+            // ------------------------------
+            .addCase(fetchAllUsers.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchAllUsers.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = action.payload;
+            })
+            .addCase(
+                fetchAllUsers.rejected,
+                (state, action: PayloadAction<string | undefined>) => {
+                    state.loading = false;
+                    state.error = action.payload || "Failed to fetch users.";
+                }
+            )
     },
 });
 

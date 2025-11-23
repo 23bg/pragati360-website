@@ -1,20 +1,15 @@
 
 export interface LoginPayload {
     email: string;
-    password: string;
 }
 
 export interface SignupPayload {
     name: string;
     email: string;
-    password: string;
+    phoneNumber: string;
 }
 
-export interface ForgotPasswordPayload {
+export interface verificationPayload {
     email: string;
-}
-
-export interface ResetPasswordPayload {
-    token: string; // usually sent via email link
-    newPassword: string;
+    otp: string
 }

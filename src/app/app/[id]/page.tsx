@@ -1,6 +1,6 @@
 'use client'
 
-import UserDetailPage from '@/features/user/components/UserDetailPage'
+import UserDetailPage from '@/features/instagram/components/InstagramDetailPage'
 import { useParams } from 'next/navigation'
 
 export default function page() {

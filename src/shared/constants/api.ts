@@ -4,8 +4,9 @@ export const API = {
         LOG_IN: '/auth/login',
         LOG_OUT: '/auth/logout',
         SIGN_UP: '/auth/signup',
-        FORGOT_PASSWORD: '/auth/forgot-password',
-        RESET_PASSWORD: '/auth/reset-password',
+        VERIFY: '/auth/verify',
+        REFRESH_TOKEN: '/auth/refersh-token',
+
     },
     USERS: {
         ALL: '/users',
@@ -19,13 +20,13 @@ export const API = {
         CREATE: '/tickets',
     },
 
-    GOOGLE: {
-        BUSINESS: {
-            GET: (locationId: string) => `/google/${locationId}`,
-            SYNC: (locationId: string) => `/google/posts/sync/${locationId}`,
-            BY_LOCATION: (locationId: string) => `/google/posts/location/${locationId}`,
-            UPDATE: (id: string) => `/google/posts/${id}`,
-            DELETE: (id: string) => `/google/posts/${id}`,
+    GOOGLE_BUSINESS: {
+        LOCATION: {
+            GET_ALL: `/google-business-locations/`,
+            GET: (locationId: string) => `/google-business-locations/${locationId}`,
+            BY_LOCATION: (locationId: string) => `/google-business-locations/posts/location/${locationId}`,
+            UPDATE: (id: string) => `/google-business-locations/posts/${id}`,
+            DELETE: (id: string) => `/google-business-locations/posts/${id}`,
         },
         REVIEW: {
             BY_LOCATION: (locationId: string) => `/google/posts/location/${locationId}`,
@@ -41,11 +42,28 @@ export const API = {
         },
     },
     SUBSCRIPTION: {
-        ALL: '/subscription',
-        GET: (id: string) => `/subscription/${id}`,
-        CREATE: '/subscription',
+        ALL: '/payments/me',
+        GET: (id: string) => `/payments/${id}`,
+        CREATE: '/payments',
     },
     TICKETS: {
         CREATE: '/tickets',
+    },
+
+    INSTAGRAM: {
+        LIST: "/instagram",
+        GET: (id: string) => `/instagram/${id}`,
+        GET_BY_BUSINESS: (biz: string) => `/instagram/business/${biz}`,
+        CREATE: "/instagram",
+        UPDATE: (id: string) => `/instagram/${id}`,
+        DELETE: (id: string) => `/instagram/${id}`,
+    },
+    BUSINESS: {
+        GET: (id: string) => `/business/${id}`,
+        GET_ALL: '/business/',
+        CREATE: '/business/',
+
+        UPDATE: (id: string) => `/business/posts/${id}`,
+        DELETE: (id: string) => `/business/posts/${id}`,
     },
 }

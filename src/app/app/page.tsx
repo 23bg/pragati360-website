@@ -1,5 +1,6 @@
 // 'use client'
 
+import PageWrapper from "@/components/custom/page-wrapper"
 import data from "./data.json"
 
 import { ChartAreaInteractive } from '@/components/dashboard/chart-area-interactive'
@@ -19,18 +20,24 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div className="pb-20">
+    <PageWrapper
+      title="Dashboard"
+      subtitle="Dashboard detail and overivew for you brand"
+      showInitialLoadingOnly
+    >
+
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
-          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+          <div className="flex flex-col gap-4 py-4 md:gap-6 ">
             <SectionCards />
-            <div className="px-4 lg:px-6">
+            <div className="">
               <ChartAreaInteractive />
             </div>
             <DataTable data={data} />
           </div>
         </div>
       </div>
-    </div>
+
+    </PageWrapper>
   )
 }

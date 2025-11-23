@@ -49,7 +49,7 @@ export function CommonTableComponent<TData>({
 
   return (
     <div className="w-full overflow-x-auto rounded-md border border-border shadow-sm bg-background text-foreground transition-colors">
-      <Table className="min-w-[700px] w-full table-auto">
+      <Table  className="min-w-[700px] w-full table-auto">
         {/* ---------- HEADER ---------- */}
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

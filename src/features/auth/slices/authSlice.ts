@@ -2,7 +2,17 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import api from "@/shared/lib/axios";
 import { API } from "@/shared/constants";
 import { User } from "@/shared/types";
-import { LoginPayload, SignupPayload, ForgotPasswordPayload, ResetPasswordPayload } from "@/features/auth/types/auth.type";
+import { LoginPayload, SignupPayload, verificationPayload } from "@/features/auth/types/auth.type";
+
+// ------------------------------
+// TYPES
+// ------------------------------
+
+export interface AuthResponse {
+    user: User;
+    accessToken: string;
+    refreshToken: string;
+}
 
 interface AuthState {
     user: User | null;
@@ -13,7 +23,7 @@ interface AuthState {
 }
 
 // ------------------------------
-// Initial State
+// INITIAL STATE
 // ------------------------------
 
 const initialState: AuthState = {
@@ -25,92 +35,69 @@ const initialState: AuthState = {
 };
 
 // ------------------------------
-// Async Thunks
+// ASYNC THUNKS
 // ------------------------------
 
-// ✅ Login
+// LOGIN (returns user + tokens)
 export const loginUser = createAsyncThunk<
-    User,
+    AuthResponse,
     LoginPayload,
     { rejectValue: string }
 >("auth/loginUser", async (payload, { rejectWithValue }) => {
     try {
         const response = await api.post(API.AUTH.LOG_IN, payload);
-        return response.data as User;
+        return response.data as AuthResponse;
     } catch (error: any) {
-        console.error("Login error:", error);
         const message =
             error?.response?.data?.message || "Login failed. Please try again.";
         return rejectWithValue(message);
     }
 });
 
-// ✅ Signup
+// SIGNUP (returns user + tokens)
 export const signupUser = createAsyncThunk<
-    User,
+    AuthResponse,
     SignupPayload,
     { rejectValue: string }
 >("auth/signupUser", async (payload, { rejectWithValue }) => {
     try {
         const response = await api.post(API.AUTH.SIGN_UP, payload);
-        return response.data as User;
+        return response.data as AuthResponse;
     } catch (error: any) {
-        console.error("Signup error:", error);
         const message =
             error?.response?.data?.message || "Signup failed. Please try again.";
         return rejectWithValue(message);
     }
 });
 
-// ✅ Forgot Password
-export const forgotPassword = createAsyncThunk<
-    string,
-    ForgotPasswordPayload,
+// VERIFY OTP (returns user + tokens)
+export const verifyOtp = createAsyncThunk<
+    AuthResponse,
+    verificationPayload,
     { rejectValue: string }
->("auth/forgotPassword", async (payload, { rejectWithValue }) => {
+>("auth/verifyOtp", async (payload, { rejectWithValue }) => {
     try {
-        const response = await api.post(API.AUTH.FORGOT_PASSWORD, payload);
-        return response.data.message || "Password reset link sent to your email.";
+        const response = await api.post(API.AUTH.VERIFY, payload);
+        return response.data as AuthResponse;
     } catch (error: any) {
-        console.error("Forgot password error:", error);
         const message =
-            error?.response?.data?.message ||
-            "Unable to send reset link. Please try again.";
+            error?.response?.data?.message || "Invalid or expired OTP.";
         return rejectWithValue(message);
     }
 });
 
-// ✅ Reset Password
-export const resetPassword = createAsyncThunk<
-    string,
-    ResetPasswordPayload,
-    { rejectValue: string }
->("auth/resetPassword", async (payload, { rejectWithValue }) => {
-    try {
-        const response = await api.post(API.AUTH.RESET_PASSWORD, payload);
-        return response.data.message || "Password has been reset successfully.";
-    } catch (error: any) {
-        console.error("Reset password error:", error);
-        const message =
-            error?.response?.data?.message ||
-            "Password reset failed. Please try again.";
-        return rejectWithValue(message);
-    }
-});
-
-// ✅ Logout
+// LOGOUT
 export const logoutUser = createAsyncThunk("auth/logoutUser", async () => {
     try {
         await api.post(API.AUTH.LOG_OUT);
         return true;
-    } catch (error) {
-        console.error("Logout error:", error);
-        return true; // still clear local state
+    } catch {
+        return true; // always clear state on frontend
     }
 });
 
 // ------------------------------
-// Slice Definition
+// SLICE
 // ------------------------------
 
 const authSlice = createSlice({
@@ -129,6 +116,7 @@ const authSlice = createSlice({
             state.successMessage = null;
         },
     },
+
     extraReducers: (builder) => {
         builder
             // ------------------------------
@@ -138,18 +126,24 @@ const authSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(loginUser.fulfilled, (state, action: PayloadAction<User>) => {
-                state.loading = false;
-                state.user = action.payload;
-                state.isAuthenticated = true;
-                state.error = null;
-            })
+            .addCase(
+                loginUser.fulfilled,
+                (state, action: PayloadAction<AuthResponse>) => {
+                    state.loading = false;
+                    state.user = action.payload.user;
+                    state.isAuthenticated = true;
+                    state.error = null;
+
+                    // Save token (if storing client-side)
+                    localStorage.setItem("accessToken", action.payload.accessToken);
+                    localStorage.setItem("refreshToken", action.payload.refreshToken);
+                }
+            )
             .addCase(
                 loginUser.rejected,
                 (state, action: PayloadAction<string | undefined>) => {
                     state.loading = false;
-                    state.error = action.payload || "Something went wrong.";
-                    state.isAuthenticated = false;
+                    state.error = action.payload || "Login failed.";
                 }
             )
 
@@ -160,12 +154,18 @@ const authSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(signupUser.fulfilled, (state, action: PayloadAction<User>) => {
-                state.loading = false;
-                state.user = action.payload;
-                state.isAuthenticated = true;
-                state.successMessage = "Account created successfully.";
-            })
+            .addCase(
+                signupUser.fulfilled,
+                (state, action: PayloadAction<AuthResponse>) => {
+                    state.loading = false;
+                    state.user = action.payload.user;
+                    state.isAuthenticated = true;
+                    state.successMessage = "Account created successfully.";
+
+                    localStorage.setItem("accessToken", action.payload.accessToken);
+                    localStorage.setItem("refreshToken", action.payload.refreshToken);
+                }
+            )
             .addCase(
                 signupUser.rejected,
                 (state, action: PayloadAction<string | undefined>) => {
@@ -175,42 +175,30 @@ const authSlice = createSlice({
             )
 
             // ------------------------------
-            // FORGOT PASSWORD
+            // VERIFY OTP
             // ------------------------------
-            .addCase(forgotPassword.pending, (state) => {
+            .addCase(verifyOtp.pending, (state) => {
                 state.loading = true;
                 state.error = null;
                 state.successMessage = null;
             })
-            .addCase(forgotPassword.fulfilled, (state, action) => {
-                state.loading = false;
-                state.successMessage = action.payload;
-            })
             .addCase(
-                forgotPassword.rejected,
-                (state, action: PayloadAction<string | undefined>) => {
+                verifyOtp.fulfilled,
+                (state, action: PayloadAction<AuthResponse>) => {
                     state.loading = false;
-                    state.error = action.payload || "Unable to send reset link.";
+                    state.user = action.payload.user;
+                    state.isAuthenticated = true;
+                    state.successMessage = "OTP verified successfully.";
+
+                    localStorage.setItem("accessToken", action.payload.accessToken);
+                    localStorage.setItem("refreshToken", action.payload.refreshToken);
                 }
             )
-
-            // ------------------------------
-            // RESET PASSWORD
-            // ------------------------------
-            .addCase(resetPassword.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-                state.successMessage = null;
-            })
-            .addCase(resetPassword.fulfilled, (state, action) => {
-                state.loading = false;
-                state.successMessage = action.payload;
-            })
             .addCase(
-                resetPassword.rejected,
+                verifyOtp.rejected,
                 (state, action: PayloadAction<string | undefined>) => {
                     state.loading = false;
-                    state.error = action.payload || "Password reset failed.";
+                    state.error = action.payload || "Invalid OTP.";
                 }
             )
 
@@ -223,12 +211,15 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.error = null;
                 state.successMessage = null;
+
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("refreshToken");
             });
     },
 });
 
 // ------------------------------
-// Exports
+// EXPORTS
 // ------------------------------
 
 export const { resetAuthState, setUserFromStorage, clearMessages } =

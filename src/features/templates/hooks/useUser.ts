@@ -16,7 +16,7 @@ export const useUser = () => {
         loading,
         error,
         successMessage,
-    } = useAppSelector((state) => state.user);
+    } = useAppSelector((state) => state.users);
 
     // ------------------------------
     // Actions / Thunks

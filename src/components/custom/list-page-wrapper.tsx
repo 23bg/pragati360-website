@@ -1,118 +1,192 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import {
+  RefreshCcw,
+  Plus,
+  Download,
+  ArrowLeft,
+  AlertTriangle,
+} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type ListPageWrapperProps = {
   title: string;
   subtitle?: string;
+  breadcrumbSlot?: React.ReactNode;
+
   createHref?: string;
   createLabel?: string;
+
   showSearch?: boolean;
   searchPlaceholder?: string;
   searchValue?: string;
   onSearchChange?: (value: string) => void;
+
+  bulkActionSlot?: React.ReactNode;
+  dropdownSlot?: React.ReactNode;
+  filterChipsSlot?: React.ReactNode;
+
+  paginationSlot?: React.ReactNode;
+
   isLoading?: boolean;
   error?: string | null;
   onRetry?: () => void;
-  dropdownSlot?: React.ReactNode;
+
   showExport?: boolean;
   showRefresh?: boolean;
   showBackButton?: boolean;
+
   children: React.ReactNode;
+  hasData?: boolean;
+  emptyState?: React.ReactNode;
 };
 
 export function ListPageWrapper({
   title,
   subtitle,
+  breadcrumbSlot,
   createHref,
   createLabel = "Create",
   showSearch,
   searchPlaceholder = "Search...",
   searchValue,
   onSearchChange,
+  bulkActionSlot,
+  dropdownSlot,
+  filterChipsSlot,
+  paginationSlot,
   isLoading,
   error,
   onRetry,
-  dropdownSlot,
   showExport,
   showRefresh,
   showBackButton,
   children,
+  hasData = true,
+  emptyState,
 }: ListPageWrapperProps) {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-background text-foreground transition-colors">
-      {/* Header */}
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold text-foreground">{title}</h1>
-          {subtitle && (
-            <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
-          )}
-        </div>
+    <div className="w-full space-y-6 ">
+      {/* Breadcrumb */}
+      {breadcrumbSlot}
 
-        <div className="flex items-center gap-2 flex-wrap">
+      {/* Header - Module Information Only */}
+      <div className="  space-y-1">
+        <div className="flex items-center gap-2">
           {showBackButton && (
-            <Button variant="outline" className="sm:hidden">
-              Back
+            <Button variant="ghost" size="icon">
+              <ArrowLeft className="h-4 w-4" />
             </Button>
           )}
 
-          {showRefresh && (
-            <Button variant="outline" onClick={onRetry} disabled={isLoading}>
-              Refresh
-            </Button>
-          )}
-
-          {showExport && (
-            <Button
-              variant="outline"
-              onClick={() => alert("Export feature coming soon")}
-            >
-              Export
-            </Button>
-          )}
-
-          {dropdownSlot}
-
-          {createHref && createLabel && (
-            <Button className="whitespace-nowrap">{createLabel}</Button>
-          )}
-        </div>
-      </header>
-
-      {/* Search */}
-      {showSearch && onSearchChange && (
-        <div className="mb-4">
-          <input
-            type="search"
-            placeholder={searchPlaceholder}
-            value={searchValue}
-            onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full sm:w-64 px-3 py-2 border border-border rounded-md bg-background text-foreground 
-                       placeholder:text-muted-foreground 
-                       focus:outline-none focus:ring-2 focus:ring-primary transition"
-          />
-        </div>
-      )}
-
-      {/* Content */}
-      <main>
-        {isLoading ? (
-          <div className="text-center py-20 text-muted-foreground">
-            Loading...
+          <div>
+            <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
+            {subtitle && (
+              <p className="text-sm text-muted-foreground">{subtitle}</p>
+            )}
           </div>
-        ) : error ? (
-          <div className="text-center py-20 text-destructive">
-            <p>Error: {error}</p>
-            {onRetry && (
-              <Button onClick={onRetry} className="mt-2">
-                Retry
+        </div>
+      </div>
+
+      {/* Table Toolbar - All Data Actions */}
+      {(showSearch || dropdownSlot || bulkActionSlot || createHref) && (
+        <div
+          role="toolbar"
+          className="sticky top-[72px] z-20 bg-background flex items-center gap-3 flex-wrap justify-between pb-3 "
+        >
+          {/* Left Controls (filters/search/selectors) */}
+          <div className="flex items-center gap-3 flex-1 flex-wrap">
+            {showSearch && onSearchChange && (
+              <div className="max-w-sm w-full">
+                <Input
+                  role="search"
+                  placeholder={searchPlaceholder}
+                  value={searchValue}
+                  onChange={(e) => onSearchChange(e.target.value)}
+                />
+              </div>
+            )}
+
+            {dropdownSlot}
+          </div>
+
+          {/* Right Controls (actions on table data) */}
+          <div className="flex items-center gap-2">
+            {bulkActionSlot}
+
+            {showRefresh && (
+              <Button variant="outline" size="icon" onClick={onRetry} disabled={isLoading}>
+                <RefreshCcw className="h-4 w-4" />
+              </Button>
+            )}
+
+            {showExport && (
+              <Button variant="outline" size="icon" onClick={() => alert("Export coming soon")}>
+                <Download className="h-4 w-4" />
+              </Button>
+            )}
+
+            {createHref && (
+              <Button asChild className="gap-2 whitespace-nowrap">
+                <Link href={createHref}>
+                  <Plus className="h-4 w-4" />
+                  {createLabel}
+                </Link>
               </Button>
             )}
           </div>
-        ) : (
-          children
+        </div>
+      )}
+
+      {/* Active Filter Chips */}
+      {filterChipsSlot && (
+        <div className=" ">{filterChipsSlot}</div>
+      )}
+
+      {/* Table Content */}
+      <div className="relative min-h-[350px] ">
+        {/* Loading */}
+        {isLoading && (
+          <div className="space-y-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-10 w-full rounded-md" />
+            ))}
+          </div>
         )}
-      </main>
+
+        {/* Error State */}
+        {!isLoading && error && (
+          <div className="flex flex-col items-center justify-center py-20 text-center space-y-3">
+            <AlertTriangle className="w-8 h-8 text-destructive" />
+            <p className="text-destructive font-medium">{error}</p>
+            {onRetry && <Button variant="outline" onClick={onRetry}>Retry</Button>}
+          </div>
+        )}
+
+        {/* Empty State */}
+        {!isLoading && !error && !hasData && (
+          emptyState ?? (
+            <div className="flex items-center justify-center py-10 text-muted-foreground">
+              No records available.
+            </div>
+          )
+        )}
+
+        {/* Table Content */}
+        {!isLoading && !error && hasData && children}
+      </div>
+
+      {/* Pagination */}
+      {paginationSlot && (
+        <div className="pt-2 flex justify-end">
+          {paginationSlot}
+        </div>
+      )}
     </div>
   );
 }

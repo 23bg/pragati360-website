@@ -3,21 +3,14 @@
 import * as React from "react"
 import {
     LayoutDashboard,
-    Layers,
-    Instagram,
-    MessageCircle,
     CreditCard,
     Settings,
     Phone,
-    HelpCircle,
     SquareTerminal,
     Store,
-    Folder,
-    MessageSquare,
     MessageCircleQuestion,
-    Command,
-    MessageSquareShare,
-    Image,
+    LucideInstagram,
+    Users2,
 } from "lucide-react"
 
 
@@ -75,28 +68,25 @@ export function DashboardAppSidebar({ ...props }: React.ComponentProps<typeof Si
         navMain: [
 
             {
-                title: "Google Business",
-                url: ROUTES.APP.GOOGLE_BUSINESS,
+                title: "Business",
+                url: ROUTES.APP.BUSINESS.ROOT,
                 icon: Store, // Represents business/storefront
             },
+
             {
-                title: "Google Reviews",
-                url: ROUTES.APP.GOOGLE_REVIEWS,
-                icon: MessageSquareShare,
+                title: "Instagram",
+                url: ROUTES.APP.INSTAGRAM.ROOT,
+                icon: LucideInstagram, // chat-style, instantly clear
             },
             {
-                title: "Google Posts",
-                url: ROUTES.APP.GOOGLE_POSTS,
-                icon: Image, // chat-style, instantly clear
+                title: "Members",
+                url: ROUTES.APP.MEMBERS.ROOT,
+                icon: Users2,
             },
-            {
-                title: "Templates",
-                url: ROUTES.APP.TEMPLATES,
-                icon: Folder, // visually clear for “content templates”
-            },
+
             {
                 title: "Subscriptions",
-                url: ROUTES.APP.SUBSCRIPTION,
+                url: ROUTES.APP.SUBSCRIPTION.ROOT,
                 icon: CreditCard, // payment-related
             },
             {

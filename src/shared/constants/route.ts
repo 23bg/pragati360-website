@@ -4,26 +4,80 @@ const ROUTES = {
 
 
     APP: {
-        ROOT: '/app',
-        USER_PROFILE: '/app/:id',
-        GOOGLE_BUSINESS: '/app/google-business',
-        GOOGLE_REVIEWS: '/app/google-reviews',
-        GOOGLE_POSTS: '/app/google-posts'
-        ,
-        TEMPLATES: '/app/templates',
-        SUBSCRIPTION: '/app/subscription',
-        SUBSCRIPTION_DETAIL: (id: string) => `/app/subscription/${id}`,
-        SETTINGS: '/app/settings',
-        HELP_CENTER: '/app/help-center',
-        FAQs: '/app/faqs',
-        CONTACT: '/app/contact',
+        ROOT: "/app",
+
+
+
+
+        // The ONE business the user owns
+        BUSINESS: {
+            ROOT: "/app/business",
+            LOCATIONS: {
+                ROOT: "/app/business/locations",
+                CREATE: "/app/business/locations/create",
+                DETAIL: (locationId: string) =>
+                    `/app/business/locations/${locationId}`,
+                UPDATE: (locationId: string) =>
+                    `/app/business/locations/${locationId}/update`,
+                POSTS: {
+                    ROOT: (locationId: string) =>
+                        `/app/business/locations/${locationId}/posts`,
+                    CREATE: (locationId: string) =>
+                        `/app/business/locations/${locationId}/posts/create`,
+                    UPDATE: (locationId: string, postId: string) =>
+                        `/app/business/locations/${locationId}/posts/${postId}/update`,
+                },
+                REVIEWS: {
+                    ROOT: (locationId: string) =>
+                        `/app/business/locations/${locationId}/reviews`,
+                    REPLY: (locationId: string, reviewId: string) =>
+                        `/app/business/locations/${locationId}/reviews/${reviewId}/reply`,
+                }
+            },
+
+        },
+
+
+
+        // Instagram module remains same
+        INSTAGRAM: {
+            ROOT: "/app/instagram",
+            POSTS: "/app/instagram/posts",
+            MESSAGES: "/app/instagram/messages",
+            COMPETITORS: "/app/instagram/competitors",
+        },
+
+        MEMBERS: {
+            ROOT: "/app/members",
+            CREATE: "/app/members/create",
+            DETAIL: (memberId: string) => `/app/members/${memberId}`,
+            UPDATE: (memberId: string) => `/app/members/${memberId}/update`,
+        },
+
+        SUBSCRIPTION: {
+            ROOT: "/app/subscription",
+            CREATE: "/app/subscription/create",
+            DETAIL: (subscriptionId: string) => `/app/subscription/${subscriptionId}`,
+        },
+
+
+        // Other modules
+
+        TEMPLATES: "/app/templates",
+
+        SETTINGS: "/app/settings",
+
+
+        HELP_CENTER: "/app/help-center",
+        FAQs: "/app/faqs",
+        CONTACT: "/app/contact",
     },
 
+
     AUTH: {
-        LOG_IN: '/auth/login',
-        SIGN_UP: '/auth/signup',
-        FORGOT_PASSWORD: '/auth/forgot-password',
-        RESET_PASSWORD: '/auth/reset-password',
+        LOG_IN: '/login',
+        SIGN_UP: '/signup',
+        VERIFICATION: '/verification',
     },
 
 

@@ -3,38 +3,90 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "../hooks/useAuth";
-import { SignupFormData, signupFormSchema } from "../validations/signup.validation";
-
+import {
+    SignupFormData,
+    signupFormSchema,
+} from "../validations/signup.validation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import ROUTES from "@/shared/constants/route";
 
 export default function SignupForm() {
+    const router = useRouter();
     const { signup, loading, error } = useAuth();
-    const { register, handleSubmit, formState: { errors } } = useForm<SignupFormData>({
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<SignupFormData>({
         resolver: zodResolver(signupFormSchema),
     });
 
-    const onSubmit = (data: SignupFormData) => {
-        signup(data);
+    const onSubmit = async (data: SignupFormData) => {
+        const success = await signup(data);
+
+        if (success) {
+            router.push(ROUTES.AUTH.VERIFICATION); // Where user receives OTP next
+        }
+
+        reset();
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-6 max-w-sm mx-auto">
-            <input {...register("fullName")} placeholder="Full Name" className="w-full border p-2 rounded" />
-            {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4 p-6 max-w-sm mx-auto"
+        >
+            {/* Full Name */}
+            <div>
+                <Input
+                    {...register("name")}
+                    placeholder="Full Name"
+                    className="w-full"
+                />
+                {errors.name && (
+                    <p className="text-red-500 text-sm">{errors.name.message}</p>
+                )}
+            </div>
 
-            <input {...register("phoneNumber")} placeholder="text" className="w-full border p-2 rounded" />
-            {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
+            {/* Phone Number */}
+            <div>
+                <Input
+                    {...register("phoneNumber")}
+                    placeholder="Phone Number"
+                    className="w-full"
+                />
+                {errors.phoneNumber && (
+                    <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
+                )}
+            </div>
 
-            <input {...register("email")} placeholder="Email" className="w-full border p-2 rounded" />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            {/* Email */}
+            <div>
+                <Input
+                    {...register("email")}
+                    placeholder="Email"
+                    className="w-full"
+                />
+                {errors.email && (
+                    <p className="text-red-500 text-sm">{errors.email.message}</p>
+                )}
+            </div>
 
-            <input type="password" {...register("password")} placeholder="Password" className="w-full border p-2 rounded" />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
-
+            {/* Error Message */}
             {error && <p className="text-red-500 text-sm">{error}</p>}
 
-            <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white py-2 rounded">
+            {/* Submit */}
+            <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-blue-600 text-white"
+            >
                 {loading ? "Creating account..." : "Sign Up"}
-            </button>
+            </Button>
         </form>
     );
 }
