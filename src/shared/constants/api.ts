@@ -11,6 +11,7 @@ export const API = {
     USERS: {
         ALL: '/users',
         GET: (id: string) => `/users/${id}`,
+        CURRENT_USER: '/users/me',
         CREATE: '/users',
         UPDATE: (id: string) => `/users/${id}`,
     },

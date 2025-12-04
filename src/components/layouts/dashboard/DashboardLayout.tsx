@@ -1,11 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
-    SunIcon,
-    MoonIcon,
     HelpCircle,
     Search,
 } from "lucide-react";
@@ -16,11 +12,7 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar";
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbList,
-} from "@/components/ui/breadcrumb";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
@@ -30,6 +22,8 @@ import {
     TooltipProvider,
 } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
+import { redirect } from "next/navigation";
+import ROUTES from "@/shared/constants/route";
 
 
 
@@ -38,44 +32,10 @@ export default function DashboardLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    // Theme setup
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        const isDark = savedTheme === "dark";
-        document.documentElement.classList.toggle("dark", isDark);
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLoading(false);
-    }, [])
-
-
-
-    const toggleTheme = () => {
-        const newTheme = isDarkMode ? "light" : "dark";
-
-        // Update React state
-        setIsDarkMode(!isDarkMode);
-
-        // Update HTML class
-        document.documentElement.classList.toggle("dark", !isDarkMode);
-
-        // Save preference
-        localStorage.setItem("theme", newTheme);
-    };
-
-    if (loading)
-        return (
-            <div className="flex justify-center items-center h-screen bg-zinc-300 dark:bg-zinc-800">
-                Loading...
-            </div>
-        );
-
-    // Generate breadcrumb segments
-    const pathSegments = pathname.split("/").filter(Boolean);
+    const token = localStorage.getItem("accessToken");
+    if (!token) {
+        redirect(ROUTES.AUTH.LOG_IN)
+    }
 
     return (
         <SidebarProvider className="rounded overflow-hidden h-screen">
@@ -86,48 +46,9 @@ export default function DashboardLayout({
       border-b bg-background dark:bg-zinc-900/40 backdrop-blur-sm rounded-t-2xl">
                     {/* Left: Sidebar + Breadcrumb */}
                     <div className="flex items-center gap-2 justify-center">
-                        <SidebarTrigger className="dark:text-white text-black" />
+                        <SidebarTrigger />
 
-                        {/* <Breadcrumb className="hidden md:block mt-0.5">
-                            <BreadcrumbList>
-                                {pathSegments.map((segment, index) => {
-                                    const href = `/${pathSegments
-                                        .slice(0, index + 1)
-                                        .join("/")}`;
-                                    const isLast = index === pathSegments.length - 1;
-                                    const formattedSegment = segment
-                                        .replace(/-/g, " ")
-                                        .replace(/\b\w/g, (char) => char.toUpperCase());
 
-                                    return isLast ? (
-                                        <BreadcrumbItem key={href}>
-                                            <Button
-                                                size="sm"
-                                                variant="link"
-                                                className="dark:text-white text-black"
-                                            >
-                                                {formattedSegment}
-                                            </Button>
-                                        </BreadcrumbItem>
-                                    ) : (
-                                        <BreadcrumbItem key={href}>
-                                            <>
-                                                <Link href={href}>
-                                                    <Button
-                                                        size="sm"
-                                                        variant='link'
-                                                        className="dark:text-zinc-400 text-zinc-700"
-                                                    >
-                                                        {formattedSegment}
-                                                    </Button>
-                                                </Link>
-                                                <span className="mx-2">/</span>
-                                            </>
-                                        </BreadcrumbItem>
-                                    );
-                                })}
-                            </BreadcrumbList>
-                        </Breadcrumb> */}
                         <div className="h-5 w-10">
                             <Separator orientation="vertical" className="m-0 p-0" />
                         </div>
@@ -143,27 +64,13 @@ export default function DashboardLayout({
 
 
                         <TooltipProvider delayDuration={150}>
-                            {/* Theme Toggle */}
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <Button variant="ghost" size="icon" onClick={toggleTheme}>
-                                        {isDarkMode ? (
-                                            <SunIcon className="h-5 w-5 text-yellow-500" />
-                                        ) : (
-                                            <MoonIcon className="h-5 w-5 text-blue-500" />
-                                        )}
-                                    </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>Toggle Theme</p>
-                                </TooltipContent>
-                            </Tooltip>
+
 
                             {/* Help Button */}
                             <Tooltip>
                                 <TooltipTrigger asChild>
-                                    <Button variant="ghost" size="icon" onClick={() => router.push("/help")}>
-                                        <HelpCircle className="h-5 w-5 dark:text-white text-black" />
+                                    <Button variant="ghost" size="icon" >
+                                        <HelpCircle className="h-5 w-5 " />
                                     </Button>
                                 </TooltipTrigger>
                                 <TooltipContent>
@@ -203,7 +110,7 @@ export default function DashboardLayout({
                 </footer>
             </SidebarInset>
 
-        </SidebarProvider>
+        </SidebarProvider >
     );
 }
 

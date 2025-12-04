@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import api from "@/shared/lib/axios";
 import { API } from "@/shared/constants";
-import { User } from "@/shared/types";
+import { } from "@/shared/types";
+import { User } from "../types/user.type";
 
 // ------------------------------
 // State Interface
@@ -30,13 +32,14 @@ const initialState: UserState = {
 // ------------------------------
 
 // ✅ Get Current User (Profile)
-export const fetchUserById = createAsyncThunk<
+
+export const fetchCurrentUser = createAsyncThunk<
     User,
-    { id: string },
+    void,
     { rejectValue: string }
->("user/fetchCurrentUser", async ({ id }, { rejectWithValue }) => {
+>("user/fetchCurrentUser", async (_, { rejectWithValue }) => {
     try {
-        const response = await api.get(API.USERS.GET(id));
+        const response = await api.get(API.USERS.CURRENT_USER);
         console.log(response.data.data)
         return response.data.data as User;
     } catch (error: any) {
@@ -64,22 +67,8 @@ export const updateUserProfile = createAsyncThunk<
     }
 });
 
-// ✅ Fetch All Users (Admin only)
-export const fetchAllUsers = createAsyncThunk<
-    User[],
-    void,
-    { rejectValue: string }
->("user/fetchAllUsers", async (_, { rejectWithValue }) => {
-    try {
-        const response = await api.get(API.USERS.ALL);
-        return response.data.data.users;
-    } catch (error: any) {
-        console.error("Fetch all users error:", error);
-        const message =
-            error?.response?.data?.message || "Failed to fetch users list.";
-        return rejectWithValue(message);
-    }
-});
+
+
 
 
 // ------------------------------
@@ -97,28 +86,30 @@ const userSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+
+
             // ------------------------------
             // FETCH CURRENT USER
             // ------------------------------
-            .addCase(fetchUserById.pending, (state) => {
+            .addCase(fetchCurrentUser.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
             .addCase(
-                fetchUserById.fulfilled,
+                fetchCurrentUser.fulfilled,
                 (state, action: PayloadAction<User>) => {
                     state.loading = false;
                     state.currentUser = action.payload;
                     state.error = null;
                 }
-            )
-            .addCase(
-                fetchUserById.rejected,
+            ).addCase(
+                fetchCurrentUser.rejected,
                 (state, action: PayloadAction<string | undefined>) => {
                     state.loading = false;
                     state.error = action.payload || "Failed to load profile.";
                 }
             )
+
 
             // ------------------------------
             // UPDATE USER PROFILE
@@ -144,24 +135,7 @@ const userSlice = createSlice({
                 }
             )
 
-            // ------------------------------
-            // FETCH ALL USERS
-            // ------------------------------
-            .addCase(fetchAllUsers.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchAllUsers.fulfilled, (state, action) => {
-                state.loading = false;
-                state.users = action.payload;
-            })
-            .addCase(
-                fetchAllUsers.rejected,
-                (state, action: PayloadAction<string | undefined>) => {
-                    state.loading = false;
-                    state.error = action.payload || "Failed to fetch users.";
-                }
-            )
+
     },
 });
 

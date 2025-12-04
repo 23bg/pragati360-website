@@ -36,7 +36,7 @@ export const CustomBreadcrumbs: React.FC = () => {
     }, [deviceid, currentDevice, fetchDeviceById])
 
     return (
-        <nav className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+        <nav className="flex items-center space-x-2 text-sm ">
             <Link to="/">Home</Link>
             {breadcrumbs.map((crumb, index) => {
                 const isLast = index === breadcrumbs.length - 1

@@ -78,7 +78,7 @@ export const verifyOtp = createAsyncThunk<
 >("auth/verifyOtp", async (payload, { rejectWithValue }) => {
     try {
         const response = await api.post(API.AUTH.VERIFY, payload);
-        return response.data as AuthResponse;
+        return response.data.data as AuthResponse;
     } catch (error: any) {
         const message =
             error?.response?.data?.message || "Invalid or expired OTP.";

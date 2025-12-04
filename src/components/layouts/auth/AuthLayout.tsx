@@ -1,80 +1,86 @@
 "use client";
 
-import { ReactNode } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import type React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import ROUTES from "@/shared/constants/route";
+import { useEffect } from "react";
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default function AuthLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    const router = useRouter();
+
+    useEffect(() => {
+        const token = localStorage.getItem("accessToken");
+        if (token) {
+            router.replace(ROUTES.APP.ROOT);
+        }
+    }, [router]);
+
     return (
-        <div className="min-h-screen flex flex-col md:flex-row bg-background text-foreground">
-
-            {/* ---------- Left Section (Brand) ---------- */}
-            <div className="relative hidden md:flex md:w-1/2 items-center justify-center 
-                bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 text-white p-12">
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
-
-                {/* Decorative Grid */}
-                <div className="absolute inset-0 opacity-15 
-                    bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] 
-                    bg-[length:24px_24px]" />
-
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="relative z-10 text-center max-w-md"
-                >
-                    <div className="flex justify-center mb-6">
-                        <Image
-                            src="/logo-light.svg"
-                            alt="Pragati360 Logo"
-                            width={80}
-                            height={80}
-                            className="drop-shadow-lg"
-                        />
+        <div className="min-h-screen flex">
+            {/* Left Section */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 flex-col justify-between p-8 text-white"
+            >
+                <div>
+                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                        <svg
+                            className="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
+                        </svg>
                     </div>
-
-                    <h1 className="text-4xl font-bold mb-3 leading-tight">
-                        Welcome to <span className="text-indigo-100">Pragati360</span>
-                    </h1>
-
-                    <p className="text-indigo-200 text-sm leading-relaxed">
-                        Powering your cloud-native apps with decentralized infrastructure.
-                        Secure, scalable, and built for the modern web.
+                    <h1 className="text-4xl font-bold mb-4">Welcome back</h1>
+                    <p className="text-indigo-100 text-lg leading-relaxed">
+                        Access your account to manage your workspace, collaborate with your
+                        team, and build amazing things.
                     </p>
-                </motion.div>
-            </div>
+                </div>
 
-            {/* ---------- Right Section (Auth Form) ---------- */}
-            <div className="flex w-full md:w-1/2 items-center justify-center px-6 py-10">
+                <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-sm">
+                        <div className="w-2 h-2 rounded-full bg-indigo-200" />
+                        <span>Secure and encrypted</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <div className="w-2 h-2 rounded-full bg-indigo-200" />
+                        <span>Real-time collaboration</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <div className="w-2 h-2 rounded-full bg-indigo-200" />
+                        <span>24/7 support included</span>
+                    </div>
+                </div>
+
+                <p className="text-xs text-indigo-200">
+                    © 2025 Your Company. All rights reserved.
+                </p>
+            </motion.div>
+
+            {/* Right Section */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8">
                 <motion.div
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="w-full max-w-md space-y-8 bg-card text-card-foreground 
-                               rounded-2xl shadow-lg border border-border p-8 md:p-10"
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="w-full max-w-md"
                 >
                     {children}
-
-                    {/* Footer Links */}
-                    <div className="pt-4 text-center text-sm text-muted-foreground">
-                        <p className="space-x-3">
-                            <Link href="/privacy-policy" className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                                Privacy Policy
-                            </Link>
-                            <span>·</span>
-                            <Link href="/terms" className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                                Terms
-                            </Link>
-                            <span>·</span>
-                            <Link href="/help" className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                                Help
-                            </Link>
-                        </p>
-                    </div>
                 </motion.div>
             </div>
         </div>

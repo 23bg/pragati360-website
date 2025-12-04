@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} font-sans antialiased bg-black text-white`}
+        className={`${dmSans.variable} font-sans antialiased `}
       >
         <ReduxProvider>
           <NextTopLoader

@@ -11,10 +11,10 @@ const ROUTES = {
 
         // The ONE business the user owns
         BUSINESS: {
-            ROOT: "/app/business",
+            ROOT: "/business",
             LOCATIONS: {
-                ROOT: "/app/business/locations",
-                CREATE: "/app/business/locations/create",
+                ROOT: "/business/locations",
+                CREATE: "/business/locations/create",
                 DETAIL: (locationId: string) =>
                     `/app/business/locations/${locationId}`,
                 UPDATE: (locationId: string) =>
@@ -41,36 +41,37 @@ const ROUTES = {
 
         // Instagram module remains same
         INSTAGRAM: {
-            ROOT: "/app/instagram",
-            POSTS: "/app/instagram/posts",
-            MESSAGES: "/app/instagram/messages",
-            COMPETITORS: "/app/instagram/competitors",
+            ROOT: "/instagram",
+            POSTS: "/instagram/posts",
+            MESSAGES: "/instagram/messages",
+            COMPETITORS: "/instagram/competitors",
         },
 
         MEMBERS: {
-            ROOT: "/app/members",
-            CREATE: "/app/members/create",
+            ROOT: "/members",
+            CREATE: "/members/create",
             DETAIL: (memberId: string) => `/app/members/${memberId}`,
             UPDATE: (memberId: string) => `/app/members/${memberId}/update`,
         },
 
         SUBSCRIPTION: {
-            ROOT: "/app/subscription",
-            CREATE: "/app/subscription/create",
+            ROOT: "/subscription",
+            CREATE: "/subscription/create",
             DETAIL: (subscriptionId: string) => `/app/subscription/${subscriptionId}`,
         },
 
 
         // Other modules
 
-        TEMPLATES: "/app/templates",
+        TEMPLATES: "/templates",
 
-        SETTINGS: "/app/settings",
+        ACCOUNT: "/account",
+        INTEGRATIONS: "/integrations",
 
 
-        HELP_CENTER: "/app/help-center",
-        FAQs: "/app/faqs",
-        CONTACT: "/app/contact",
+        HELP_CENTER: "/help-center",
+        FAQs: "/faqs",
+        CONTACT: "/contact",
     },
 
 

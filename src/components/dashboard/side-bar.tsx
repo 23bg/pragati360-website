@@ -11,6 +11,9 @@ import {
     MessageCircleQuestion,
     LucideInstagram,
     Users2,
+    User,
+    UserCircle,
+    Route,
 } from "lucide-react"
 
 
@@ -78,11 +81,7 @@ export function DashboardAppSidebar({ ...props }: React.ComponentProps<typeof Si
                 url: ROUTES.APP.INSTAGRAM.ROOT,
                 icon: LucideInstagram, // chat-style, instantly clear
             },
-            {
-                title: "Members",
-                url: ROUTES.APP.MEMBERS.ROOT,
-                icon: Users2,
-            },
+
 
             {
                 title: "Subscriptions",
@@ -90,9 +89,14 @@ export function DashboardAppSidebar({ ...props }: React.ComponentProps<typeof Si
                 icon: CreditCard, // payment-related
             },
             {
-                title: "Settings",
-                url: ROUTES.APP.SETTINGS,
-                icon: Settings, // standard and clean
+                title: "Integrations",
+                url: ROUTES.APP.INTEGRATIONS,
+                icon: Route,
+            },
+            {
+                title: "Account",
+                url: ROUTES.APP.ACCOUNT,
+                icon: UserCircle, // standard and clean
             },
         ],
 

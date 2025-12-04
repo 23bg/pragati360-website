@@ -7,6 +7,7 @@ type ToastType = 'default' | 'success' | 'warning' | 'error'
 interface ToastOptions {
     message?: string
     description?: string
+    postion?: 'bottom-right'
 }
 
 const getStyles = (type: ToastType): React.CSSProperties => {
