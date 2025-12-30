@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+export const dynamic = "force-dynamic";
 import { Button } from "@/components/ui/button";
 import { ProductIcon } from "@/components/ui/display-icon";
 

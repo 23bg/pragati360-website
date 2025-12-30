@@ -1,8 +1,6 @@
 import { generateMetadata } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 export const metadata = generateMetadata({
@@ -69,19 +67,19 @@ export default function ContactPage() {
                 <label htmlFor="name" className="sr-only">
                   Your Name
                 </label>
-                <Input id="name" placeholder="Your Name" className="rounded-xl shadow-sm" />
+                <input id="name" placeholder="Your Name" className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
               </div>
               <div>
                 <label htmlFor="email" className="sr-only">
                   Your Email
                 </label>
-                <Input id="email" type="email" placeholder="Your Email" className="rounded-xl shadow-sm" />
+                <input id="email" type="email" placeholder="Your Email" className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
               </div>
               <div>
                 <label htmlFor="message" className="sr-only">
                   Your Message
                 </label>
-                <Textarea id="message" placeholder="Your Message" rows={5} className="rounded-xl shadow-sm" />
+                <textarea id="message" placeholder="Your Message" rows={5} className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
               </div>
               <Button type="submit" className="w-full rounded-xl shadow-lg">
                 Send Message

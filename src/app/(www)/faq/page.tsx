@@ -1,5 +1,6 @@
 import { generateMetadata } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,

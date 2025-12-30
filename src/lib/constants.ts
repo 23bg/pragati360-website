@@ -67,25 +67,55 @@ export const FEATURE_SECTIONS = [
     title: "Google Business Profile Management",
     description: "Automate all your Google Business Profile updates with real-time sync and insights.",
     icon: "google",
+    link: "/features/google-business",
+    details: [
+      "Schedule and publish posts",
+      "Monitor and respond to reviews",
+      "Track customer actions and insights",
+    ],
   },
   {
     title: "Instagram Post Scheduling",
     description: "Schedule and publish posts in advance to maximize engagement and reach.",
     icon: "instagram",
+    link: "/features/instagram",
+    details: [
+      "Plan and schedule posts",
+      "Draft captions and media",
+      "Analyze post performance",
+    ],
   },
   {
     title: "Smart Alerts & Notifications",
     description: "Get real-time alerts on activity, performance, and updates from your business.",
     icon: "bell",
+    link: "/features/alerts",
+    details: [
+      "Real-time activity alerts",
+      "Customizable notification rules",
+      "Immediate action suggestions",
+    ],
   },
   {
     title: "Unified Dashboard",
     description: "A single view of all your business data across platforms for better visibility.",
     icon: "dashboard",
+    link: "/features/dashboard",
+    details: [
+      "Centralized metrics and KPIs",
+      "Cross-platform performance overview",
+      "Quick access to common actions",
+    ],
   },
   {
     title: "Outlet Management",
     description: "Manage multiple outlets with centralized inventory, orders, and performance tracking.",
     icon: "outlet",
+    link: "/features/outlet-management",
+    details: [
+      "Central inventory control",
+      "Outlet-specific content and pricing",
+      "Performance comparisons across outlets",
+    ],
   },
 ];

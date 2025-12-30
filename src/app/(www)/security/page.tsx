@@ -2,6 +2,7 @@ import { generateMetadata } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
 import { Lock, ShieldCheck, Fingerprint, Cloud, Scale } from "lucide-react";
 import { DisplayIcon } from "@/components/ui/display-icon";
+import type { IconKeys } from "@/components/icons";
 
 export const metadata = generateMetadata({
   title: "Security & Trust",

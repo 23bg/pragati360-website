@@ -5,7 +5,7 @@ interface SEOProps {
   description: string;
   keywords?: string[];
   ogImage?: string;
-  ogType?: string;
+  ogType?: any;
   ogUrl?: string;
 }
 

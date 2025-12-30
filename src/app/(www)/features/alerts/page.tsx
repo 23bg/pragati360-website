@@ -1,4 +1,5 @@
 import { generateMetadata } from "@/lib/seo";
+export const dynamic = "force-dynamic";
 import { FEATURE_SECTIONS } from "@/lib/constants";
 import { DisplayIcon } from "@/components/ui/display-icon";
 import { Check } from "lucide-react";
