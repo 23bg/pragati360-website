@@ -5,7 +5,7 @@ import { Icon } from "@/components/ui/display-icon";
 
 export const metadata: Metadata = {
   title: "Instagram Post Scheduling | Pragati360",
-  description: "Schedule and manage Instagram posts with Pragati360 — from content planning to analytics — all in one place.",
+  description: "Pragati360 provides a controlled approach to planning and scheduling your Instagram content, helping maintain a consistent and professional online presence.",
   applicationName: "Pragati360",
   metadataBase: new URL("https://pragati360.com"),
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Instagram Post Scheduling | Pragati360",
-    description: "Schedule and manage Instagram posts with Pragati360 — from content planning to analytics — all in one place.",
+    description: "Pragati360 provides a controlled approach to planning and scheduling your Instagram content, helping maintain a consistent and professional online presence.",
     url: "https://pragati360.com/features/instagram",
     siteName: "Pragati360",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Instagram Post Scheduling | Pragati360",
-    description: "Schedule and manage Instagram posts with Pragati360 — from content planning to analytics — all in one place.",
+    description: "Pragati360 provides a controlled approach to planning and scheduling your Instagram content, helping maintain a consistent and professional online presence.",
     images: ["https://pragati360.com/og-image-instagram.jpg"]
   }
 };
@@ -52,7 +52,7 @@ export default function InstagramPage() {
           Instagram Post Scheduling
         </h1>
         <p className="text-lg leading-8 text-muted-foreground mb-8">
-          Pragati360 helps you plan, schedule, and manage your Instagram content with full control over posting timelines and performance.
+          Pragati360 offers methodical tools to plan, schedule, and manage your Instagram content, ensuring a reliable and professional online presence.
         </p>
       </div>
 
@@ -93,21 +93,21 @@ export default function InstagramPage() {
           <h3 className="text-2xl font-bold text-foreground mb-6">Why Use Pragati360?</h3>
           <ul className="space-y-4 text-muted-foreground">
             <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Plan and schedule posts without manual effort</span>
+              <span className="w-2 h-2 mt-2 rounded-full bg-primary"></span>
+              <span>Maintain a consistent, professional Instagram presence.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Visualize content performance and adjust strategy</span>
+              <span className="w-2 h-2 mt-2 rounded-full bg-primary"></span>
+              <span>Methodically organize and deploy your content.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Save time with reusable content templates</span>
+              <span className="w-2 h-2 mt-2 rounded-full bg-primary"></span>
+              <span>Gain insights to refine your content approach.</span>
             </li>
           </ul>
           <div className="mt-8">
             <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg">
-              <a href="/pricing">Start at ₹199/month</a>
+              <a href="/early-access">Request Early Access</a>
             </Button>
           </div>
         </div>

@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/display-icon";
 
 export const metadata: Metadata = {
-  title: "Post Scheduling | Prag-than360",
-  description: "Schedule your Instagram and Google Business posts with Pragati360 — from content planning to automated posting.",
+  description: "Pragati360 provides a controlled approach to planning and deploying your content across Instagram and Google Business, ensuring consistent and reliable post scheduling.",
   applicationName: "Pragati360",
   metadataBase: new URL("https://pragati360.com"),
   keywords: [
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Post Scheduling | Pragati360",
-    description: "Schedule your Instagram and Google Business posts with Pragati360 — from content planning to automated posting.",
+    description: "Pragati360 provides a controlled approach to planning and deploying your content across Instagram and Google Business, ensuring consistent and reliable post scheduling.",
     url: "https://pragati360.com/features/scheduling",
     siteName: "Pragati360",
     images: [
@@ -31,6 +30,12 @@ export const metadata: Metadata = {
         alt: "Post Scheduling on Pragati360"
       }
     ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Post Scheduling | Pragati360",
+    description: "Pragati360 provides a controlled approach to planning and deploying your content across Instagram and Google Business, ensuring consistent and reliable post scheduling.",
+    images: ["https://pragati360.com/og-image-scheduling.jpg"]
   }
 };
 
@@ -41,7 +46,7 @@ export default function SchedulingPage() {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-6">Post Scheduling</h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Schedule your Instagram and Google Business posts with Pragati360 — from content planning to automated posting.
+            Pragati360 offers a reliable approach to planning and deploying your content across Instagram and Google Business, ensuring consistent and controlled post scheduling.
           </p>
         </div>
 
@@ -52,7 +57,7 @@ export default function SchedulingPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Set Post Times</h3>
             <p className="text-muted-foreground">
-              Choose exact times to post your content across all platforms — no more guessing when to post.
+              Define precise deployment times for content across platforms, ensuring reliability.
             </p>
           </div>
 
@@ -62,7 +67,7 @@ export default function SchedulingPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Edit & Reschedule</h3>
             <p className="text-muted-foreground">
-              Modify your posts or reschedule them at any time — no need to manually re-post.
+              Adjust content and schedule with full control, adapting to your operational needs.
             </p>
           </div>
 
@@ -72,7 +77,7 @@ export default function SchedulingPage() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Get Notifications</h3>
             <p className="text-muted-foreground">
-              Receive alerts when posts go live or when engagement spikes — stay in control.
+              Receive clear confirmations when content is deployed, maintaining oversight.
             </p>
           </div>
         </div>
@@ -82,22 +87,22 @@ export default function SchedulingPage() {
           <ol className="space-y-4 text-muted-foreground">
             <li className="flex items-start gap-3">
               <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-              <span>Create or edit your content in the dashboard</span>
+              <span>Prepare or refine your content within the secure dashboard.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-              <span>Select the platforms and schedule post times</span>
+              <span>Designate target platforms and precise content deployment times.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
-              <span>Post content automatically at scheduled times</span>
+              <span>Ensure reliable content deployment at predetermined intervals.</span>
             </li>
           </ol>
         </div>
 
         <div className="mt-12 text-center">
           <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg bg-blue-600 hover:bg-blue-700 text-white">
-            <a href="/pricing">Start at ₹199/month</a>
+            <a href="/early-access">Request Early Access</a>
           </Button>
         </div>
       </div>

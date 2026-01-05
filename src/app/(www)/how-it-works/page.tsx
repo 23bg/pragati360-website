@@ -1,44 +1,34 @@
 import { generateMetadata } from "@/lib/seo";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
-import { Check, Star } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export const metadata = generateMetadata({
-  title: "How It Works",
-  description: `Understand the simple process of how ${SITE_NAME} streamlines your business management.`,
+  title: "How Pragati360 Early Access Works",
+  description: "Learn about the structured process for joining Pragati360's Early Access program and how you can contribute to shaping a reliable operational platform.",
 });
 
 const steps = [
   {
-    title: "Connect Your Accounts",
-    description:
-      "Securely link your Google Business Profile and Instagram accounts in minutes. Our platform ensures data privacy and seamless integration.",
-    icon: "plug", // Placeholder icon
+    title: "Submit Your Request",
+    description: "Complete our brief Early Access request form. This helps us understand your business and ensure Pragati360 is the right fit.",
   },
   {
-    title: "Schedule Your Content",
-    description:
-      "Plan and schedule posts for both platforms from a single intuitive calendar. Create engaging content with our built-in tools.",
-    icon: "calendar", // Placeholder icon
+    title: "Personalized Consultation",
+    description: "Our team will reach out for a confidential conversation to discuss your operational needs, answer your questions, and detail the Early Access benefits.",
   },
   {
-    title: "Manage Your Outlets",
-    description:
-      "If you have multiple business locations, easily manage and tailor content for each outlet from one central dashboard.",
-    icon: "store", // Placeholder icon
+    title: "Controlled Onboarding",
+    description: "Upon acceptance, we'll guide you through a structured onboarding process, ensuring smooth integration and initial setup tailored to your business.",
   },
   {
-    title: "Receive Smart Alerts",
-    description:
-      "Stay informed with real-time notifications for new reviews, messages, and critical business updates, ensuring you never miss a beat.",
-    icon: "bell", // Placeholder icon
+    title: "Collaborate & Provide Feedback",
+  description: "Actively use Pragati360's tools. Your invaluable feedback directly informs our development cycles, shaping features and refining the platform.",
   },
   {
-    title: "Gain Insights & Grow",
-    description:
-      "Access a unified dashboard with performance analytics to understand your reach, engagement, and optimize your strategy for continuous growth.",
-    icon: "chart-line", // Placeholder icon
+    title: "Benefit from Foundational Partnership",
+    description: "As an Early Access partner, you'll receive dedicated support, priority access to new features, and foundational pricing terms.",
   },
 ];
 
@@ -47,10 +37,10 @@ export default function HowItWorksPage() {
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          How Pragati360 Works
+          How Pragati360 Early Access Works
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Simplifying your business management in a few easy steps.
+          A structured approach to partnering with us and shaping a reliable operational platform.
         </p>
 
         <div className="mt-16 relative">
@@ -83,13 +73,13 @@ export default function HowItWorksPage() {
 
         <div className="mt-20">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Ready to get started?
+            Ready to Begin Your Early Access Journey?
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-            Experience the ease of managing your online presence with Pragati360 today.
+            Join a select group of local businesses influencing the development of a production-grade platform.
           </p>
           <Button size="lg" asChild className="mt-8 text-base px-8 py-6 rounded-xl shadow-lg">
-            <Link href="/pricing">Start Your Free Trial</Link>
+            <Link href="/early-access">Request Early Access Invitation</Link>
           </Button>
         </div>
       </div>

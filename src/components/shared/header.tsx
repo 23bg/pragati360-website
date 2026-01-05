@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { HEADER_NAV_LINKS, SITE_NAME } from "@/lib/constants";
@@ -30,8 +31,8 @@ export function Header() {
 
         {/* CTA & Theme Toggle */} {/* Updated comment */}
         <div className="flex items-center gap-2">
-          <Button size="sm" asChild> {/* Single CTA button */}
-            <Link href="/pricing">Start Now</Link> {/* Links to pricing */}
+          <Button size="sm" >
+            <Link href="/early-access">Request Early Access</Link> {/* Links to early access page */}
           </Button>
           <ThemeToggle />
         </div>

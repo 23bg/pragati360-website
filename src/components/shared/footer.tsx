@@ -9,15 +9,15 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">Pragati360</h3>
             <p className="text-sm text-gray-600">
-              A platform for innovative solutions and digital transformation.
+              Pragati360: Reliable operations for local businesses. Currently in Early Access.
             </p>
           </div>
           <div className="flex flex-col gap-4">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="text-sm text-gray-600 hover:text-gray-900">Home</Link></li>
-              <li><Link href="/about" className="text-sm text-gray-600 hover:text-gray-900">About</Link></li>
-              <li><Link href="/services" className="text-sm text-gray-600 hover:text-gray-900">Services</Link></li>
+              <li><Link href="/early-access" className="text-sm text-gray-600 hover:text-gray-900">Early Access</Link></li>
+              <li><Link href="/security" className="text-sm text-gray-600 hover:text-gray-900">Trust & Security</Link></li>
               <li><Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900">Contact</Link></li>
             </ul>
           </div>

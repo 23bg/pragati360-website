@@ -1,15 +1,17 @@
 export const HEADER_NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/features", label: "Features" },
+  { href: "/early-access", label: "Early Access" },
+  { href: "/how-it-works", label: "How Early Access Works" },
+  { href: "/security", label: "Trust & Security" },
+  { href: "/ai-assist", label: "AI Assist" },
   { href: "/contact", label: "Contact" },
 ];
 
 export const SITE_NAME = "Pragati360";
 
-export const SITE_DESCRIPTION = "A powerful platform for business growth and automation.";
+export const SITE_DESCRIPTION = "Pragati360 offers reliable, controlled management for local businesses. Join our Early Access program for trusted tools to manage Google Business Profile, Instagram, and essential business alerts.";
 export const SITE_URL = "https://pragati360.com";
-export const PRODUCT_TAGLINE = "Empowering businesses with intelligent automation.";
+export const PRODUCT_TAGLINE = "Pragati360: Reliable Operations for Local Businesses. Early Access.";
 
 export const PRICING_PLANS = [
   {
@@ -65,57 +67,57 @@ export const APP_PLATFORMS = [
 export const FEATURE_SECTIONS = [
   {
     title: "Google Business Profile Management",
-    description: "Automate all your Google Business Profile updates with real-time sync and insights.",
+    description: "Maintain your Google Business Profile with precision. Ensure accurate, timely updates and manage customer interactions reliably.",
     icon: "google",
     link: "/features/google-business",
     details: [
-      "Schedule and publish posts",
-      "Monitor and respond to reviews",
-      "Track customer actions and insights",
+      "Plan and publish essential business updates.",
+      "Track and professionally respond to customer reviews.",
+      "Access core performance metrics for informed decisions.",
     ],
   },
   {
     title: "Instagram Post Scheduling",
-    description: "Schedule and publish posts in advance to maximize engagement and reach.",
+    description: "Methodically plan and publish Instagram content to maintain a consistent, professional online presence.",
     icon: "instagram",
     link: "/features/instagram",
     details: [
-      "Plan and schedule posts",
-      "Draft captions and media",
-      "Analyze post performance",
+      "Securely schedule and queue your Instagram posts.",
+      "Organize content and media for efficient publishing.",
+      "Review key performance indicators to refine content strategy.",
     ],
   },
   {
-    title: "Smart Alerts & Notifications",
-    description: "Get real-time alerts on activity, performance, and updates from your business.",
+    title: "Essential Business Alerts",
+    description: "Receive critical, timely notifications regarding your business's online activity and essential operational updates.",
     icon: "bell",
     link: "/features/alerts",
     details: [
-      "Real-time activity alerts",
-      "Customizable notification rules",
-      "Immediate action suggestions",
+      "Timely alerts on critical business events.",
+      "Configure alerts to focus on what matters most.",
+      "Understand impact with clear, actionable summaries.",
     ],
   },
   {
     title: "Unified Dashboard",
-    description: "A single view of all your business data across platforms for better visibility.",
+    description: "A concise, integrated overview of your key business data, providing clarity without distraction.",
     icon: "dashboard",
     link: "/features/dashboard",
     details: [
-      "Centralized metrics and KPIs",
-      "Cross-platform performance overview",
-      "Quick access to common actions",
+      "Consolidated view of vital business metrics.",
+      "Reliable data across connected platforms.",
+      "Streamlined access to essential functions.",
     ],
   },
   {
     title: "Outlet Management",
-    description: "Manage multiple outlets with centralized inventory, orders, and performance tracking.",
+    description: "Oversee multiple business locations with a controlled approach to ensure consistency and operational stability.",
     icon: "outlet",
     link: "/features/outlet-management",
     details: [
-      "Central inventory control",
-      "Outlet-specific content and pricing",
-      "Performance comparisons across outlets",
+      "Consistent management of multiple business locations.",
+      "Tailor content and settings for each outlet.",
+      "Monitor and compare operational health across locations.",
     ],
   },
 ];

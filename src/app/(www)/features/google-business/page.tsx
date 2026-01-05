@@ -5,7 +5,7 @@ import { ProductIcon } from "@/components/ui/display-icon";
 
 export const metadata: Metadata = {
   title: "Google Business Profile Management | Pragati360",
-  description: "Manage your Google Business Profile with Pragati360 — from posting, reviews, to analytics — all in one place.",
+  description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
   applicationName: "Pragati360",
   metadataBase: new URL("https://pragati360.com"),
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Google Business Profile Management | Pragati360",
-    description: "Manage your Google Business Profile with Pragati360 — from posting, reviews, to analytics — all in one place.",
+    description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
     url: "https://pragati360.com/features/google-business",
     siteName: "Pragati360",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Google Business Profile Management | Pragati360",
-    description: "Manage your Google Business Profile with Pragati360 — from posting, reviews, to analytics — all in one place.",
+    description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
     images: ["https://pragati360.com/og-image-google-business.jpg"]
   }
 };
@@ -52,7 +52,7 @@ export default function GoogleBusinessPage() {
           Google Business Profile Management
         </h1>
         <p className="text-lg leading-8 text-muted-foreground mb-8">
-          Pragati360 helps you manage your Google Business Profile with full control over posts, reviews, and visibility.
+          Pragati360 provides precise tools to manage your Google Business Profile, offering essential control over your online presence.
         </p>
       </div>
 
@@ -94,20 +94,20 @@ export default function GoogleBusinessPage() {
           <ul className="space-y-4 text-muted-foreground">
             <li className="flex items-start gap-3">
               <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Automate posting without manual effort</span>
+              <span>Maintain consistent, professional presence on Google.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Respond to reviews instantly with templates</span>
+              <span>Ensure timely and considered responses to customer feedback.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Track performance and optimize content strategy</span>
+              <span>Gain clarity on profile engagement and impact.</span>
             </li>
           </ul>
           <div className="mt-8">
             <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg">
-              <a href="/pricing">Start at ₹199/month</a>
+              <a href="/early-access">Request Early Access</a>
             </Button>
           </div>
         </div>

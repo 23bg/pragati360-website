@@ -5,8 +5,8 @@ import { DisplayIcon } from "@/components/ui/display-icon";
 import type { IconKeys } from "@/components/icons";
 
 export const metadata = generateMetadata({
-  title: "Security & Trust",
-  description: `Learn about ${SITE_NAME}'s commitment to your data security and privacy.`,
+  title: "Pragati360's Commitment to Trust & Security",
+  description: "Discover Pragati360's unwavering commitment to robust security, data integrity, and your absolute privacy. Building trust through reliable protection.",
 });
 
 const securityFeatures = [
@@ -14,31 +14,31 @@ const securityFeatures = [
     icon: "Lock",
     title: "Data Encryption",
     description:
-      "All your data is encrypted at rest and in transit using industry-standard protocols, ensuring maximum security.",
+      "Your sensitive data is protected with industry-standard encryption, both at rest and in transit, ensuring its confidentiality and integrity.",
   },
   {
     icon: "ShieldCheck",
     title: "Secure Infrastructure",
     description:
-      "We build on robust, secure cloud infrastructure with continuous monitoring and regular security audits.",
+      "Our platform is built upon a resilient, secure cloud infrastructure, fortified by continuous monitoring and rigorous security audits.",
   },
   {
     icon: "Fingerprint",
     title: "Access Control",
     description:
-      "Strict access controls and authentication mechanisms are in place to protect your account from unauthorized access.",
+      "Rigorous access controls and multi-factor authentication safeguard your account, preventing unauthorized access and maintaining operational integrity.",
   },
   {
     icon: "Cloud",
     title: "Regular Backups",
     description:
-      "Your data is regularly backed up to ensure business continuity and quick recovery in unforeseen events.",
+      "Comprehensive and regular data backups ensure your business continuity and rapid recovery from any unforeseen data event.",
   },
   {
     icon: "Scale",
     title: "Privacy by Design",
     description:
-      "We adhere to strict privacy principles and comply with relevant data protection regulations to safeguard your information.",
+      "Our systems are engineered with privacy at their core, adhering to stringent data protection principles and regulatory compliance.",
   },
 ];
 
@@ -47,10 +47,10 @@ export default function SecurityPage() {
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          Your Trust, Our Priority
+          Our Unwavering Commitment: Trust & Security at Pragati360
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          At {SITE_NAME}, we are committed to protecting your data and ensuring your privacy with robust security measures.
+          At Pragati360, we build and operate with an absolute commitment to safeguarding your business data and maintaining the highest standards of privacy.
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

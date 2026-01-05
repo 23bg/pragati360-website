@@ -9,7 +9,7 @@ const feature = FEATURE_SECTIONS.find(
 );
 
 export const metadata = generateMetadata({
-  title: feature?.title || "Smart Alerts & Notifications",
+  title: feature?.title || "Essential Business Alerts",
   description: feature?.description || "",
 });
 

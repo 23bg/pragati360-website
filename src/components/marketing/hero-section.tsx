@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { PRODUCT_TAGLINE } from "@/lib/constants";
+import dashboardImage from '@/assets/dashboard-mock.webp'
 
 export function HeroSection() {
   return (
@@ -31,7 +32,7 @@ export function HeroSection() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-2xl aspect-[16/9] rounded-xl overflow-hidden shadow-2xl border border-border">
               <Image
-                src="/dashboard-mock.webp" // Placeholder image for dashboard
+                src={dashboardImage} // Placeholder image for dashboard
                 alt="Pragati360 Dashboard Mockup"
                 layout="fill"
                 objectFit="cover"
