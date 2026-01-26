@@ -1,11 +1,10 @@
 import { generateMetadata } from "@/lib/seo";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = generateMetadata({
   title: "Request Early Access to Pragati360",
-  description: "Join Pragati360's Early Access program for local businesses. Experience reliable, production-grade tools and help shape the future of business operations.",
+  description: "Join our exclusive Early Access program and help us shape the future of growth operations for local businesses.",
 });
 
 export default function EarlyAccessPage() {
@@ -16,45 +15,121 @@ export default function EarlyAccessPage() {
           Request Early Access to Pragati360
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          Pragati360 is currently operating in a controlled Early Access mode. We are
-          selectively partnering with local businesses to ensure a stable, reliable,
-          and production-grade experience from day one. This allows us to
-          collaborate closely and integrate feedback, building a platform truly
-          designed for your operational needs.
+          Join our exclusive Early Access program and help us shape the future of growth operations for local businesses.
         </p>
 
-        <div className="mt-12 max-w-2xl mx-auto space-y-8 text-left">
-          <div>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Why Join Early Access?</h2>
-            <ul className="space-y-4 text-lg text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                <span>**Direct Impact:** Your insights will directly influence the development roadmap, ensuring features meet real-world business needs.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                <span>**Foundational Partnership:** Establish a long-term relationship with a committed team, benefiting from early support and preferential terms.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                <span>**Exclusive Access:** Be among the first to utilize Pragati360's robust tools for Google Business Profile, Instagram, and essential alerts.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                <span>**Dedicated Support:** Receive personalized attention and priority assistance from our engineering and product teams.</span>
-              </li>
-            </ul>
-          </div>
+        <div className="mt-12 max-w-2xl mx-auto text-left p-8 border border-border rounded-xl shadow-lg">
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="business-name" className="block text-sm font-medium text-foreground">
+                Business Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="business-name"
+                name="business-name"
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
+                placeholder="As registered with your Google Business Profile (if applicable)."
+              />
+            </div>
 
-          <div className="text-center pt-8 border-t border-border mt-8">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Ready to Shape the Future of Your Operations?</h2>
-            <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg">
-              <Link href="/contact">Request Early Access</Link>
-            </Button>
-            <p className="mt-4 text-sm text-muted-foreground">
-              This will initiate a conversation with our team to discuss your needs and how Pragati360 can best serve you.
-            </p>
-          </div>
+            <div>
+              <label htmlFor="business-email" className="block text-sm font-medium text-foreground">
+                Business Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="business-email"
+                name="business-email"
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
+                placeholder="We'll use this to communicate about your Early Access application."
+              />
+            </div>
+
+            <div>
+              <label htmlFor="num-outlets" className="block text-sm font-medium text-foreground">
+                Number of Business Locations <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="num-outlets"
+                name="num-outlets"
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
+              >
+                <option value="">How many physical locations does your business operate?</option>
+                <option value="1">1</option>
+                <option value="2-5">2-5</option>
+                <option value="6-10">6-10</option>
+                <option value="10+">10+</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground">
+                Which platforms are important for your business? <span className="text-red-500">*</span>
+              </label>
+              <div className="mt-2 space-y-2">
+                <div className="flex items-center">
+                  <input
+                    id="platform-gbp"
+                    name="platforms"
+                    type="checkbox"
+                    value="GBP"
+                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
+                  />
+                  <label htmlFor="platform-gbp" className="ml-3 block text-sm text-muted-foreground">
+                    Google Business Profile (GBP)
+                  </label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    id="platform-instagram"
+                    name="platforms"
+                    type="checkbox"
+                    value="Instagram"
+                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
+                  />
+                  <label htmlFor="platform-instagram" className="ml-3 block text-sm text-muted-foreground">
+                    Instagram Business
+                  </label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    id="platform-both"
+                    name="platforms"
+                    type="checkbox"
+                    value="Both"
+                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
+                  />
+                  <label htmlFor="platform-both" className="ml-3 block text-sm text-muted-foreground">
+                    Both GBP & Instagram
+                  </label>
+                </div>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">Select all that apply to your current online strategy.</p>
+            </div>
+
+            <div>
+              <label htmlFor="whatsapp-number" className="block text-sm font-medium text-foreground">
+                WhatsApp Number <span className="text-muted-foreground">(Optional)</span>
+              </label>
+              <input
+                type="tel"
+                id="whatsapp-number"
+                name="whatsapp-number"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
+                placeholder="Provide a WhatsApp number if you'd like to receive important updates or direct support communications via WhatsApp."
+              />
+            </div>
+
+            <div className="text-center">
+              <Button type="submit" size="lg" className="px-8 py-4 rounded-xl shadow-lg">
+                Submit Request
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

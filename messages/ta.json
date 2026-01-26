@@ -1,0 +1,29 @@
+{
+    "global": {
+        "siteName": "Pragati360"
+    },
+    "buttons": {
+        "getEarlyAccess": "முன்னுரிமை அணுகலை பெறுங்கள்",
+        "seeHowItWorks": "எப்படி வேலை செய்கிறது என்பதை பாருங்கள்",
+        "submitRequest": "விண்ணப்பத்தை சமர்ப்பிக்கவும்",
+        "contactUs": "எங்களை தொடர்புகொள்ளுங்கள்"
+    },
+    "home": {
+        "hero": {
+            "headline": "உங்கள் உள்ளூர் வணிகத்தின் ஆன்லைன் இருப்பை கட்டுப்படுத்துங்கள்.",
+            "subHeadline": "Pragati360, தானியங்கியல்ல — நம்பகத்தன்மை மற்றும் கட்டுப்பாட்டுடன் Google Business Profile மற்றும் Instagram நிர்வகிக்க உதவுகிறது. தற்போது Early Access நிலையில் உள்ளது."
+        }
+    },
+    "pricing": {
+        "headline": "நம்பகமான வளர்ச்சிக்கான தெளிவான விலை",
+        "startingPrice": "திட்டங்கள் ₹199/மாதம் முதல்"
+    },
+    "footer": {
+        "languageSwitcher": {
+            "label": "மொழி",
+            "english": "English",
+            "hindi": "Hindi",
+            "tamil": "தமிழ்"
+        }
+    }
+}

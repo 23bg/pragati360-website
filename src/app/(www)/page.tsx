@@ -1,4 +1,4 @@
-import { CoreCapabilitiesSection } from "@/components/marketing/core-capabilities-section";
+import { CoreValueExplanationSection } from "@/components/marketing/core-capabilities-section";
 import { FinalCTAMainSection } from "@/components/marketing/final-cta-main-section";
 import { HeroSection } from "@/components/marketing/hero-section";
 import { PricingPreviewSection } from "@/components/marketing/pricing-preview-section";
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <HeroSection />
       <TrustSignalsSection />
-      <CoreCapabilitiesSection />
+      <CoreValueExplanationSection />
       <PricingPreviewSection />
       <FinalCTAMainSection />
     </>

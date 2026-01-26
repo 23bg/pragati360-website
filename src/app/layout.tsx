@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -63,8 +64,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={`min-h-screen bg-background font-sans antialiased ${dmSans.variable}`}>
+        <ThemeProvider>
 
-        <main>{children}</main>
+          <main>{children}</main>
+        </ThemeProvider>
 
       </body>
     </html>

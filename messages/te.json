@@ -1,0 +1,24 @@
+{
+    "buttons": {
+        "getEarlyAccess": "ఎర్లీ యాక్సెస్ పొందండి",
+        "seeHowItWorks": "ఇది ఎలా పనిచేస్తుందో చూడండి",
+        "submitRequest": "అభ్యర్థన పంపండి",
+        "contactUs": "మమ్మల్ని సంప్రదించండి"
+    },
+    "home": {
+        "hero": {
+            "headline": "మీ లోకల్ బిజినెస్ ఆన్‌లైన్ ప్రెజెన్స్‌పై పూర్తి నియంత్రణ పొందండి.",
+            "subHeadline": "Pragati360 ఆటోమేషన్‌పై కాకుండా నమ్మకంపై ఆధారపడి Google Business Profile మరియు Instagram నిర్వహణకు సహాయపడుతుంది. ప్రస్తుతం ఎర్లీ యాక్సెస్‌లో ఉంది."
+        }
+    },
+    "pricing": {
+        "headline": "నమ్మదగిన వృద్ధికి స్పష్టమైన ధరలు",
+        "startingPrice": "ప్లాన్లు ₹199/నెల నుండి"
+    },
+    "footer": {
+        "languageSwitcher": {
+            "label": "భాష",
+            "telugu": "తెలుగు"
+        }
+    }
+}

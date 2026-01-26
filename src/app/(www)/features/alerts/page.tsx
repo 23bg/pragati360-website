@@ -1,57 +1,63 @@
 import { generateMetadata } from "@/lib/seo";
-export const dynamic = "force-dynamic";
-import { FEATURE_SECTIONS } from "@/lib/constants";
-import { DisplayIcon } from "@/components/ui/display-icon";
-import { Check } from "lucide-react";
-
-const feature = FEATURE_SECTIONS.find(
-  (f) => f.link === "/features/alerts"
-);
+export const dynamic = "force-dynamic"; // Keep if dynamic data is still possible, otherwise remove
+import Link from "next/link"; // For the CTA
 
 export const metadata = generateMetadata({
-  title: feature?.title || "Essential Business Alerts",
-  description: feature?.description || "",
+  title: "Alerts & Reliability",
+  description: "Pragati360's reliable alert system keeps you informed of critical events across your online presence, ensuring timely action and peace of mind.",
 });
 
 export default function AlertsPage() {
-  if (!feature) {
-    return (
-      <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-3xl font-bold text-foreground">Feature not found</h1>
-        <p className="text-muted-foreground">
-          The Smart Alerts & Notifications feature could not be loaded.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <div className="px-4 py-6 lg:py-8">
-      <div className="mb-8 text-center md:text-left">
-        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-primary/10 p-3 text-primary">
-          <DisplayIcon icon={feature.icon} className="h-10 w-10" />
-        </div>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          {feature.title}
+    <section className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          Stay Informed, Always in Control.
         </h1>
-        <p className="mt-4 text-lg leading-8 text-muted-foreground">
-          {feature.description}
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          Pragati360's reliable alert system keeps you informed of critical events across your online presence, ensuring timely action and peace of mind.
         </p>
-      </div>
 
-      <div className="mt-12">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground mb-6">
-          Key Benefits
-        </h2>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-muted-foreground">
-          {feature.details?.map((detail, index) => (
-            <li key={index} className="flex items-start">
-              <Check className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-              <span>{detail}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-12 max-w-3xl mx-auto space-y-8 text-left">
+          <p className="text-lg text-muted-foreground">
+            In the fast-paced world of local business, staying on top of your online presence is crucial. Pragati360's alert system is designed to provide you with clear, actionable notifications when it matters most, without overwhelming you with noise. Our focus is on reliability, ensuring you never miss a critical update or interaction.
+          </p>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Alert Channels: Timely Notifications, Your Way</h2>
+            <p className="text-lg text-muted-foreground">
+              Receive alerts through channels that suit your workflow. Pragati360 delivers notifications for events on your Google Business Profile and Instagram Business profile, ensuring you're always aware of new reviews, messages, or publishing statuses.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Severity Model: Focus on What's Urgent</h2>
+            <p className="text-lg text-muted-foreground">
+              Not all alerts are created equal. Our system categorizes notifications based on their importance, helping you quickly identify and prioritize critical issues that require your immediate attention versus routine updates. This ensures you can focus your efforts effectively.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Why Alerts Exist: Your Digital Watchdog</h2>
+            <p className="text-lg text-muted-foreground">
+              Alerts are your safeguard. They exist to bring important events to your attention, enabling you to maintain an active and responsive online presence. From new customer feedback to successful content delivery, our alerts ensure you're always in the loop.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Why WhatsApp is Used Carefully: Respecting Your Privacy</h2>
+            <p className="text-lg text-muted-foreground">
+              While we understand the convenience of WhatsApp, Pragati360 uses it for alerts with extreme care and only for specific, opted-in notifications. We prioritize your privacy and aim to avoid interrupting your personal communications. Our use of WhatsApp is always intentional, transparent, and user-controlled, adhering strictly to our "reliability over automation" principle.
+            </p>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/early-access" className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+                Get Early Access
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

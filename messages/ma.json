@@ -1,0 +1,24 @@
+{
+    "buttons": {
+        "getEarlyAccess": "लवकर प्रवेश मिळवा",
+        "seeHowItWorks": "हे कसे काम करते ते पहा",
+        "submitRequest": "विनंती सबमिट करा",
+        "contactUs": "आमच्याशी संपर्क साधा"
+    },
+    "home": {
+        "hero": {
+            "headline": "तुमच्या स्थानिक व्यवसायाची ऑनलाइन उपस्थिती तुमच्या नियंत्रणात ठेवा.",
+            "subHeadline": "Pragati360 ऑटोमेशनपेक्षा विश्वासार्हतेवर भर देते आणि Google Business Profile व Instagram व्यवस्थापनात मदत करते. सध्या Early Access मध्ये आहे."
+        }
+    },
+    "pricing": {
+        "headline": "विश्वासार्ह वाढीसाठी पारदर्शक दर",
+        "startingPrice": "योजना ₹199/महिन्यापासून"
+    },
+    "footer": {
+        "languageSwitcher": {
+            "label": "भाषा",
+            "marathi": "मराठी"
+        }
+    }
+}

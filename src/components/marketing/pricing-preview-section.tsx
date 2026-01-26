@@ -1,50 +1,35 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PRICING_PLANS } from "@/lib/constants";
-import { Check } from "lucide-react";
 
 export function PricingPreviewSection() {
   return (
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Simple & Transparent Pricing
+          Transparent Pricing for Reliable Growth
         </h2>
         <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-          Choose the plan that fits your business needs. Upgrade or downgrade anytime.
+          Pragati360 offers straightforward pricing tailored for local businesses. Start exploring our platform in Early Access with plans starting from ₹199/month.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {PRICING_PLANS.map((plan) => (
-            <div
-              key={plan.name}
-              className="group relative overflow-hidden rounded-xl bg-card p-8 shadow-soft border border-border flex flex-col justify-between"
-            >
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
-                <p className="mt-4 text-4xl font-bold text-foreground">
-                  {plan.price}
-                  <span className="text-base font-medium text-muted-foreground">/month</span>
-                </p>
-                <ul className="mt-8 space-y-4 text-left text-muted-foreground">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center">
-                      <Check className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Button asChild className="mt-8 w-full rounded-xl shadow-lg">
-                <Link href="/pricing">Get Started with {plan.name}</Link>
-              </Button>
-            </div>
-          ))}
+        <div className="mt-12">
+          <p className="text-5xl font-bold text-foreground">
+            Plans starting from ₹199/month
+          </p>
+          <p className="mt-8 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+            We believe in clear, honest pricing that supports your business without surprises. During our Early Access phase, we are committed to offering foundational plans that provide essential tools for managing your Google Business Profile and Instagram. Access to Pragati360 during Early Access is not through an immediate checkout process. We're carefully onboarding businesses to ensure a quality experience and gather valuable insights.
+          </p>
+          <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+            We're building Pragati360 with local businesses in mind, and that includes fair and transparent pricing. There are no hidden fees or complex tiers. During Early Access, we're focused on building relationships and a product that truly serves your needs. Join us to experience a platform that prioritizes reliability over hype.
+          </p>
         </div>
 
-        <div className="mt-12">
-          <Button size="lg" asChild className="text-base px-8 py-6 rounded-xl shadow-lg">
-            <Link href="/pricing">View All Pricing Details</Link>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button size="lg" asChild className="text-base px-8 py-6 rounded shadow-lg">
+            <Link href="/early-access">Get Early Access</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="text-base px-8 py-6 rounded shadow-lg">
+            <Link href="/how-it-works">See How It Works</Link>
           </Button>
         </div>
       </div>

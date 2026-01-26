@@ -3,8 +3,6 @@
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/header";
 
-export const dynamic = "force-dynamic";
-
 export default function WebsiteLayout({
     children,
 }: Readonly<{
@@ -12,14 +10,12 @@ export default function WebsiteLayout({
 }>) {
     return (
         <>
-
-
             <div className="min-h-screen">
                 <div> <Header /></div>
-                <main >
+                <main className="h-full">
                     {children}
                 </main>
-                <div><Footer /></div>
+                <Footer />
             </div>
         </>
     );

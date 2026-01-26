@@ -1,0 +1,370 @@
+{
+  "global": {
+    "siteName": "Pragati360"
+  },
+  "buttons": {
+    "getEarlyAccess": "Get Early Access",
+    "seeHowItWorks": "See How It Works",
+    "submitRequest": "Submit Request",
+    "contactUs": "Contact us"
+  },
+  "home": {
+    "hero": {
+      "headline": "Take Control of Your Local Business Presence.",
+      "subHeadline": "Pragati360 helps local businesses manage Google Business Profile and Instagram with reliability and confidence, not automation. Currently in Early Access."
+    },
+    "problemValidation": {
+      "headline": "The Challenges of Local Business Online Presence",
+      "body": "Managing your online presence across platforms like Google Business Profile and Instagram can be fragmented and time-consuming. You need reliable tools that ensure accuracy and consistency without sacrificing your control or brand voice. Many solutions promise quick fixes, but true growth comes from intentional, consistent effort."
+    },
+    "coreValue": {
+      "headline": "Your Presence, Perfected",
+      "body": "Pragati360 is built for local businesses like yours. We provide the essential operations platform to ensure your Google Business Profile and Instagram are always accurate, engaging, and reflective of your brand. Focus on what you do best, while we help you maintain a reliable, visible, and controlled online footprint.",
+      "benefit1": {
+        "title": "Reliability Over Automation.",
+        "description": "We empower you with precise control, ensuring every update and interaction meets your standards."
+      },
+      "benefit2": {
+        "title": "Visibility Over Intelligence.",
+        "description": "Clear, actionable insights help you understand your reach, rather than abstract data."
+      },
+      "benefit3": {
+        "title": "Human Approval Over Autonomy.",
+        "description": "You always have the final say. Our tools assist, but never act independently."
+      }
+    },
+    "earlyAccessExplanation": {
+      "headline": "Join Our Early Access Program",
+      "body": "Pragati360 is currently in a focused Early Access phase. This allows us to work closely with local business owners, gather essential feedback, and fine-tune our platform to meet your specific needs. Access is limited and granted in batches to ensure a personalized experience for every participant."
+    },
+    "trustReinforcement": {
+      "headline": "Built for Your Success",
+      "body": "We understand the unique demands of local businesses. Pragati360 is engineered for stability and transparency, giving you peace of mind. Your data is yours, your decisions are final, and your online presence is secure. We prioritize your trust above all else."
+    }
+  },
+  "productOverview": {
+    "headline": "Pragati360: Essential Operations for Local Business Growth",
+    "subHeadline": "Gain reliable control over your online presence with a platform designed for clarity, consistency, and your peace of mind.",
+    "body": "Pragati360 is a dedicated growth operations platform built specifically for local businesses. We provide the tools you need to effectively manage and optimize your presence on critical platforms: Google Business Profile and Instagram. Our focus is on empowering you with reliability and visibility, ensuring that your online footprint accurately reflects your business.",
+    "keyPrinciple1": {
+      "title": "Focused Control.",
+      "description": "We believe in providing you with the direct ability to manage your key online channels. No complex dashboards, just clear actions."
+    },
+    "keyPrinciple2": {
+      "title": "Data You Can Trust.",
+      "description": "See what matters. We deliver information that helps you make informed decisions about your online interactions."
+    },
+    "keyPrinciple3": {
+      "title": "Your Brand, Always.",
+      "description": "Every post, every reply, every update is initiated and approved by you, ensuring your voice remains authentic."
+    }
+  },
+  "googleBusiness": {
+    "headline": "Master Your Google Business Profile with Pragati360",
+    "subHeadline": "Ensure your local business stands out on Google with reliable management of reviews, posts, and essential alerts.",
+    "body": "For local businesses, your Google Business Profile (GBP) is often the first interaction a potential customer has with you. It's not just a listing; it's a dynamic storefront that impacts your visibility and reputation. Pragati360 provides you with the precise tools to manage your GBP, ensuring accuracy and engagement.",
+    "reviews": {
+      "title": "Reviews: Build Trust, Respond Thoughtfully",
+      "body": "Customer reviews are your social proof. Pragati360 helps you monitor new reviews, ensuring you can respond promptly and professionally. Maintain your brand's reputation by engaging directly with customer feedback, turning positive experiences into powerful endorsements and addressing concerns with care."
+    },
+    "replies": {
+      "title": "Replies: Consistent Engagement, Every Time",
+      "body": "Engaging with customers isn't just about reviews. Our platform streamlines your ability to reply to messages and questions on GBP, ensuring consistent communication and showing your customers you're attentive and accessible."
+    },
+    "posts": {
+      "title": "Posts: Keep Your Audience Informed",
+      "body": "Use GBP Posts to share updates, offers, and news directly with your local audience. Pragati360 allows you to schedule and publish these posts with confidence, keeping your profile fresh and relevant without daily manual effort."
+    },
+    "alerts": {
+      "title": "Alerts: Never Miss a Beat",
+      "body": "Stay informed of critical changes or interactions on your GBP. Pragati360 delivers timely alerts for new reviews, important messages, or profile updates, ensuring you're always aware and can act quickly. Our alert system is designed for clarity, not noise."
+    },
+    "whyMatters": {
+      "title": "Why GBP Matters for Local Businesses",
+      "body": "A well-maintained Google Business Profile is crucial for discoverability and trust. It directly influences your local SEO, drives calls and website visits, and helps customers choose you over competitors. Pragati360 helps you leverage this powerful tool to its fullest potential, ensuring your digital storefront is always optimized and inviting."
+    }
+  },
+  "instagram": {
+    "headline": "Cultivate Your Brand on Instagram, Reliably.",
+    "subHeadline": "Pragati360 helps local businesses maintain a consistent, professional Instagram presence with scheduled posts and clear status visibility.",
+    "body": "Instagram is a powerful visual platform for local businesses to connect with their community and showcase their brand. Pragati360 empowers you to manage your Instagram Business profile effectively, ensuring your content strategy is consistent and your online presence always reflects your best.",
+    "businessPosting": {
+      "title": "Business Posting: Plan & Publish with Precision",
+      "body": "Maintain a vibrant Instagram feed with ease. Pragati360 allows you to plan your content and schedule posts for your Instagram Business profile. Ensure your brand story is consistently told, without the daily scramble."
+    },
+    "scheduling": {
+      "title": "Scheduling: Consistency Made Simple",
+      "body": "Organize your content calendar and schedule posts in advance. Our intuitive scheduling features help you achieve a steady, engaging presence on Instagram, building anticipation and keeping your audience connected."
+    },
+    "statusVisibility": {
+      "title": "Status Visibility: Know When Your Content Goes Live",
+      "body": "Gain clear visibility into the status of your scheduled posts. Pragati360 provides updates on content delivery, so you always know when your messages have successfully reached your audience."
+    },
+    "limitations": {
+      "title": "Clear Limitations: What Pragati360 Does NOT Do for Instagram",
+      "body": "Pragati360 focuses on reliable content publishing for your Instagram Business profile. To maintain a trust-first approach and respect the platform's guidelines, we intentionally do NOT support:",
+      "dm": "Direct Messages (DMs): We do not access or manage your private messages.",
+      "storiesReels": "Stories or Reels: Our focus is on feed posts for consistent brand messaging.",
+      "automatedEngagement": "Automated Engagement: We do not automate likes, comments, or follows. Your engagement remains authentic and human-driven.",
+      "spamMessaging": "Spam or Mass Messaging: Pragati360 is built for genuine, deliberate content sharing, not growth-hacking tactics."
+    }
+  },
+  "unifiedPosting": {
+    "headline": "Post Once, Publish Where It Matters.",
+    "subHeadline": "Streamline your content strategy by publishing to Google Business Profile and Instagram from a single, controlled workflow.",
+    "body": "Managing multiple online profiles can be time-consuming. Pragati360 simplifies your content distribution by allowing you to create a single post and publish it to both your Google Business Profile and Instagram Business profile. This ensures consistent messaging across your most critical local channels.",
+    "multiplePlatforms": {
+      "title": "One Post → Multiple Platforms: Efficiency with Control",
+      "body": "Craft your message once and select the platforms where it needs to go. Pragati360 handles the distribution, saving you time and ensuring your updates reach your audience on both Google and Instagram. You maintain full control over the content and publishing schedule for each platform."
+    },
+    "independentSuccessFailure": {
+      "title": "Independent Success/Failure: Clear Outcomes",
+      "body": "We believe in transparency. When you initiate a unified post, Pragati360 will process the delivery to each platform independently. This means if a post succeeds on Google Business Profile but encounters an issue on Instagram, you will be clearly notified about the status of each."
+    },
+    "noSilentPartialSuccess": {
+      "title": "No Silent Partial Success: Always Informed",
+      "body": "You will never be left guessing. Pragati360 provides explicit feedback on the outcome for every platform you selected. There's no such thing as a \"silent partial success\"—you'll know precisely where your content has been successfully published and where it requires your attention."
+    }
+  },
+  "alertsReliability": {
+    "headline": "Stay Informed, Always in Control.",
+    "subHeadline": "Pragati360's reliable alert system keeps you informed of critical events across your online presence, ensuring timely action and peace of mind.",
+    "body": "In the fast-paced world of local business, staying on top of your online presence is crucial. Pragati360's alert system is designed to provide you with clear, actionable notifications when it matters most, without overwhelming you with noise. Our focus is on reliability, ensuring you never miss a critical update or interaction.",
+    "alertChannels": {
+      "title": "Alert Channels: Timely Notifications, Your Way",
+      "body": "Receive alerts through channels that suit your workflow. Pragati360 delivers notifications for events on your Google Business Profile and Instagram Business profile, ensuring you're always aware of new reviews, messages, or publishing statuses."
+    },
+    "severityModel": {
+      "title": "Severity Model: Focus on What's Urgent",
+      "body": "Not all alerts are created equal. Our system categorizes notifications based on their importance, helping you quickly identify and prioritize critical issues that require your immediate attention versus routine updates. This ensures you can focus your efforts effectively."
+    },
+    "whyAlertsExist": {
+      "title": "Why Alerts Exist: Your Digital Watchdog",
+      "body": "Alerts are your safeguard. They exist to bring important events to your attention, enabling you to maintain an active and responsive online presence. From new customer feedback to successful content delivery, our alerts ensure you're always in the loop."
+    },
+    "whatsappCarefullyUsed": {
+      "title": "Why WhatsApp is Used Carefully: Respecting Your Privacy",
+      "body": "While we understand the convenience of WhatsApp, Pragati360 uses it for alerts with extreme care and only for specific, opted-in notifications. We prioritize your privacy and aim to avoid interrupting your personal communications. Our use of WhatsApp is always intentional, transparent, and user-controlled, adhering strictly to our \"reliability over automation\" principle."
+    }
+  },
+  "pricing": {
+    "headline": "Transparent Pricing for Reliable Growth",
+    "subHeadline": "Pragati360 offers straightforward pricing tailored for local businesses. Start exploring our platform in Early Access with plans starting from ₹199/month.",
+    "body": "We believe in clear, honest pricing that supports your business without surprises. During our Early Access phase, we are committed to offering foundational plans that provide essential tools for managing your Google Business Profile and Instagram.",
+    "philosophy": {
+      "title": "Our Early Access Pricing Philosophy",
+      "body": "Our Early Access pricing is designed to be accessible and reflective of the core value Pragati360 delivers. This phase allows us to understand your specific needs and gather feedback to shape our future offerings. You'll receive full access to selected features at a special introductory rate."
+    },
+    "startingPrice": "Plans starting from ₹199/month",
+    "noCheckout": "Access to Pragati360 during Early Access is not through an immediate checkout process. We're carefully onboarding businesses to ensure a quality experience and gather valuable insights.",
+    "calmTransparentTone": "We're building Pragati360 with local businesses in mind, and that includes fair and transparent pricing. There are no hidden fees or complex tiers. During Early Access, we're focused on building relationships and a product that truly serves your needs. Join us to experience a platform that prioritizes reliability over hype."
+    },
+  "howEarlyAccessWorks": {
+    "headline": "Your Path to Pragati360 Early Access",
+    "subHeadline": "We're carefully onboarding local businesses to ensure a tailored experience and gather valuable feedback. Here's how to join.",
+    "body": "Pragati360 is building a platform for local businesses, with local businesses. Our Early Access program is designed to create a collaborative environment where your feedback directly shapes the future of Pragati360. We're not about instant mass sign-ups; we're about intentional partnerships.",
+    "step1": {
+      "title": "Request Early Access",
+      "description": "Fill out our brief Early Access request form with details about your business. This helps us understand your needs and ensures Pragati360 is a good fit."
+    },
+    "step2": {
+      "title": "Review & Approval",
+      "description": "Our team carefully reviews each application. We manually approve requests in limited batches to maintain quality and provide dedicated support to our Early Access partners. This isn't instant; it's a thoughtful process."
+    },
+    "step3": {
+      "title": "Personalized Onboarding",
+      "description": "Once approved, we'll reach out to schedule a personalized onboarding session. This ensures you get started smoothly and can leverage Pragati360 effectively from day one."
+    },
+    "step4": {
+      "title": "Provide Feedback",
+      "description": "As an Early Access partner, your insights are invaluable. We'll encourage you to share your experiences and suggestions, helping us refine features and build a platform that truly serves local businesses."
+    },
+    "expectations": {
+      "noInstantActivation": "No Instant Activation: Access is not immediate. We prioritize thoughtful onboarding over speed to ensure a quality experience for everyone.",
+      "limitedAvailability": "Limited Availability: Early Access is offered to a select group of businesses.",
+      "directImpact": "Direct Impact: Your feedback directly influences product development.",
+      "dedicatedSupport": "Dedicated Support: Receive priority support as an Early Access partner."
+    }
+  },
+  "aiAssist": {
+    "headline": "AI at Pragati360: Your Co-Pilot, Not the Pilot.",
+    "subHeadline": "We use AI to assist and streamline, never to automate decisions or act without your explicit human approval.",
+    "body": "At Pragati360, Artificial Intelligence is a tool designed to enhance your operational efficiency, not replace your judgment. Our philosophy is rooted in \"human approval over autonomy.\" We leverage AI responsibly to provide suggestions and simplify tasks, always ensuring that you, the business owner, remain in complete control.",
+    "whatAiDoes": {
+      "title": "What AI Does: Smart Suggestions, Effortless Drafting",
+      "draftingResponses": "Drafting Responses: Generating initial drafts for customer replies based on review content or common inquiries.",
+      "contentPrompts": "Content Prompts: Offering ideas or starting points for social media posts relevant to your business or industry trends.",
+      "categorization": "Categorization: Assisting in organizing incoming feedback or identifying key themes in customer interactions."
+    },
+    "whatAiNeverDoes": {
+      "title": "What AI Never Does: Your Business, Your Voice",
+      "noAutomatedPublishing": "No Automated Publishing: AI will never publish a post, send a reply, or make an update without your explicit review and approval.",
+      "noIndependentDecisions": "No Independent Decisions: AI does not make strategic choices for your business or alter your online presence autonomously.",
+      "noImpersonalInteractions": "No Impersonal Interactions: All customer-facing communication is always reviewed and approved by you, ensuring it genuinely reflects your business's voice."
+    },
+    "merchantApproval": {
+      "title": "Merchant Approval Always Required: The Final Say is Yours",
+      "body": "Every output generated or suggested by our AI goes through you. You have the ultimate authority to edit, approve, or discard any AI-assisted content. Pragati360 is built to serve your vision, not dictate it."
+    }
+  },
+  "trustSecurity": {
+    "headline": "Your Business, Your Data, Your Control.",
+    "subHeadline": "Pragati360 is built on a foundation of trust, security, and transparency, ensuring your peace of mind while managing your online presence.",
+    "body": "We understand that entrusting your business's online presence to a platform requires confidence. At Pragati360, security and data ownership are not afterthoughts; they are core principles. We've implemented robust measures to protect your information and ensure you always remain in full control.",
+    "otpLogin": {
+      "title": "OTP-Based Login: Secure Access, Every Time",
+      "body": "Your account security is paramount. Pragati360 utilizes OTP (One-Time Password) based login to ensure that only authorized individuals can access your account, adding an extra layer of protection against unauthorized access."
+    },
+    "merchantOwnedData": {
+      "title": "Merchant-Owned Data: Your Information Stays Yours",
+      "body": "Your business data belongs to you, always. We never sell your data, and we provide clear pathways for you to export or delete your information at any time."
+    },
+    "noSilentFailures": {
+      "title": "No Silent Failures: Transparency in Operations",
+      "body": "We believe in absolute transparency. Pragati360 is engineered to never fail silently. If an action cannot be completed, or if there's an issue with a scheduled post or an alert delivery, you will be explicitly notified. You'll always know the status of your operations."
+    },
+    "activityLogs": {
+      "title": "Activity Logs: Clear Records, Full Accountability",
+      "body": "Maintain a comprehensive record of all key actions taken within your Pragati360 account. Our detailed activity logs provide an audit trail, ensuring accountability and offering insights into all interactions with your Google Business Profile and Instagram."
+    },
+    "cancelAnytime": {
+      "title": "Cancel Anytime: Flexibility and Freedom",
+      "body": "We believe in earning your trust, not locking you in. You have the freedom to cancel your Pragati360 service at any time, with no hidden fees or complicated processes. Your satisfaction and control are our priority."
+    }
+  },
+  "faq": {
+    "headline": "Your Questions, Answered.",
+    "subHeadline": "Clear and transparent answers to common questions about Pragati360 and our Early Access program.",
+    "body": "We believe in open communication. Here are answers to some questions you might have about Pragati360 and how we operate. If you have more, please don't hesitate to reach out.",
+    "questions": {
+      "whyEarlyAccess": {
+        "question": "Why is Pragati360 in Early Access?",
+        "answer": "We're committed to building a platform that truly serves local businesses. Early Access allows us to work closely with a select group of users, gather invaluable feedback, and fine-tune Pragati360 to ensure it meets your specific needs and delivers reliable results before a wider launch."
+      },
+      "productionReady": {
+        "question": "Is Pragati360 production-ready?",
+        "answer": "Yes, the core functionalities offered during Early Access are stable and designed for production use. We are continuously improving and adding features, and your feedback as an Early Access partner helps us prioritize these developments."
+      },
+      "missReviews": {
+        "question": "Can I miss important reviews or messages on my Google Business Profile?",
+        "answer": "No. Pragati360's alert system is designed to notify you of new reviews, messages, and other critical interactions on your Google Business Profile, ensuring you can respond promptly and never miss an important customer interaction."
+      },
+      "postFails": {
+        "question": "What happens if a post fails to publish on Instagram or Google Business Profile?",
+        "answer": "Pragati360 is built with transparency in mind. If a post encounters an issue and fails to publish on any platform, you will receive an immediate and clear notification, informing you of the specific problem so you can take corrective action. We ensure \"no silent partial success.\""
+      },
+      "mobileApp": {
+        "question": "When will a mobile app for Pragati360 be available?",
+        "answer": "Currently, Pragati360 is optimized for web use. We are actively gathering feedback from our Early Access partners to inform our future development roadmap, which includes considering dedicated mobile applications."
+      },
+      "cancelSubscription": {
+        "question": "Can I cancel my subscription later if I'm not satisfied?",
+        "answer": "Yes, absolutely. We believe in earning your business. You can cancel your Pragati360 service at any time without any long-term commitments or hidden fees. Your control and satisfaction are our priority."
+      },
+      "replaceMarketingTeam": {
+        "question": "Does Pragati360 replace my marketing team or strategy?",
+        "answer": "No. Pragati360 is a powerful tool to *support* your existing marketing efforts and operations. It streamlines the execution of your Google Business Profile and Instagram strategies, allowing your team to focus on higher-level tasks and creativity. It's about efficiency and control, not replacement."
+      }
+    }
+  },
+  "aboutUs": {
+    "headline": "Pragati360: Built for Local Business Owners, By Local Business Owners.",
+    "subHeadline": "Our mission is to empower local businesses with reliable tools for online visibility and control, fostering growth through trust and clarity.",
+    "body": "Pragati360 was born from a deep understanding of the challenges faced by local businesses in managing their online presence. In an increasingly digital world, maintaining a consistent, accurate, and engaging presence on platforms like Google Business Profile and Instagram is no longer optional—it's essential for survival and growth.",
+    "whyExists": {
+      "title": "Why it Exists: Bridging the Gap for Local Commerce",
+      "body": "We saw a need for a platform that prioritizes stability, transparency, and merchant control over flashy promises and complex automations. Many existing solutions either over-promise or under-deliver, leaving local business owners feeling overwhelmed or disempowered. Pragati360 is designed to be the reliable partner you can trust."
+    },
+    "whoBuiltFor": {
+      "title": "Who it is Built For: The Dedicated Local Entrepreneur",
+      "body": "Pragati360 is for the hardworking local business owner, the entrepreneur, the independent shopkeeper, and the service provider who understands the value of their online reputation. It's for those who demand clarity, appreciate reliability, and want to maintain a human touch in their digital interactions. If you run a local business and rely on Google Business Profile and Instagram to connect with customers, Pragati360 is for you."
+    },
+    "whatAvoids": {
+      "title": "What it Intentionally Avoids: No Hype, Just Results",
+      "aiAutomation": "AI Automation without Approval: We will never act autonomously. All AI is assistive, requiring your final say.",
+      "growthHackTactics": "Growth-Hack Tactics: Sustainable growth comes from consistent effort and authentic engagement, not shortcuts.",
+      "overPromising": "Over-promising and Under-delivering: Our features are built for reliability and clarity, delivering on what we promise.",
+      "complexIntelligence": "Complex Marketing Intelligence: Our focus is on clear visibility and actionable control, not overwhelming data."
+    }
+  },
+  "contact": {
+    "headline": "Connect with Pragati360",
+    "subHeadline": "Whether you have questions about partnerships or need support, we're here to help.",
+    "body": "We value clear communication and are ready to assist you. Please choose the appropriate contact method below.",
+    "salesPartnerships": {
+      "title": "Sales & Partnerships",
+      "body": "Interested in a strategic partnership or have questions about how Pragati360 can specifically benefit a larger network of local businesses? Our team is available to discuss collaboration opportunities.",
+      "email": "partnerships@pragati360.com",
+      "phone": "+91-987-654-3210 (Mon-Fri, 9 AM - 5 PM IST)"
+    },
+    "productAccess": {
+      "title": "Product Access & Early Access Inquiries",
+      "body": "For all inquiries related to gaining access to Pragati360, including questions about our features or the Early Access program, please utilize our dedicated Early Access request process. This ensures your request is routed efficiently and we can provide you with the most relevant information.",
+      "redirect": "Please use the \"Get Early Access\" button to submit your interest."
+    }
+  },
+  "forms": {
+    "earlyAccess": {
+      "title": "Request Early Access to Pragati360",
+      "subHeadline": "Join our exclusive Early Access program and help us shape the future of growth operations for local businesses.",
+      "businessName": {
+        "label": "Business Name",
+        "helperText": "As registered with your Google Business Profile (if applicable)."
+      },
+      "businessEmail": {
+        "label": "Business Email",
+        "helperText": "We'll use this to communicate about your Early Access application."
+      },
+      "numOutlets": {
+        "label": "Number of Business Locations",
+        "helperText": "How many physical locations does your business operate?",
+        "option1": "1",
+        "option2": "2-5",
+        "option3": "6-10",
+        "option4": "10+"
+      },
+      "platformsUsed": {
+        "label": "Which platforms are important for your business?",
+        "helperText": "Select all that apply to your current online strategy.",
+        "gbp": "Google Business Profile (GBP)",
+        "instagram": "Instagram Business",
+        "both": "Both GBP & Instagram"
+      },
+      "whatsappNumber": {
+        "label": "WhatsApp Number (Optional)",
+        "helperText": "Provide a WhatsApp number if you'd like to receive important updates or direct support communications via WhatsApp."
+      },
+      "submissionSuccess": {
+        "headline": "Thank You for Your Early Access Request!",
+        "body": "We've received your application for Pragati360 Early Access. Our team will carefully review your details and get back to you within [X] business days regarding the status of your request. We appreciate your patience and interest in building a more reliable online presence for your local business.",
+        "subText": "In the meantime, learn more about how Pragati360 works by clicking \"See How It Works\" below."
+      }
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "productOverview": "Product Overview",
+    "features": {
+      "label": "Features",
+      "googleBusiness": "Google Business",
+      "instagram": "Instagram",
+      "unifiedPosting": "Unified Posting",
+      "alertsReliability": "Alerts & Reliability"
+    },
+    "pricing": "Pricing",
+    "howEarlyAccessWorks": "How Early Access Works",
+    "aiAssist": "AI Assist",
+    "trustSecurity": "Trust & Security",
+    "faq": "FAQs",
+    "aboutUs": "About Us",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "languageSwitcher": {
+      "label": "Language",
+      "english": "English",
+      "hindi": "Hindi"
+    }
+  }
+}

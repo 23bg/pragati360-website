@@ -1,12 +1,11 @@
 import { generateMetadata } from "@/lib/seo";
-import { SITE_NAME, SITE_DESCRIPTION, FEATURE_SECTIONS } from "@/lib/constants";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
 export const metadata = generateMetadata({
   title: "Features",
-  description: SITE_DESCRIPTION,
+  description: "Explore the core features of Pragati360 designed to streamline your local business operations.",
 });
 
 interface FeaturesLayoutProps {
@@ -20,18 +19,42 @@ export default function FeaturesLayout({ children }: FeaturesLayoutProps) {
         <div className="py-6 pr-6 lg:py-8">
           <h4 className="mb-4 px-4 text-lg font-semibold tracking-tight">Features</h4>
           <nav className="flex flex-col space-y-1">
-            {FEATURE_SECTIONS.map((section) => (
               <Link
-                key={section.link}
-                href={section.link}
+                href="/features/google-business"
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
                   "justify-start hover:text-primary"
                 )}
               >
-                {section.title}
+                Google Business
               </Link>
-            ))}
+              <Link
+                href="/features/instagram"
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "justify-start hover:text-primary"
+                )}
+              >
+                Instagram
+              </Link>
+              <Link
+                href="/features/unified-posting"
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "justify-start hover:text-primary"
+                )}
+              >
+                Unified Posting
+              </Link>
+              <Link
+                href="/features/alerts"
+                className={cn(
+                  buttonVariants({ variant: "ghost" }),
+                  "justify-start hover:text-primary"
+                )}
+              >
+                Alerts & Reliability
+              </Link>
           </nav>
         </div>
       </aside>

@@ -1,75 +1,67 @@
 import { generateMetadata } from "@/lib/seo";
-import { SITE_NAME } from "@/lib/constants";
-import { Lock, ShieldCheck, Fingerprint, Cloud, Scale } from "lucide-react";
-import { DisplayIcon } from "@/components/ui/display-icon";
-import type { IconKeys } from "@/components/icons";
+import Link from "next/link"; // For the CTA
 
 export const metadata = generateMetadata({
-  title: "Pragati360's Commitment to Trust & Security",
-  description: "Discover Pragati360's unwavering commitment to robust security, data integrity, and your absolute privacy. Building trust through reliable protection.",
+  title: "Your Business, Your Data, Your Control.",
+  description: "Pragati360 is built on a foundation of trust, security, and transparency, ensuring your peace of mind while managing your online presence.",
 });
-
-const securityFeatures = [
-  {
-    icon: "Lock",
-    title: "Data Encryption",
-    description:
-      "Your sensitive data is protected with industry-standard encryption, both at rest and in transit, ensuring its confidentiality and integrity.",
-  },
-  {
-    icon: "ShieldCheck",
-    title: "Secure Infrastructure",
-    description:
-      "Our platform is built upon a resilient, secure cloud infrastructure, fortified by continuous monitoring and rigorous security audits.",
-  },
-  {
-    icon: "Fingerprint",
-    title: "Access Control",
-    description:
-      "Rigorous access controls and multi-factor authentication safeguard your account, preventing unauthorized access and maintaining operational integrity.",
-  },
-  {
-    icon: "Cloud",
-    title: "Regular Backups",
-    description:
-      "Comprehensive and regular data backups ensure your business continuity and rapid recovery from any unforeseen data event.",
-  },
-  {
-    icon: "Scale",
-    title: "Privacy by Design",
-    description:
-      "Our systems are engineered with privacy at their core, adhering to stringent data protection principles and regulatory compliance.",
-  },
-];
 
 export default function SecurityPage() {
   return (
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          Our Unwavering Commitment: Trust & Security at Pragati360
+          Your Business, Your Data, Your Control.
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          At Pragati360, we build and operate with an absolute commitment to safeguarding your business data and maintaining the highest standards of privacy.
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          Pragati360 is built on a foundation of trust, security, and transparency, ensuring your peace of mind while managing your online presence.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {securityFeatures.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl bg-card p-8 shadow-soft border border-border flex flex-col items-center text-center"
-            >
-              <div className="mb-6 inline-flex items-center justify-center rounded-full bg-primary/10 p-3 text-primary">
-                <DisplayIcon icon={feature.icon as IconKeys} className="h-8 w-8" />
-              </div>
-              <h2 className="text-xl font-semibold text-foreground">
-                {feature.title}
-              </h2>
-              <p className="mt-3 text-base text-muted-foreground">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <div className="mt-12 max-w-3xl mx-auto space-y-8 text-left">
+          <p className="text-lg text-muted-foreground">
+            We understand that entrusting your business's online presence to a platform requires confidence. At Pragati360, security and data ownership are not afterthoughts; they are core principles. We've implemented robust measures to protect your information and ensure you always remain in full control.
+          </p>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">OTP-Based Login: Secure Access, Every Time</h2>
+            <p className="text-lg text-muted-foreground">
+              Your account security is paramount. Pragati360 utilizes OTP (One-Time Password) based login to ensure that only authorized individuals can access your account, adding an extra layer of protection against unauthorized access.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Merchant-Owned Data: Your Information Stays Yours</h2>
+            <p className="text-lg text-muted-foreground">
+              Your business data belongs to you, always. We never sell your data, and we provide clear pathways for you to export or delete your information at any time.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">No Silent Failures: Transparency in Operations</h2>
+            <p className="text-lg text-muted-foreground">
+              We believe in absolute transparency. Pragati360 is engineered to never fail silently. If an action cannot be completed, or if there's an issue with a scheduled post or an alert delivery, you will be explicitly notified. You'll always know the status of your operations.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Activity Logs: Clear Records, Full Accountability</h2>
+            <p className="text-lg text-muted-foreground">
+              Maintain a comprehensive record of all key actions taken within your Pragati360 account. Our detailed activity logs provide an audit trail, ensuring accountability and offering insights into all interactions with your Google Business Profile and Instagram.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Cancel Anytime: Flexibility and Freedom</h2>
+            <p className="text-lg text-muted-foreground">
+              We believe in earning your trust, not locking you in. You have the freedom to cancel your Pragati360 service at any time, with no hidden fees or complicated processes. Your satisfaction and control are our priority.
+            </p>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/early-access" className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+                Get Early Access
+            </Link>
+          </div>
         </div>
       </div>
     </section>

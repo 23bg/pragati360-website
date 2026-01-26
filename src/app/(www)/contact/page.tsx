@@ -1,11 +1,10 @@
 import { generateMetadata } from "@/lib/seo";
-import { SITE_NAME } from "@/lib/constants";
-import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata = generateMetadata({
-  title: "Contact Us",
-  description: `Get in touch with ${SITE_NAME} for support, sales, or general inquiries.`,
+  title: "Connect with Pragati360",
+  description: "Whether you have questions about partnerships or need support, we're here to help.",
 });
 
 export default function ContactPage() {
@@ -13,81 +12,42 @@ export default function ContactPage() {
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          Get in Touch
+          Connect with Pragati360
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          We&apos;d love to hear from you. Whether you have a question about features, pricing, or anything else, our team is ready to answer all your questions.
+          We value clear communication and are ready to assist you. Please choose the appropriate contact method below.
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-          {/* Contact Information */}
+          {/* Sales & Partnerships */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              Our Contact Information
+              Sales & Partnerships
             </h2>
-            <div className="space-y-6 text-muted-foreground">
-              <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Email Us</h3>
-                  <a href="mailto:support@pragati360.com" className="hover:text-primary transition-colors">
-                    support@pragati360.com
-                  </a>
-                  <p className="text-sm">We aim to respond within 24 hours.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Call Us</h3>
-                  <a href="tel:+919999999999" className="hover:text-primary transition-colors">
-                    +91 99999 99999
-                  </a>
-                  <p className="text-sm">Mon-Fri, 9 AM - 6 PM IST</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-foreground">Our Office</h3>
-                  <p>123 Business Street,</p>
-                  <p>Pune, Maharashtra, India - 411001</p>
-                </div>
-              </div>
-            </div>
+            <p className="text-lg text-muted-foreground mb-4">
+              Interested in a strategic partnership or have questions about how Pragati360 can specifically benefit a larger network of local businesses? Our team is available to discuss collaboration opportunities.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              <strong>Email:</strong> <a href="mailto:partnerships@pragati360.com" className="hover:text-primary transition-colors">partnerships@pragati360.com</a>
+            </p>
+            <p className="text-lg text-muted-foreground">
+              <strong>Phone:</strong> +91-987-654-3210 (Mon-Fri, 9 AM - 5 PM IST)
+            </p>
           </div>
 
-          {/* Contact Form (Display Only) */}
+          {/* Product Access & Early Access Inquiries */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              Send us a Message
+              Product Access & Early Access Inquiries
             </h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="sr-only">
-                  Your Name
-                </label>
-                <input id="name" placeholder="Your Name" className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
-              </div>
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Your Email
-                </label>
-                <input id="email" type="email" placeholder="Your Email" className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
-              </div>
-              <div>
-                <label htmlFor="message" className="sr-only">
-                  Your Message
-                </label>
-                <textarea id="message" placeholder="Your Message" rows={5} className="w-full rounded-xl shadow-sm border border-border px-3 py-2" />
-              </div>
-              <Button type="submit" className="w-full rounded-xl shadow-lg">
-                Send Message
-              </Button>
-            </form>
-            <p className="mt-4 text-sm text-muted-foreground text-center">
-              *This form is for display purposes only and does not submit data.
+            <p className="text-lg text-muted-foreground mb-4">
+              For all inquiries related to gaining access to Pragati360, including questions about our features or the Early Access program, please utilize our dedicated Early Access request process. This ensures your request is routed efficiently and we can provide you with the most relevant information.
             </p>
+            <div className="mt-8 text-center md:text-left">
+              <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg">
+                <Link href="/early-access">Get Early Access</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

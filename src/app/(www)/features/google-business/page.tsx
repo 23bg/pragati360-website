@@ -1,117 +1,71 @@
-import { Metadata } from "next";
+import { generateMetadata } from "@/lib/seo";
 export const dynamic = "force-dynamic";
 import { Button } from "@/components/ui/button";
-import { ProductIcon } from "@/components/ui/display-icon";
+import Link from "next/link"; // For the CTA
 
-export const metadata: Metadata = {
-  title: "Google Business Profile Management | Pragati360",
-  description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
-  applicationName: "Pragati360",
-  metadataBase: new URL("https://pragati360.com"),
-  keywords: [
-    "Google Business Profile",
-    "Google Business Management",
-    "Google Business Profile tools",
-    "Small business tools",
-    "India",
-    "SaaS",
-    "Marketing"
-  ],
-  openGraph: {
-    title: "Google Business Profile Management | Pragati360",
-    description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
-    url: "https://pragati360.com/features/google-business",
-    siteName: "Pragati360",
-    images: [
-      {
-        url: "https://pragati360.com/og-image-google-business.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Google Business Profile Management with Pragati360"
-      }
-    ],
-    locale: "en_IN",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Google Business Profile Management | Pragati360",
-    description: "Pragati360 provides precise and reliable tools for managing your Google Business Profile, ensuring your local business maintains a professional online presence.",
-    images: ["https://pragati360.com/og-image-google-business.jpg"]
-  }
-};
+export const metadata = generateMetadata({
+  title: "Master Your Google Business Profile with Pragati360",
+  description: "Ensure your local business stands out on Google with reliable management of reviews, posts, and essential alerts.",
+});
 
 export default function GoogleBusinessPage() {
   return (
-    <div className="container mx-auto px-4 py-16 sm:py-24">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
-          <ProductIcon icon="google-business" className="w-8 h-8" />
-        </div>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6">
-          Google Business Profile Management
+    <section className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          Master Your Google Business Profile with Pragati360
         </h1>
-        <p className="text-lg leading-8 text-muted-foreground mb-8">
-          Pragati360 provides precise tools to manage your Google Business Profile, offering essential control over your online presence.
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+          Ensure your local business stands out on Google with reliable management of reviews, posts, and essential alerts.
         </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="space-y-6">
-          <div className="flex items-start gap-4">
-            <div className="w-2 h-2 mt-2 rounded-full bg-primary"></div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground">Post Content</h3>
-              <p className="text-muted-foreground">
-                Schedule posts and manage content calendar for your Google Business Profile.
-              </p>
-            </div>
+        <div className="mt-12 max-w-3xl mx-auto space-y-8 text-left">
+          <p className="text-lg text-muted-foreground">
+            For local businesses, your Google Business Profile (GBP) is often the first interaction a potential customer has with you. It's not just a listing; it's a dynamic storefront that impacts your visibility and reputation. Pragati360 provides you with the precise tools to manage your GBP, ensuring accuracy and engagement.
+          </p>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Reviews: Build Trust, Respond Thoughtfully</h2>
+            <p className="text-lg text-muted-foreground">
+              Customer reviews are your social proof. Pragati360 helps you monitor new reviews, ensuring you can respond promptly and professionally. Maintain your brand's reputation by engaging directly with customer feedback, turning positive experiences into powerful endorsements and addressing concerns with care.
+            </p>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="w-2 h-2 mt-2 rounded-full bg-primary"></div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground">Review Management</h3>
-              <p className="text-muted-foreground">
-                Monitor, respond to, and track customer reviews in real time.
-              </p>
-            </div>
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Replies: Consistent Engagement, Every Time</h2>
+            <p className="text-lg text-muted-foreground">
+              Engaging with customers isn't just about reviews. Our platform streamlines your ability to reply to messages and questions on GBP, ensuring consistent communication and showing your customers you're attentive and accessible.
+            </p>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="w-2 h-2 mt-2 rounded-full bg-primary"></div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground">Analytics & Insights</h3>
-              <p className="text-muted-foreground">
-                Get performance metrics, reach, engagement, and traffic insights.
-              </p>
-            </div>
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Posts: Keep Your Audience Informed</h2>
+            <p className="text-lg text-muted-foreground">
+              Use GBP Posts to share updates, offers, and news directly with your local audience. Pragati360 allows you to schedule and publish these posts with confidence, keeping your profile fresh and relevant without daily manual effort.
+            </p>
           </div>
-        </div>
 
-        <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
-          <h3 className="text-2xl font-bold text-foreground mb-6">Why Use Pragati360?</h3>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Maintain consistent, professional presence on Google.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Ensure timely and considered responses to customer feedback.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 rounded-full bg-primary mt-2"></span>
-              <span>Gain clarity on profile engagement and impact.</span>
-            </li>
-          </ul>
-          <div className="mt-8">
-            <Button size="lg" asChild className="px-8 py-4 rounded-xl shadow-lg">
-              <a href="/early-access">Request Early Access</a>
-            </Button>
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Alerts: Never Miss a Beat</h2>
+            <p className="text-lg text-muted-foreground">
+              Stay informed of critical changes or interactions on your GBP. Pragati360 delivers timely alerts for new reviews, important messages, or profile updates, ensuring you're always aware and can act quickly. Our alert system is designed for clarity, not noise.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Why GBP Matters for Local Businesses</h2>
+            <p className="text-lg text-muted-foreground">
+              A well-maintained Google Business Profile is crucial for discoverability and trust. It directly influences your local SEO, drives calls and website visits, and helps customers choose you over competitors. Pragati360 helps you leverage this powerful tool to its fullest potential, ensuring your digital storefront is always optimized and inviting.
+            </p>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/early-access" className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+                Get Early Access
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

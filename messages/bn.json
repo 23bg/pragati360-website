@@ -1,0 +1,24 @@
+{
+    "buttons": {
+        "getEarlyAccess": "আর্লি অ্যাক্সেস নিন",
+        "seeHowItWorks": "এটি কীভাবে কাজ করে দেখুন",
+        "submitRequest": "অনুরোধ পাঠান",
+        "contactUs": "যোগাযোগ করুন"
+    },
+    "home": {
+        "hero": {
+            "headline": "আপনার স্থানীয় ব্যবসার অনলাইন উপস্থিতির নিয়ন্ত্রণ নিন।",
+            "subHeadline": "Pragati360 স্বয়ংক্রিয়তার পরিবর্তে নির্ভরযোগ্যতার উপর ভিত্তি করে Google Business Profile ও Instagram পরিচালনা করতে সাহায্য করে। বর্তমানে আর্লি অ্যাক্সেসে রয়েছে।"
+        }
+    },
+    "pricing": {
+        "headline": "নির্ভরযোগ্য বৃদ্ধির জন্য স্বচ্ছ মূল্য",
+        "startingPrice": "প্ল্যান শুরু ₹199/মাস থেকে"
+    },
+    "footer": {
+        "languageSwitcher": {
+            "label": "ভাষা",
+            "bengali": "বাংলা"
+        }
+    }
+}
