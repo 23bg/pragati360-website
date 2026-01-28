@@ -1,7 +1,7 @@
 import { SITE_NAME } from "@/lib/constants";
 import { Linkedin, Twitter, MessageCircle } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';;
 import { ThemeToggle } from "./theme-toggle";
 
 export function Footer() {

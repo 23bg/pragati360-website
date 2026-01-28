@@ -1,10 +1,9 @@
-// @ts-ignore
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-const SUPPORTED_LOCALES = ['en', 'hi'];
+const SUPPORTED_LOCALES = ['en', 'hi', 'mr', 'ta', 'bn', 'gu', 'te'] as const;
 
 export function generateStaticParams() {
     return SUPPORTED_LOCALES.map((locale) => ({ locale }));
@@ -12,16 +11,18 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
     children,
-    params: { locale },
+    params,
 }: {
     children: React.ReactNode;
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
 }) {
-    if (!SUPPORTED_LOCALES.includes(locale)) {
+    const { locale } = await params;
+
+    if (!SUPPORTED_LOCALES.includes(locale as any)) {
         notFound();
     }
 
-    const messages = await getMessages();
+    const messages = await getMessages({ locale });
 
     return (
         <NextIntlClientProvider locale={locale} messages={messages}>

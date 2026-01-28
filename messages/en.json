@@ -9,6 +9,7 @@
     "contactUs": "Contact us"
   },
   "home": {
+    "title": "Home",
     "hero": {
       "headline": "Take Control of Your Local Business Presence.",
       "subHeadline": "Pragati360 helps local businesses manage Google Business Profile and Instagram with reliability and confidence, not automation. Currently in Early Access."
@@ -42,24 +43,24 @@
       "body": "We understand the unique demands of local businesses. Pragati360 is engineered for stability and transparency, giving you peace of mind. Your data is yours, your decisions are final, and your online presence is secure. We prioritize your trust above all else."
     }
   },
-  "productOverview": {
-    "headline": "Pragati360: Essential Operations for Local Business Growth",
-    "subHeadline": "Gain reliable control over your online presence with a platform designed for clarity, consistency, and your peace of mind.",
-    "body": "Pragati360 is a dedicated growth operations platform built specifically for local businesses. We provide the tools you need to effectively manage and optimize your presence on critical platforms: Google Business Profile and Instagram. Our focus is on empowering you with reliability and visibility, ensuring that your online footprint accurately reflects your business.",
-    "keyPrinciple1": {
-      "title": "Focused Control.",
-      "description": "We believe in providing you with the direct ability to manage your key online channels. No complex dashboards, just clear actions."
-    },
-    "keyPrinciple2": {
-      "title": "Data You Can Trust.",
-      "description": "See what matters. We deliver information that helps you make informed decisions about your online interactions."
-    },
-    "keyPrinciple3": {
-      "title": "Your Brand, Always.",
-      "description": "Every post, every reply, every update is initiated and approved by you, ensuring your voice remains authentic."
-    }
-  },
-  "googleBusiness": {
+      "productOverview": {
+          "headline": "Pragati360: Essential Operations for Local Business Growth",
+          "subHeadline": "Gain reliable control over your online presence with a platform designed for clarity, consistency, and your peace of mind.",
+          "body": "Pragati360 is a dedicated growth operations platform built specifically for local businesses. We provide the tools you need to effectively manage and optimize your presence on critical platforms: Google Business Profile and Instagram. Our focus is on empowering you with reliability and visibility, ensuring that your online footprint accurately reflects your business.",
+          "keyPrinciplesHeadline": "Key Principles:",
+          "keyPrinciple1": {
+              "title": "Focused Control.",
+              "description": "We believe in providing you with the direct ability to manage your key online channels. No complex dashboards, just clear actions."
+          },
+          "keyPrinciple2": {
+              "title": "Data You Can Trust.",
+              "description": "See what matters. We deliver information that helps you make informed decisions about your online interactions."
+          },
+          "keyPrinciple3": {
+              "title": "Your Brand, Always.",
+              "description": "Every post, every reply, every update is initiated and approved by you, ensuring your voice remains authentic."
+          }
+      },  "googleBusiness": {
     "headline": "Master Your Google Business Profile with Pragati360",
     "subHeadline": "Ensure your local business stands out on Google with reliable management of reviews, posts, and essential alerts.",
     "body": "For local businesses, your Google Business Profile (GBP) is often the first interaction a potential customer has with you. It's not just a listing; it's a dynamic storefront that impacts your visibility and reputation. Pragati360 provides you with the precise tools to manage your GBP, ensuring accuracy and engagement.",
@@ -103,10 +104,10 @@
     "limitations": {
       "title": "Clear Limitations: What Pragati360 Does NOT Do for Instagram",
       "body": "Pragati360 focuses on reliable content publishing for your Instagram Business profile. To maintain a trust-first approach and respect the platform's guidelines, we intentionally do NOT support:",
-      "dm": "Direct Messages (DMs): We do not access or manage your private messages.",
-      "storiesReels": "Stories or Reels: Our focus is on feed posts for consistent brand messaging.",
-      "automatedEngagement": "Automated Engagement: We do not automate likes, comments, or follows. Your engagement remains authentic and human-driven.",
-      "spamMessaging": "Spam or Mass Messaging: Pragati360 is built for genuine, deliberate content sharing, not growth-hacking tactics."
+      "dm": "<strong>Direct Messages (DMs):</strong> We do not access or manage your private messages.",
+      "storiesReels": "<strong>Stories or Reels:</strong> Our focus is on feed posts for consistent brand messaging.",
+      "automatedEngagement": "<strong>Automated Engagement:</strong> We do not automate likes, comments, or follows. Your engagement remains authentic and human-driven.",
+      "spamMessaging": "<strong>Spam or Mass Messaging:</strong> Pragati360 is built for genuine, deliberate content sharing, not growth-hacking tactics."
     }
   },
   "unifiedPosting": {
@@ -147,44 +148,84 @@
       "body": "While we understand the convenience of WhatsApp, Pragati360 uses it for alerts with extreme care and only for specific, opted-in notifications. We prioritize your privacy and aim to avoid interrupting your personal communications. Our use of WhatsApp is always intentional, transparent, and user-controlled, adhering strictly to our \"reliability over automation\" principle."
     }
   },
-  "pricing": {
-    "headline": "Transparent Pricing for Reliable Growth",
-    "subHeadline": "Pragati360 offers straightforward pricing tailored for local businesses. Start exploring our platform in Early Access with plans starting from ₹199/month.",
-    "body": "We believe in clear, honest pricing that supports your business without surprises. During our Early Access phase, we are committed to offering foundational plans that provide essential tools for managing your Google Business Profile and Instagram.",
-    "philosophy": {
-      "title": "Our Early Access Pricing Philosophy",
-      "body": "Our Early Access pricing is designed to be accessible and reflective of the core value Pragati360 delivers. This phase allows us to understand your specific needs and gather feedback to shape our future offerings. You'll receive full access to selected features at a special introductory rate."
-    },
-    "startingPrice": "Plans starting from ₹199/month",
-    "noCheckout": "Access to Pragati360 during Early Access is not through an immediate checkout process. We're carefully onboarding businesses to ensure a quality experience and gather valuable insights.",
-    "calmTransparentTone": "We're building Pragati360 with local businesses in mind, and that includes fair and transparent pricing. There are no hidden fees or complex tiers. During Early Access, we're focused on building relationships and a product that truly serves your needs. Join us to experience a platform that prioritizes reliability over hype."
-    },
-  "howEarlyAccessWorks": {
-    "headline": "Your Path to Pragati360 Early Access",
-    "subHeadline": "We're carefully onboarding local businesses to ensure a tailored experience and gather valuable feedback. Here's how to join.",
-    "body": "Pragati360 is building a platform for local businesses, with local businesses. Our Early Access program is designed to create a collaborative environment where your feedback directly shapes the future of Pragati360. We're not about instant mass sign-ups; we're about intentional partnerships.",
+        "pricing": {
+            "headline": "Transparent Pricing for Reliable Growth",
+            "subHeadline": "Pragati360 offers straightforward pricing tailored for local businesses. Start exploring our platform in Early Access with plans starting from ₹199/month.",
+            "startingPrice": "Plans starting from ₹199/month",
+            "body1": "We believe in clear, honest pricing that supports your business without surprises. During our Early Access phase, we are committed to offering foundational plans that provide essential tools for managing your Google Business Profile and Instagram. Access to Pragati360 during Early Access is not through an immediate checkout process. We're carefully onboarding businesses to ensure a quality experience and gather valuable insights.",
+            "body2": "We're building Pragati360 with local businesses in mind, and that includes fair and transparent pricing. There are no hidden fees or complex tiers. During Early Access, we're focused on building relationships and a product that truly serves your needs. Join us to experience a platform that prioritizes reliability over hype.",
+            "mostPopular": "Most Popular",
+            "plans": {
+                "starter": {
+                    "name": "Starter",
+                    "description": "Essential tools to get started",
+                    "features": [
+                        "Basic business profile",
+                        "Limited integrations",
+                        "Email support"
+                    ]
+                },
+                "growth": {
+                    "name": "Growth",
+                    "description": "For growing local businesses",
+                    "features": [
+                        "Everything in Starter",
+                        "Social posting tools",
+                        "Basic analytics"
+                    ]
+                },
+                "pro": {
+                    "name": "Pro",
+                    "description": "Advanced control & insights",
+                    "features": [
+                        "Everything in Growth",
+                        "Advanced analytics",
+                        "Priority support"
+                    ]
+                },
+                "scale": {
+                    "name": "Scale",
+                    "description": "For multi-outlet operations",
+                    "features": [
+                        "Everything in Pro",
+                        "Multi-location support",
+                        "Dedicated onboarding"
+                    ]
+                }
+            },
+            "philosophy": {
+                "headline": "Our Early Access Pricing Philosophy",
+                "body1": "Our Early Access pricing is designed to be accessible and reflective of the core value Pragati360 delivers. This phase allows us to understand your specific needs and gather feedback to shape our future offerings.",
+                "body2": "Access is not through an immediate checkout process. We're carefully onboarding businesses to ensure a quality experience and meaningful feedback."
+            },
+            "ctaHeadline": "Ready to Get Started?"
+        },  "howEarlyAccessWorks": {
+    "headline": "How Pragati360 Early Access Works",
+    "subHeadline": "A structured approach to partnering with us and shaping a reliable operational platform.",
+    "introBody": "Pragati360 is building a platform for local businesses, with local businesses. Our Early Access program is designed to create a collaborative environment where your feedback directly shapes the future of Pragati360. We're not about instant mass sign-ups; we're about intentional partnerships.",
     "step1": {
-      "title": "Request Early Access",
-      "description": "Fill out our brief Early Access request form with details about your business. This helps us understand your needs and ensures Pragati360 is a good fit."
+      "title": "Submit Your Request",
+      "description": "Complete our brief Early Access request form. This helps us understand your business and ensure Pragati360 is the right fit."
     },
     "step2": {
-      "title": "Review & Approval",
-      "description": "Our team carefully reviews each application. We manually approve requests in limited batches to maintain quality and provide dedicated support to our Early Access partners. This isn't instant; it's a thoughtful process."
+      "title": "Personalized Consultation",
+      "description": "Our team will reach out for a confidential conversation to discuss your operational needs, answer your questions, and detail the Early Access benefits."
     },
     "step3": {
-      "title": "Personalized Onboarding",
-      "description": "Once approved, we'll reach out to schedule a personalized onboarding session. This ensures you get started smoothly and can leverage Pragati360 effectively from day one."
+      "title": "Controlled Onboarding",
+      "description": "Upon acceptance, we'll guide you through a structured onboarding process, ensuring smooth integration and initial setup tailored to your business."
     },
     "step4": {
-      "title": "Provide Feedback",
-      "description": "As an Early Access partner, your insights are invaluable. We'll encourage you to share your experiences and suggestions, helping us refine features and build a platform that truly serves local businesses."
+      "title": "Collaborate & Provide Feedback",
+      "description": "Actively use Pragati360's tools. Your invaluable feedback directly informs our development cycles, shaping features and refining the platform."
     },
-    "expectations": {
-      "noInstantActivation": "No Instant Activation: Access is not immediate. We prioritize thoughtful onboarding over speed to ensure a quality experience for everyone.",
-      "limitedAvailability": "Limited Availability: Early Access is offered to a select group of businesses.",
-      "directImpact": "Direct Impact: Your feedback directly influences product development.",
-      "dedicatedSupport": "Dedicated Support: Receive priority support as an Early Access partner."
-    }
+    "step5": {
+      "title": "Benefit from Foundational Partnership",
+      "description": "As an Early Access partner, you'll receive dedicated support, priority access to new features, and foundational pricing terms."
+    },
+    "ctaHeadline": "Ready to Begin Your Early Access Journey?",
+    "ctaBody": "Join a select group of local businesses influencing the development of a production-grade platform.",
+    "ctaButton": "Request Early Access Invitation"
   },
   "aiAssist": {
     "headline": "AI at Pragati360: Your Co-Pilot, Not the Pilot.",
@@ -232,40 +273,105 @@
       "body": "We believe in earning your trust, not locking you in. You have the freedom to cancel your Pragati360 service at any time, with no hidden fees or complicated processes. Your satisfaction and control are our priority."
     }
   },
-  "faq": {
-    "headline": "Your Questions, Answered.",
-    "subHeadline": "Clear and transparent answers to common questions about Pragati360 and our Early Access program.",
-    "body": "We believe in open communication. Here are answers to some questions you might have about Pragati360 and how we operate. If you have more, please don't hesitate to reach out.",
-    "questions": {
-      "whyEarlyAccess": {
-        "question": "Why is Pragati360 in Early Access?",
-        "answer": "We're committed to building a platform that truly serves local businesses. Early Access allows us to work closely with a select group of users, gather invaluable feedback, and fine-tune Pragati360 to ensure it meets your specific needs and delivers reliable results before a wider launch."
-      },
-      "productionReady": {
-        "question": "Is Pragati360 production-ready?",
-        "answer": "Yes, the core functionalities offered during Early Access are stable and designed for production use. We are continuously improving and adding features, and your feedback as an Early Access partner helps us prioritize these developments."
-      },
-      "missReviews": {
-        "question": "Can I miss important reviews or messages on my Google Business Profile?",
-        "answer": "No. Pragati360's alert system is designed to notify you of new reviews, messages, and other critical interactions on your Google Business Profile, ensuring you can respond promptly and never miss an important customer interaction."
-      },
-      "postFails": {
-        "question": "What happens if a post fails to publish on Instagram or Google Business Profile?",
-        "answer": "Pragati360 is built with transparency in mind. If a post encounters an issue and fails to publish on any platform, you will receive an immediate and clear notification, informing you of the specific problem so you can take corrective action. We ensure \"no silent partial success.\""
-      },
-      "mobileApp": {
-        "question": "When will a mobile app for Pragati360 be available?",
-        "answer": "Currently, Pragati360 is optimized for web use. We are actively gathering feedback from our Early Access partners to inform our future development roadmap, which includes considering dedicated mobile applications."
-      },
-      "cancelSubscription": {
-        "question": "Can I cancel my subscription later if I'm not satisfied?",
-        "answer": "Yes, absolutely. We believe in earning your business. You can cancel your Pragati360 service at any time without any long-term commitments or hidden fees. Your control and satisfaction are our priority."
-      },
-      "replaceMarketingTeam": {
-        "question": "Does Pragati360 replace my marketing team or strategy?",
-        "answer": "No. Pragati360 is a powerful tool to *support* your existing marketing efforts and operations. It streamlines the execution of your Google Business Profile and Instagram strategies, allowing your team to focus on higher-level tasks and creativity. It's about efficiency and control, not replacement."
-      }
-    }
+  "terms": {
+    "headline": "Terms & Conditions",
+    "section1": {
+      "title": "1. Agreement to Terms",
+      "body": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+    },
+    "section2": {
+      "title": "2. Use License",
+      "body": "Permission is granted to temporarily download one copy of the materials (information or software) on our website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:",
+      "features": [
+        "Modifying or copying the materials",
+        "Using the materials for any commercial purpose or for any public display",
+        "Attempting to decompile or reverse engineer any software contained on the website",
+        "Removing any copyright or other proprietary notations from the materials",
+        "Transferring the materials to another person or \"mirroring\" the materials on any other server"
+      ]
+    },
+    "section3": {
+      "title": "3. Disclaimer",
+      "body": "The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+    },
+    "section4": {
+      "title": "4. Limitations",
+      "body": "In no event shall our company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if we or our authorized representative has been notified orally or in writing of the possibility of such damage."
+    },
+    "section5": {
+      "title": "5. Accuracy of Materials",
+      "body": "The materials appearing on our website could include technical, typographical, or photographic errors. We do not warrant that any of the materials on our website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice."
+    },
+    "section6": {
+      "title": "6. Links",
+      "body": "We have not reviewed all of the sites linked to our website and are not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by us of the site. Use of any such linked website is at the user's own risk."
+    },
+    "section7": {
+      "title": "7. Modifications",
+      "body": "We may revise these terms of service for our website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
+    },
+    "section8": {
+      "title": "8. Governing Law",
+      "body": "These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which we are located, and you irrevocably submit to the exclusive jurisdiction of the courts in that location."
+    },
+    "section9": {
+      "title": "9. Contact Information",
+      "body": "If you have any questions about these Terms & Conditions, please contact us:",
+      "legalTeam": "Legal Team",
+      "email": "Email: legal@company.com",
+      "address": "Address: 123 Main Street, San Francisco, CA 94105"
+    },
+    "lastUpdated": "Last updated: November 2025"
+  },
+  "terms": {
+    "headline": "Terms & Conditions",
+    "section1": {
+      "title": "1. Agreement to Terms",
+      "body": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+    },
+    "section2": {
+      "title": "2. Use License",
+      "body": "Permission is granted to temporarily download one copy of the materials (information or software) on our website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:",
+      "features": [
+        "Modifying or copying the materials",
+        "Using the materials for any commercial purpose or for any public display",
+        "Attempting to decompile or reverse engineer any software contained on the website",
+        "Removing any copyright or other proprietary notations from the materials",
+        "Transferring the materials to another person or \"mirroring\" the materials on any other server"
+      ]
+    },
+    "section3": {
+      "title": "3. Disclaimer",
+      "body": "The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+    },
+    "section4": {
+      "title": "4. Limitations",
+      "body": "In no event shall our company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if we or our authorized representative has been notified orally or in writing of the possibility of such damage."
+    },
+    "section5": {
+      "title": "5. Accuracy of Materials",
+      "body": "The materials appearing on our website could include technical, typographical, or photographic errors. We do not warrant that any of the materials on our website are accurate, complete, or current. We may make changes to the materials contained on our website at any time without notice."
+    },
+    "section6": {
+      "title": "6. Links",
+      "body": "We have not reviewed all of the sites linked to our website and are not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by us of the site. Use of any such linked website is at the user's own risk."
+    },
+    "section7": {
+      "title": "7. Modifications",
+      "body": "We may revise these terms of service for our website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
+    },
+    "section8": {
+      "title": "8. Governing Law",
+      "body": "These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which we are located, and you irrevocably submit to the exclusive jurisdiction of the courts in that location."
+    },
+    "section9": {
+      "title": "9. Contact Information",
+      "body": "If you have any questions about these Terms & Conditions, please contact us:",
+      "legalTeam": "Legal Team",
+      "email": "Email: legal@company.com",
+      "address": "Address: 123 Main Street, San Francisco, CA 94105"
+    },
+    "lastUpdated": "Last updated: November 2025"
   },
   "aboutUs": {
     "headline": "Pragati360: Built for Local Business Owners, By Local Business Owners.",
@@ -281,23 +387,24 @@
     },
     "whatAvoids": {
       "title": "What it Intentionally Avoids: No Hype, Just Results",
-      "aiAutomation": "AI Automation without Approval: We will never act autonomously. All AI is assistive, requiring your final say.",
-      "growthHackTactics": "Growth-Hack Tactics: Sustainable growth comes from consistent effort and authentic engagement, not shortcuts.",
-      "overPromising": "Over-promising and Under-delivering: Our features are built for reliability and clarity, delivering on what we promise.",
-      "complexIntelligence": "Complex Marketing Intelligence: Our focus is on clear visibility and actionable control, not overwhelming data."
+      "aiAutomation": "<strong>AI Automation without Approval:</strong> We will never act autonomously. All AI is assistive, requiring your final say.",
+      "growthHackTactics": "<strong>Growth-Hack Tactics:</strong> Sustainable growth comes from consistent effort and authentic engagement, not shortcuts.",
+      "overPromising": "<strong>Over-promising and Under-delivering:</strong> Our features are built for reliability and clarity, delivering on what we promise.",
+      "complexIntelligence": "<strong>Complex Marketing Intelligence:</strong> Our focus is on clear visibility and actionable control, not overwhelming data."
     }
   },
   "contact": {
     "headline": "Connect with Pragati360",
     "subHeadline": "Whether you have questions about partnerships or need support, we're here to help.",
     "body": "We value clear communication and are ready to assist you. Please choose the appropriate contact method below.",
-    "salesPartnerships": {
-      "title": "Sales & Partnerships",
-      "body": "Interested in a strategic partnership or have questions about how Pragati360 can specifically benefit a larger network of local businesses? Our team is available to discuss collaboration opportunities.",
-      "email": "partnerships@pragati360.com",
-      "phone": "+91-987-654-3210 (Mon-Fri, 9 AM - 5 PM IST)"
-    },
-    "productAccess": {
+          "salesPartnerships": {
+            "title": "Sales & Partnerships",
+            "body": "Interested in a strategic partnership or have questions about how Pragati360 can specifically benefit a larger network of local businesses? Our team is available to discuss collaboration opportunities.",
+            "emailLabel": "Email:",
+            "email": "partnerships@pragati360.com",
+            "phoneLabel": "Phone:",
+            "phone": "+91-987-654-3210 (Mon-Fri, 9 AM - 5 PM IST)"
+          },    "productAccess": {
       "title": "Product Access & Early Access Inquiries",
       "body": "For all inquiries related to gaining access to Pragati360, including questions about our features or the Early Access program, please utilize our dedicated Early Access request process. This ensures your request is routed efficiently and we can provide you with the most relevant information.",
       "redirect": "Please use the \"Get Early Access\" button to submit your interest."
@@ -331,7 +438,8 @@
         "both": "Both GBP & Instagram"
       },
       "whatsappNumber": {
-        "label": "WhatsApp Number (Optional)",
+        "label": "WhatsApp Number",
+        "optional": "(Optional)",
         "helperText": "Provide a WhatsApp number if you'd like to receive important updates or direct support communications via WhatsApp."
       },
       "submissionSuccess": {
