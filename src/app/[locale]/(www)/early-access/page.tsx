@@ -1,145 +1,100 @@
 import { generateMetadata as generateSeoMetadata } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
-import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+import FormClient from '@/components/early-access/FormClient'
 
 export async function generateMetadata() {
-  const t = await getTranslations('forms.earlyAccess');
+  const t = await getTranslations('earlyAccess');
   return generateSeoMetadata({
     title: t('title'),
     description: t('subHeadline'),
   });
 }
 
-export default function EarlyAccessPage() {
-  const t = useTranslations('forms.earlyAccess');
-  const tButton = useTranslations('buttons');
+export default async function EarlyAccessPage({ params }: { params: { locale: string } }) {
+  const t = await getTranslations('earlyAccess');
+  const locale = params?.locale === 'hi' ? 'hi' : 'en'
+
+  const strings = {
+    'form.businessName': t('form.businessName'),
+    'form.yourName': t('form.yourName'),
+    'form.email': t('form.email'),
+    'form.phone': t('form.phone'),
+    'form.numLocations.label': t('form.numLocations.label'),
+    'form.numLocations.option1': t('form.numLocations.option1'),
+    'form.numLocations.option2': t('form.numLocations.option2'),
+    'form.numLocations.option3': t('form.numLocations.option3'),
+    'form.numLocations.option4': t('form.numLocations.option4'),
+    'form.currentManagement': t('form.currentManagement'),
+    'form.whyInterested': t('form.whyInterested'),
+    'form.submitButton': t('form.submitButton'),
+    'form.usesGBP': t('form.usesGBP') ?? 'I confirm we manage our Google Business Profile (required)',
+    'form.clientValidation': t('form.clientValidation') ?? '',
+    'form.success': t('form.success') ?? '',
+    'form.submitting': t('form.submitting') ?? '',
+  }
 
   return (
-    <section className="w-full py-16 sm:py-24 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-foreground">
-          {t('title')}
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
+      {/* Hero */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          {t('headline')}
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground">
           {t('subHeadline')}
         </p>
+      </section>
 
-        <div className="mt-12 max-w-2xl mx-auto text-left p-8 border border-border rounded shadow-lg">
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="business-name" className="block text-sm font-medium text-foreground">
-                {t('businessName.label')} <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="business-name"
-                name="business-name"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
-                placeholder={t('businessName.helperText')}
-              />
-            </div>
+      {/* What to Expect */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('whatToExpect.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3', 'point4'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">{t(`whatToExpect.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-            <div>
-              <label htmlFor="business-email" className="block text-sm font-medium text-foreground">
-                {t('businessEmail.label')} <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="business-email"
-                name="business-email"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
-                placeholder={t('businessEmail.helperText')}
-              />
-            </div>
+      {/* Who Should Apply */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('whoShouldApply.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3', 'point4'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span className="text-muted-foreground">{t(`whoShouldApply.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-            <div>
-              <label htmlFor="num-outlets" className="block text-sm font-medium text-foreground">
-                {t('numOutlets.label')} <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="num-outlets"
-                name="num-outlets"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
-              >
-                <option value="">{t('numOutlets.helperText')}</option>
-                <option value="1">{t('numOutlets.option1')}</option>
-                <option value="2-5">{t('numOutlets.option2')}</option>
-                <option value="6-10">{t('numOutlets.option3')}</option>
-                <option value="10+">{t('numOutlets.option4')}</option>
-              </select>
-            </div>
+      {/* Form */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8">{t('form.headline')}</h2>
+        {/* Client form handles JSON POST to /api/early-access */}
+        {/* Passing a small map of strings so form stays translated while being a client component */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        {/* Client component */}
+        {/* @ts-ignore */}
+        <FormClient language={locale} strings={strings} />
+      </section>
 
-            <div>
-              <label className="block text-sm font-medium text-foreground">
-                {t('platformsUsed.label')} <span className="text-red-500">*</span>
-              </label>
-              <div className="mt-2 space-y-2">
-                <div className="flex items-center">
-                  <input
-                    id="platform-gbp"
-                    name="platforms"
-                    type="checkbox"
-                    value="GBP"
-                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
-                  />
-                  <label htmlFor="platform-gbp" className="ml-3 block text-sm text-muted-foreground">
-                    {t('platformsUsed.gbp')}
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    id="platform-instagram"
-                    name="platforms"
-                    type="checkbox"
-                    value="Instagram"
-                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
-                  />
-                  <label htmlFor="platform-instagram" className="ml-3 block text-sm text-muted-foreground">
-                    {t('platformsUsed.instagram')}
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    id="platform-both"
-                    name="platforms"
-                    type="checkbox"
-                    value="Both"
-                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
-                  />
-                  <label htmlFor="platform-both" className="ml-3 block text-sm text-muted-foreground">
-                    {t('platformsUsed.both')}
-                  </label>
-                </div>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{t('platformsUsed.helperText')}</p>
-            </div>
-
-            <div>
-              <label htmlFor="whatsapp-number" className="block text-sm font-medium text-foreground">
-                {t('whatsappNumber.label')} <span className="text-muted-foreground">{t('whatsappNumber.optional')}</span>
-              </label>
-              <input
-                type="tel"
-                id="whatsapp-number"
-                name="whatsapp-number"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-input"
-                placeholder={t('whatsappNumber.helperText')}
-              />
-            </div>
-
-            <div className="text-center">
-              <Button type="submit" size="lg" className="px-8 py-4 rounded shadow-lg">
-                {tButton('submitRequest')}
-              </Button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+      {/* After You Apply */}
+      <section className="mb-16 bg-secondary p-8 rounded-lg">
+        <h2 className="text-3xl font-bold mb-6">{t('afterYouApply.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">→</span>
+              <span className="text-muted-foreground">{t(`afterYouApply.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 }

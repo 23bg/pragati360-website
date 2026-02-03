@@ -24,17 +24,12 @@ export function HeroSection() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Button size="lg" asChild className="px-8 py-6 rounded">
-                <Link href="/early-access">{tButton('getEarlyAccess')}</Link>
+                <Link href="/early-access">{t('primaryCta')}</Link>
               </Button>
 
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="px-8 py-6 rounded"
-              >
-                <Link href="/how-it-works">{tButton('seeHowItWorks')}</Link>
-              </Button>
+              <p className="text-sm text-muted-foreground">
+                {t('secondaryCta')}
+              </p>
             </div>
           </div>
         </div>

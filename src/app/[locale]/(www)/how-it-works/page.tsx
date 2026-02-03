@@ -1,99 +1,88 @@
 import { generateMetadata as generateSeoMetadata } from "@/lib/seo";
-// import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants"; // No longer needed
 import { Button } from "@/components/ui/button";
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
-
 export async function generateMetadata() {
-  const t = await getTranslations('howEarlyAccessWorks');
+  const t = await getTranslations('howItWorks');
   return generateSeoMetadata({
-    title: t('headline'),
+    title: t('title'),
     description: t('subHeadline'),
   });
 }
 
-// The steps array can be moved inside the component if it needs to be dynamic,
-// or translated directly in the JSX as shown below.
-// For now, let's keep it here and translate within the JSX.
-
-export default function HowItWorksPage() {
-  const t = useTranslations('howEarlyAccessWorks');
-  const tButton = useTranslations('buttons');
-  const steps = [
-    {
-      titleKey: "step1.title",
-      descriptionKey: "step1.description",
-    },
-    {
-      titleKey: "step2.title",
-      descriptionKey: "step2.description",
-    },
-    {
-      titleKey: "step3.title",
-      descriptionKey: "step3.description",
-    },
-    {
-      titleKey: "step4.title",
-      descriptionKey: "step4.description",
-    },
-    {
-      titleKey: "step5.title",
-      descriptionKey: "step5.description",
-    },
-  ];
-
+export default async function HowItWorksPage() {
+  const t = await getTranslations('howItWorks');
 
   return (
-    <section className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
+      {/* Hero */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           {t('headline')}
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground">
           {t('subHeadline')}
         </p>
+      </section>
 
-        <div className="mt-16 relative">
-          {/* Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border -z-0"></div>
+      {/* Overview */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('overview.headline')}</h2>
+        <p className="text-lg text-muted-foreground">{t('overview.body')}</p>
+      </section>
 
-          {steps.map((step, index) => (
-            <div
-              key={step.titleKey}
-              className={`relative flex flex-col md:flex-row items-center justify-between py-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-            >
-              <div className="md:w-5/12 text-center md:text-left">
-                <h2 className="text-2xl font-bold text-foreground">{t(step.titleKey)}</h2>
-                <p className="mt-3 text-base text-muted-foreground">
-                  {t(step.descriptionKey)}
-                </p>
+      {/* Step-by-Step */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8">{t('steps.headline')}</h2>
+        <div className="space-y-8">
+          {[1, 2, 3, 4].map((num) => (
+            <div key={num} className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                {num}
               </div>
-              <div className="z-10 my-6 md:my-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground border-4 border-background">
-                {/* <Star className="h-6 w-6" /> */} {/* Using Star as temporary icon */}
-                {index + 1}
-              </div>
-              <div className="md:w-5/12">
-                {/* Empty div for spacing on the other side */}
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t(`steps.step${num}.title`)}</h3>
+                <p className="text-muted-foreground">{t(`steps.step${num}.description`)}</p>
               </div>
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {t('ctaHeadline')}
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-            {t('ctaBody')}
-          </p>
-          <Button size="lg" asChild className="mt-8 text-base px-8 py-6 rounded shadow-lg">
-            <Link href="/early-access">{t('ctaButton')}</Link>
-          </Button>
-        </div>
-      </div>
-    </section>
+      {/* What's Included */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('whatsIncluded.headline')}</h2>
+        <ul className="space-y-3">
+          {['feature1', 'feature2', 'feature3', 'feature4', 'feature5'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span className="text-muted-foreground">{t(`whatsIncluded.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* What's NOT Included Yet */}
+      <section className="mb-16 bg-secondary p-8 rounded-lg">
+        <h2 className="text-3xl font-bold mb-6">{t('whatsNotIncluded.headline')}</h2>
+        <ul className="space-y-3 mb-4">
+          {['feature1', 'feature2', 'feature3', 'feature4'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-muted-foreground mt-1">→</span>
+              <span className="text-muted-foreground">{t(`whatsNotIncluded.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="text-sm italic text-muted-foreground">{t('whatsNotIncluded.message')}</p>
+      </section>
+
+      {/* CTA */}
+      <section className="text-center pt-8 border-t">
+        <Button asChild size="lg">
+          <Link href="/early-access">{t('cta')}</Link>
+        </Button>
+      </section>
+    </div>
   );
 }

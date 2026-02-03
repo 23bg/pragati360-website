@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-const SUPPORTED_LOCALES = ['en', 'hi', 'mr', 'ta', 'bn', 'gu', 'te'] as const;
+const SUPPORTED_LOCALES = ['en', 'hi'] as const;
 
 export function generateStaticParams() {
     return SUPPORTED_LOCALES.map((locale) => ({ locale }));
@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
     children,
-    params,
+    params
 }: {
     children: React.ReactNode;
     params: Promise<{ locale: string }>;

@@ -1,19 +1,30 @@
 "use client"
 
 import * as React from "react"
+import { useId } from 'react'
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
-  return <SheetPrimitive.Root data-slot="sheet" {...props} />
+const SheetIdContext = React.createContext<string | null>(null)
+
+function Sheet({ children, ...props }: React.PropsWithChildren<React.ComponentProps<typeof SheetPrimitive.Root>>) {
+  const id = useId()
+  return (
+    <SheetPrimitive.Root data-slot="sheet" {...props}>
+      <SheetIdContext.Provider value={id}>{children}</SheetIdContext.Provider>
+    </SheetPrimitive.Root>
+  )
 }
 
 function SheetTrigger({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Trigger>) {
-  return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
+  const ctxId = React.useContext(SheetIdContext)
+  // deterministic id shared with SheetContent
+  const contentId = ctxId ? `sheet-content-${ctxId}` : undefined
+  return <SheetPrimitive.Trigger data-slot="sheet-trigger" aria-controls={contentId} {...props} />
 }
 
 function SheetClose({
@@ -54,10 +65,13 @@ function SheetContent({
   side?: "top" | "right" | "bottom" | "left"
   showCloseButton?: boolean
 }) {
+  const ctxId = React.useContext(SheetIdContext)
+  const id = ctxId ? `sheet-content-${ctxId}` : undefined
   return (
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
+        id={id}
         data-slot="sheet-content"
         className={cn(
           "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",

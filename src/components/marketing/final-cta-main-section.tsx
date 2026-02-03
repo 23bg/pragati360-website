@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from 'next-intl';
 
 export function FinalCTAMainSection() {
-  const t = useTranslations('home.earlyAccessExplanation');
-  const tButton = useTranslations('buttons');
+  const t = useTranslations('home.finalCta');
   return (
     <section className="py-20 sm:py-28 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 text-center">
@@ -12,14 +11,11 @@ export function FinalCTAMainSection() {
           {t('headline')}
         </h2>
         <p className="mt-6 text-lg leading-8 max-w-3xl mx-auto opacity-90">
-          {t('body')}
+          {t('subText')}
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-10">
           <Button size="lg" asChild className="text-base px-8 py-6 rounded shadow-lg bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-            <Link href="/early-access">{tButton('getEarlyAccess')}</Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild className="text-base px-8 py-6 rounded shadow-lg border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-            <Link href="/how-it-works">{tButton('seeHowItWorks')}</Link>
+            <Link href="/early-access">{t('cta')}</Link>
           </Button>
         </div>
       </div>

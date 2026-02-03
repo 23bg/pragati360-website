@@ -1,64 +1,48 @@
 import { generateMetadata as generateSeoMetadata } from "@/lib/seo";
-import { Button } from "@/components/ui/button";
-import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   const t = await getTranslations('contact');
   return generateSeoMetadata({
-    title: t('headline'),
+    title: t('title'),
     description: t('subHeadline'),
   });
 }
 
-export default function ContactPage() {
-  const t = useTranslations('contact');
-  const tButton = useTranslations('buttons');
+export default async function ContactPage() {
+  const t = await getTranslations('contact');
 
   return (
-    <section className="py-16 sm:py-24 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
+      {/* Hero */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           {t('headline')}
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground">
           {t('subHeadline')}
         </p>
+      </section>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-          {/* Sales & Partnerships */}
-          <div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              {t('salesPartnerships.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              {t('salesPartnerships.body')}
-            </p>
-            <p className="text-lg text-muted-foreground">
-              <strong>{t('salesPartnerships.emailLabel')}</strong> <a href="mailto:partnerships@pragati360.com" className="hover:text-primary transition-colors">partnerships@pragati360.com</a>
-            </p>
-            <p className="text-lg text-muted-foreground">
-              <strong>{t('salesPartnerships.phoneLabel')}</strong> {t('salesPartnerships.phone')}
-            </p>
-          </div>
-
-          {/* Product Access & Early Access Inquiries */}
-          <div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              {t('productAccess.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              {t('productAccess.body')}
-            </p>
-            <div className="mt-8 text-center md:text-left">
-              <Button size="lg" asChild className="px-8 py-4 rounded shadow-lg">
-                <Link href="/early-access">{tButton('getEarlyAccess')}</Link>
-              </Button>
-            </div>
-          </div>
+      {/* Contact Options */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('contactOptions.headline')}</h2>
+        <div className="space-y-4 text-lg">
+          <p className="text-muted-foreground">{t('contactOptions.email')}</p>
+          <p className="text-muted-foreground">{t('contactOptions.earlyAccess')}</p>
+          <p className="text-muted-foreground">{t('contactOptions.support')}</p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Response Time */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('responseTime.headline')}</h2>
+        <ul className="space-y-3">
+          <li className="text-muted-foreground">• {t('responseTime.earlyAccessRequests')}</li>
+          <li className="text-muted-foreground">• {t('responseTime.supportInquiries')}</li>
+          <li className="text-muted-foreground">• {t('responseTime.generalQuestions')}</li>
+        </ul>
+      </section>
+    </div>
   );
 }

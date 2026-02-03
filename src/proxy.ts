@@ -6,6 +6,11 @@ const intlMiddleware = createMiddleware({
     defaultLocale: 'en',
 })
 
+// export default function middleware(req: NextRequest) {
+//     return intlMiddleware(req);
+// }
+
+
 export default function proxy(req: NextRequest) {
     const pathname = req.nextUrl.pathname
 

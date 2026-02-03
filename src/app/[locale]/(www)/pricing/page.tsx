@@ -1,158 +1,110 @@
 import { generateMetadata as generateSeoMetadata } from "@/lib/seo";
 import { Link } from '@/i18n/navigation';
 import { Button } from "@/components/ui/button";
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata() {
   const t = await getTranslations('pricing');
   return generateSeoMetadata({
-    title: t('headline'),
+    title: t('title'),
     description: t('subHeadline'),
   });
 }
 
-const PRICING_PLANS_KEYS = [
-  {
-    nameKey: "plans.starter.name",
-    price: "₹199",
-    descriptionKey: "plans.starter.description",
-    featuresKeys: [
-      "plans.starter.features.0",
-      "plans.starter.features.1",
-      "plans.starter.features.2",
-    ],
-  },
-  {
-    nameKey: "plans.growth.name",
-    price: "₹399",
-    descriptionKey: "plans.growth.description",
-    featuresKeys: [
-      "plans.growth.features.0",
-      "plans.growth.features.1",
-      "plans.growth.features.2",
-    ],
-    highlighted: true,
-  },
-  {
-    nameKey: "plans.pro.name",
-    price: "₹699",
-    descriptionKey: "plans.pro.description",
-    featuresKeys: [
-      "plans.pro.features.0",
-      "plans.pro.features.1",
-      "plans.pro.features.2",
-    ],
-  },
-  {
-    nameKey: "plans.scale.name",
-    price: "₹999",
-    descriptionKey: "plans.scale.description",
-    featuresKeys: [
-      "plans.scale.features.0",
-      "plans.scale.features.1",
-      "plans.scale.features.2",
-    ],
-  },
-];
+export default async function PricingPage() {
+  const t = await getTranslations('pricing');
 
-export default function PricingPage() {
-  const t = useTranslations('pricing');
-  const tButton = useTranslations('buttons');
   return (
-    <section className="w-full py-16 sm:py-24 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        {/* Header */}
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
+      {/* Hero */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           {t('headline')}
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground">
           {t('subHeadline')}
         </p>
+      </section>
 
-        {/* Pricing Cards */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PRICING_PLANS_KEYS.map((plan) => (
-            <div
-              key={plan.nameKey}
-              className={[
-                "relative flex flex-col rounded border bg-card p-6 shadow-sm transition",
-                plan.highlighted
-                  ? "border-primary shadow-lg scale-[1.02]"
-                  : "border-border",
-              ].join(" ")}
-            >
-              {plan.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                  {t('mostPopular')}
-                </span>
-              )}
+      {/* Pricing Plan */}
+      <section className="mb-16">
+        <div className="max-w-md mx-auto border-2 border-primary rounded-lg p-8 shadow-lg">
+          <h2 className="text-2xl font-bold text-center mb-2">{t('plan.name')}</h2>
+          <div className="text-center mb-6">
+            <p className="text-4xl font-bold text-primary">{t('plan.price')}</p>
+          </div>
+          <ul className="space-y-3 mb-8">
+            {['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'].map((key) => (
+              <li key={key} className="flex items-start gap-2">
+                <span className="text-primary mt-1">✓</span>
+                <span>{t(`plan.${key}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <Button asChild className="w-full" size="lg">
+            <Link href="/early-access">{t('plan.cta')}</Link>
+          </Button>
+        </div>
+      </section>
 
-              <h3 className="font-heading text-xl font-semibold text-foreground">
-                {t(plan.nameKey)}
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t(plan.descriptionKey)}
-              </p>
+      {/* How Billing Works */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('howBillingWorks.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3', 'point4'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">{t(`howBillingWorks.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-              <div className="mt-6 text-4xl font-bold text-foreground">
-                {plan.price}
-                <span className="text-base font-normal text-muted-foreground">
-                  /month
-                </span>
-              </div>
+      {/* Multi-Location Pricing */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('multiLocation.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span className="text-muted-foreground">{t(`multiLocation.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                {plan.featuresKeys.map((featureKey) => (
-                  <li key={featureKey}>• {t(featureKey)}</li>
-                ))}
-              </ul>
+      {/* What's Included */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6">{t('whatsIncluded.headline')}</h2>
+        <ul className="space-y-3">
+          {['point1', 'point2', 'point3', 'point4'].map((key) => (
+            <li key={key} className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span className="text-muted-foreground">{t(`whatsIncluded.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-              <Button
-                asChild
-                size="lg"
-                className="mt-auto rounded"
-                variant={plan.highlighted ? "default" : "outline"}
-              >
-                <Link href="/early-access">{tButton('getEarlyAccess')}</Link>
-              </Button>
+      {/* FAQ */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-8">{t('faq.headline')}</h2>
+        <div className="space-y-6">
+          {['q1', 'q2', 'q3', 'q4'].map((key) => (
+            <div key={key}>
+              <h3 className="text-xl font-semibold mb-2">{t(`faq.${key}.question`)}</h3>
+              <p className="text-muted-foreground">{t(`faq.${key}.answer`)}</p>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* Philosophy */}
-        <div className="mt-20 max-w-3xl mx-auto space-y-6 text-left">
-          <h2 className="text-2xl font-bold text-foreground">
-            {t('philosophy.headline')}
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            {t('philosophy.body1')}
-          </p>
-          <p className="text-lg text-muted-foreground">
-            {t('philosophy.body2')}
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 text-center border-t border-border pt-10">
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            {t('ctaHeadline')}
-          </h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" asChild className="px-8 py-4 rounded">
-              <Link href="/early-access">{tButton('getEarlyAccess')}</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="px-8 py-4 rounded"
-            >
-              <Link href="/how-it-works">{tButton('seeHowItWorks')}</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
+      {/* CTA */}
+      <section className="text-center pt-8 border-t">
+        <Button asChild size="lg">
+          <Link href="/early-access">{t('cta')}</Link>
+        </Button>
+      </section>
+    </div>
   );
 }

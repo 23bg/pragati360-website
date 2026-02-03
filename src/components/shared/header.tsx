@@ -167,10 +167,9 @@
 "use client";
 
 import Image from "next/image";
-import { Menu, Globe } from "lucide-react";
+import { Menu } from "lucide-react";
 
-import { Link, usePathname } from "@/i18n/navigation";
-import { useLocale } from 'next-intl';
+import { Link } from "@/i18n/navigation";
 
 import { HEADER_NAV_LINKS, SITE_NAME } from "@/lib/constants";
 
@@ -180,28 +179,14 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
+// Phase-1: Only English and Hindi
 const LANGUAGES = [
   { code: "en", label: "English" },
   { code: "hi", label: "हिंदी" },
-  { code: "mr", label: "मराठी" },
-  { code: "ta", label: "தமிழ்" },
-  { code: "bn", label: "বাংলা" },
-  { code: "gu", label: "ગુજરાતી" },
-  { code: "te", label: "తెలుగు" },
-  { code: "kn", label: "ಕನ್ನಡ" },
 ] as const;
 
 export function Header() {
-  const pathname = usePathname(); // locale-stripped pathname
-  const locale = useLocale();     // current active locale
-
   return (
     <header className="sticky top-0 z-50 w-full bg-zinc-900 text-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -236,38 +221,8 @@ export function Header() {
           </nav>
         </div>
 
-        {/* RIGHT: Actions */}
+        {/* RIGHT: CTA + Mobile Menu */}
         <div className="flex items-center gap-2">
-
-          {/* Desktop Language Switcher */}
-          <div className="hidden md:block">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white">
-                  <Globe className="h-5 w-5" />
-                  <span className="sr-only">Change language</span>
-                </Button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent align="end">
-                {LANGUAGES.map((lang) => (
-                  <DropdownMenuItem key={lang.code} asChild>
-                    <Link
-                      href={pathname}
-                      locale={lang.code}
-                      className={
-                        locale === lang.code
-                          ? "font-semibold text-white"
-                          : "text-muted-foreground"
-                      }
-                    >
-                      {lang.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
 
           {/* Desktop CTA */}
           <Button
@@ -275,7 +230,7 @@ export function Header() {
             size="sm"
             className="hidden md:inline-flex bg-white text-zinc-950 hover:bg-zinc-200"
           >
-            <Link href="/early-access">Get Started</Link>
+            <Link href="/early-access">Request Early Access</Link>
           </Button>
 
           {/* Mobile Menu */}
@@ -307,44 +262,13 @@ export function Header() {
 
                 <div className="flex-1" />
 
-                {/* Mobile Language Switcher */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start gap-2"
-                    >
-                      <Globe className="h-4 w-4" />
-                      Language
-                    </Button>
-                  </DropdownMenuTrigger>
-
-                  <DropdownMenuContent align="start">
-                    {LANGUAGES.map((lang) => (
-                      <DropdownMenuItem key={lang.code} asChild>
-                        <Link
-                          href={pathname}
-                          locale={lang.code}
-                          className={
-                            locale === lang.code
-                              ? "font-semibold"
-                              : "text-muted-foreground"
-                          }
-                        >
-                          {lang.label}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
                 {/* Mobile CTA */}
                 <Button
                   asChild
                   size="sm"
                   className="mt-4 bg-white text-zinc-950 hover:bg-zinc-200"
                 >
-                  <Link href="/early-access">Get Started</Link>
+                  <Link href="/early-access">Request Early Access</Link>
                 </Button>
               </SheetContent>
             </Sheet>
