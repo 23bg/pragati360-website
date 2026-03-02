@@ -1,10 +1,7 @@
 import { MongoClient } from 'mongodb';
+import { getRequiredEnv } from '@/shared/utils/env';
 
-if (!process.env.MONGODB_URI) {
-    throw new Error('Missing MONGODB_URI environment variable');
-}
-
-const uri = process.env.MONGODB_URI;
+const uri = getRequiredEnv('MONGODB_URI');
 const dbName = process.env.MONGODB_DB || 'pragati360';
 
 declare global {

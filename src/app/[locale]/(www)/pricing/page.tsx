@@ -13,9 +13,41 @@ export async function generateMetadata() {
 
 export default async function PricingPage() {
   const t = await getTranslations('pricing');
+  const plans = [
+    {
+      name: 'Starter',
+      subtitle: 'For single-outlet operators',
+      features: [
+        '1 outlet',
+        'Risk alerts',
+        'Basic 24h SLA tracking',
+      ],
+    },
+    {
+      name: 'Growth',
+      subtitle: 'For growing multi-outlet teams',
+      featured: true,
+      features: [
+        'Up to 5 outlets',
+        'Escalation automation',
+        'Rating drop detection',
+        'WhatsApp alerts',
+      ],
+    },
+    {
+      name: 'Scale',
+      subtitle: 'For high-accountability organizations',
+      features: [
+        'Unlimited outlets',
+        'Advanced risk tuning',
+        'Multi-role enforcement',
+        'Reporting export',
+      ],
+    },
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-4xl">
+    <div className="container mx-auto px-4 py-16 max-w-6xl">
       {/* Hero */}
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -28,22 +60,28 @@ export default async function PricingPage() {
 
       {/* Pricing Plan */}
       <section className="mb-16">
-        <div className="max-w-md mx-auto border-2 border-primary rounded-lg p-8 shadow-lg">
-          <h2 className="text-2xl font-bold text-center mb-2">{t('plan.name')}</h2>
-          <div className="text-center mb-6">
-            <p className="text-4xl font-bold text-primary">{t('plan.price')}</p>
-          </div>
-          <ul className="space-y-3 mb-8">
-            {['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'].map((key) => (
-              <li key={key} className="flex items-start gap-2">
-                <span className="text-primary mt-1">✓</span>
-                <span>{t(`plan.${key}`)}</span>
-              </li>
-            ))}
-          </ul>
-          <Button asChild className="w-full" size="lg">
-            <Link href="/early-access">{t('plan.cta')}</Link>
-          </Button>
+        <div className="grid gap-6 md:grid-cols-3">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`rounded-lg p-8 ${plan.featured ? 'border-2 border-primary shadow-lg' : 'border bg-card'}`}
+            >
+              <h2 className="text-2xl font-bold mb-2">{plan.name}</h2>
+              <p className="text-sm text-muted-foreground mb-4">{plan.subtitle}</p>
+              <p className="text-2xl font-semibold text-primary mb-6">Custom onboarding pricing</p>
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
+                    <span className="text-primary mt-1">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild className="w-full" size="lg" variant={plan.featured ? 'default' : 'outline'}>
+                <Link href="/early-access">{t('plan.cta')}</Link>
+              </Button>
+            </div>
+          ))}
         </div>
       </section>
 

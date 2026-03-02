@@ -14,8 +14,8 @@
   "home": {
     "title": "Home",
     "hero": {
-      "headline": "Manage Your Google Business Profile Without Guesswork",
-      "subHeadline": "Pragati360 helps local businesses publish posts, respond to reviews, and maintain accurate information on Google Business Profile—without silent failures or automation surprises.",
+      "headline": "Never Lose Control of Your Online Reputation Again",
+      "subHeadline": "Pragati360 is your Reputation Operating System: detect risk early, enforce response accountability, prevent avoidable complaints, and recover trust across every outlet.",
       "primaryCta": "Request Early Access",
       "secondaryCta": "Manual onboarding  Starting ₹199/month"
     },
@@ -51,9 +51,9 @@
       "cta": "Request Access"
     },
     "pricingPreview": {
-      "headline": "Pricing Preview",
-      "startingPrice": "Starting at ₹199/month",
-      "message": "Simple, predictable pricing for local businesses.",
+      "headline": "Reputation OS Plans",
+      "startingPrice": "Starter, Growth, Scale",
+      "message": "Plans are aligned to risk detection depth, escalation automation, and multi-outlet governance.",
       "cta": "View Pricing"
     },
     "finalCta": {
@@ -109,8 +109,8 @@
   },
   "pricing": {
     "title": "Pricing",
-    "headline": "Simple Pricing for Local Businesses",
-    "subHeadline": "No hidden fees. No per-post charges. Start at ₹199/month.",
+    "headline": "Pricing for Reputation Control",
+    "subHeadline": "Choose the plan that matches your risk governance and multi-outlet accountability needs.",
     "plan": {
       "name": "Early Access Plan",
       "price": "₹199/month per location",

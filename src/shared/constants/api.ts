@@ -1,0 +1,122 @@
+export const API = {
+    PRELAUNCH_SUBMIT: '/web/pre-launch',
+    AUTH: {
+        ADMIN_LOGIN: '/admin/login',
+        LOG_IN: '/auth/login',
+        LOG_OUT: '/auth/logout',
+        SIGN_UP: '/auth/signup',
+        VERIFY: '/auth/verify',
+        REFRESH_TOKEN: '/auth/refresh-token',
+        ME: '/auth/me',
+        ADMIN_PROFILE: '/admin/profile',
+    },
+    USERS: {
+        ALL: '/users',
+        GET: (id: string) => `/users/${id}`,
+        ME: '/users/me',
+        CREATE: '/users',
+        UPDATE: (id: string) => `/users/${id}`,
+        UPLOAD_PROFILE: '/users/upload-profile',
+    },
+    BUSINESSES: {
+        ALL: '/businesses',
+        GET: (id: string) => `/businesses/${id}`,
+        CREATE: '/businesses',
+        UPDATE: (id: string) => `/businesses/${id}`,
+        PUBLISH: (id: string) => `/businesses/${id}/publish`,
+        OUTLETS: {
+            ALL: (businessId: string) => `/businesses/${businessId}/outlets`,
+            GET: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}`,
+            CREATE: (businessId: string) => `/businesses/${businessId}/outlets`,
+            UPDATE: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}`,
+            DELETE: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}`,
+            MANAGERS: {
+                ASSIGN: (businessId: string, outletId: string, userId: string) => `/businesses/${businessId}/outlets/${outletId}/managers/${userId}`,
+                REMOVE: (businessId: string, outletId: string, userId: string) => `/businesses/${businessId}/outlets/${outletId}/managers/${userId}`,
+            },
+            POSTS: {
+                ALL: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/posts`,
+                GET: (businessId: string, outletId: string, postId: string) => `/businesses/${businessId}/outlets/${outletId}/posts/${postId}`,
+                CREATE: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/posts`,
+                UPDATE: (businessId: string, outletId: string, postId: string) => `/businesses/${businessId}/outlets/${outletId}/posts/${postId}`,
+                DELETE: (businessId: string, outletId: string, postId: string) => `/businesses/${businessId}/outlets/${outletId}/posts/${postId}`,
+            },
+            REVIEWS: {
+                ALL: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/reviews`,
+                GET: (businessId: string, outletId: string, reviewId: string) => `/businesses/${businessId}/outlets/${outletId}/reviews/${reviewId}`,
+            },
+            GBP: {
+                CONNECT: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/gbp/connect`,
+                DISCONNECT: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/gbp/disconnect`,
+                STATUS: (businessId: string, outletId: string) => `/businesses/${businessId}/outlets/${outletId}/gbp/status`,
+            },
+            GBP_REVIEWS: {
+                REPLY: (businessId: string, outletId: string, reviewId: string) => `/businesses/${businessId}/outlets/${outletId}/gbp/reviews/${reviewId}/reply`,
+            },
+        },
+    },
+    PAYMENTS: {
+        ALL: '/payments',
+        GET: (id: string) => `/payments/${id}`,
+        CREATE: '/payments',
+        VERIFY: '/payments/verify',
+        STATUS: (orderId: string) => `/payments/status/${orderId}`,
+        REFUND: (id: string) => `/payments/${id}/refund`,
+    },
+    TICKETS: {
+        ALL: '/tickets',
+        GET: (id: string) => `/tickets/${id}`,
+        CREATE: '/tickets',
+        UPDATE: (id: string) => `/tickets/${id}`,
+        DELETE: (id: string) => `/tickets/${id}`,
+    },
+    GOOGLE: {
+        AUTH_URL: '/google/auth-url',
+        CALLBACK: '/google/callback',
+    },
+    PUBLIC: {
+        BUSINESSES: '/public/businesses',
+        BUSINESS: (slug: string) => `/public/business/${slug}`,
+        OUTLETS: (slug: string) => `/public/business/${slug}/outlets`,
+        OUTLET: (id: string) => `/public/outlet/${id}`,
+    },
+    ADMIN: {
+        BUSINESSES: '/admin/businesses',
+        BUSINESS_SUSPEND: (id: string) => `/admin/businesses/${id}/suspend`,
+        BUSINESS_REACTIVATE: (id: string) => `/admin/businesses/${id}/reactivate`,
+    },
+    // Deprecated endpoints (keeping for reference)
+    BUSINESS: {
+        GET: (id: string) => `businesses/${id}`,
+        GET_ALL: '/businesses/',
+        CREATE: '/businesses/',
+        UPDATE: (id: string) => `/businesses/${id}`,
+        DELETE: (id: string) => `/businesses/${id}`,
+    },
+    GOOGLE_BUSINESS: {
+        LOCATION: {
+            GET_ALL: `/google-business-locations/`,
+            GET: (locationId: string) => `/google-business-locations/${locationId}`,
+            BY_LOCATION: (locationId: string) => `/businesses/:businessId/outlets/:outletId/gbp/posts/location/${locationId}`,
+            UPDATE: (id: string) => `/google-business-locations/${id}`,
+            DELETE: (id: string) => `/google-business-locations/${id}`,
+        },
+        REVIEW: {
+            GET: (reviewId: string) => `/businesses/:businessId/outlets/:outletId/gbp/reviews/${reviewId}`,
+            BY_LOCATION: (locationId: string) => `/businesses/:businessId/outlets/:outletId/gbp/reviews/location/${locationId}`,
+            REPLY: (reviewId: string) => `/businesses/:businessId/outlets/:outletId/gbp/reviews/${reviewId}/reply`,
+            UPDATE_REPLY: (reviewId: string) => `/businesses/:businessId/outlets/:outletId/gbp/reviews/${reviewId}/reply`,
+        },
+        POST: {
+            BY_LOCATION: (locationId: string) => `/businesses/:businessId/outlets/:outletId/gbp/posts/location/${locationId}`,
+            CREATE: `/businesses/:businessId/outlets/:outletId/gbp/posts`,
+            UPDATE: (id: string) => `/businesses/:businessId/outlets/:outletId/gbp/posts/${id}`,
+            DELETE: (id: string) => `/businesses/:businessId/outlets/:outletId/gbp/posts/${id}`,
+        },
+    },
+    SUBSCRIPTION: {
+        ALL: '/payments/me',
+        GET: (id: string) => `/payments/${id}`,
+        CREATE: '/payments',
+    },
+}

@@ -1,22 +1,19 @@
 import type { MetadataRoute } from 'next'
 
-// Pragati360 — Phase-1 Early Access (GBP Only)
-// Updated: 2026-02-03
-
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: [
             {
                 userAgent: '*',
                 allow: [
-                    '/en$',
-                    '/en/how-it-works',
-                    '/en/pricing',
-                    '/en/early-access',
-                    '/en/trust',
-                    '/en/contact',
-                    '/en/privacy',
-                    '/en/terms',
+                    '/',
+                    '/how-it-works',
+                    '/pricing',
+                    '/early-access',
+                    '/trust',
+                    '/contact',
+                    '/privacy',
+                    '/terms',
                     '/*.css',
                     '/*.js',
                     '/*.png',
@@ -24,18 +21,11 @@ export default function robots(): MetadataRoute.Robots {
                     '/*.webp',
                 ],
                 disallow: [
-                    '/en/features/',
-                    '/en/product-overview',
-                    '/en/about',
-                    '/en/security',
-                    '/en/business/',
-                    '/hi/',
-                    '/bn/',
-                    '/gu/',
-                    '/kn/',
-                    '/mr/',
-                    '/ta/',
-                    '/te/',
+                    '/features/',
+                    '/product-overview',
+                    '/about',
+                    '/security',
+                    '/business/',
                     '/_next/',
                     '/api/',
                 ],

@@ -3,6 +3,8 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { ReduxProvider } from "@/shared/providers/ReduxProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -65,8 +67,10 @@ export default function RootLayout({
       <head />
       <body className={`min-h-screen bg-background font-sans antialiased ${dmSans.variable}`}>
         <ThemeProvider>
-
-          <main>{children}</main>
+          <ReduxProvider>
+            <main>{children}</main>
+            <Toaster duration={3000} position="bottom-right" />
+          </ReduxProvider>
         </ThemeProvider>
 
       </body>

@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-
-const SUPPORTED_LOCALES = ['en', 'hi'] as const;
+import { routing } from '@/i18n/config';
 
 export function generateStaticParams() {
-    return SUPPORTED_LOCALES.map((locale) => ({ locale }));
+    return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({
@@ -18,7 +16,7 @@ export default async function LocaleLayout({
 }) {
     const { locale } = await params;
 
-    if (!SUPPORTED_LOCALES.includes(locale as any)) {
+    if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
         notFound();
     }
 

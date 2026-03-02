@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 
 export function PricingPreviewSection() {
   const t = useTranslations('home.pricingPreview');
-  const tButton = useTranslations('buttons');
   return (
     <section className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">

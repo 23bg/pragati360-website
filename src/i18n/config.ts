@@ -1,4 +1,9 @@
-export const locales = ["en", "hi", "mr", "ta", "bn", "gu", "te", "kn"] as const;
-export type Locale = (typeof locales)[number];
+import { defineRouting } from "next-intl/routing";
 
-export const defaultLocale: Locale = "en";
+export const routing = defineRouting({
+	locales: ["en"],
+	defaultLocale: "en",
+	localePrefix: "never",
+});
+
+export type AppLocale = (typeof routing.locales)[number];
