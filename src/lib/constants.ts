@@ -10,4 +10,4 @@ export const HEADER_NAV_LINKS = [
 export const SITE_NAME = "Pragati360";
 
 export const SITE_DESCRIPTION = "Control your Google reviews and enquiries from one place with multi-outlet alerts, lead tracking, and a simple website for Indian SMBs.";
-export const SITE_URL = "https://www.pragati360.com";
+export const SITE_URL = "https://pragati360.com";

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://www.pragati360.com'
+const BASE_URL = 'https://pragati360.com'
 const BUILD_TIME = new Date('2026-02-03')
 
 const phase1Paths = [

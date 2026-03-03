@@ -31,6 +31,6 @@ export default function robots(): MetadataRoute.Robots {
                 ],
             },
         ],
-        sitemap: 'https://www.pragati360.com/sitemap.xml',
+        sitemap: 'https://pragati360.com/sitemap.xml',
     }
 }
