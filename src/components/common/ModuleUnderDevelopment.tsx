@@ -14,7 +14,7 @@ export default function ModuleUnderDevelopment() {
                 </p>
 
                 {/* <div className="flex justify-center">
-                    <button className="px-6 py-2 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-sm">
+                    <button className="px-6 py-2 rounded-xl border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300 transition-all shadow-sm">
                         Go Back
                     </button>
                 </div> */}

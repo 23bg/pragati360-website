@@ -52,8 +52,8 @@ export default function SchedulingPage() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="p-6 rounded border border-border bg-card hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 mb-4 bg-blue-600 rounded flex items-center justify-center">
-              <Icon name="calendar" className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 mb-4 bg-primary rounded flex items-center justify-center">
+              <Icon name="calendar" className="w-6 h-6 text-primary-foreground" />
             </div>
             <h3 className="text-h4 font-semibold mb-2">Set Post Times</h3>
             <p className="text-muted-foreground">
@@ -62,8 +62,8 @@ export default function SchedulingPage() {
           </div>
 
           <div className="p-6 rounded border border-border bg-card hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 mb-4 bg-blue-600 rounded flex items-center justify-center">
-              <Icon name="edit" className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 mb-4 bg-primary rounded flex items-center justify-center">
+              <Icon name="edit" className="w-6 h-6 text-primary-foreground" />
             </div>
             <h3 className="text-h4 font-semibold mb-2">Edit & Reschedule</h3>
             <p className="text-muted-foreground">
@@ -72,8 +72,8 @@ export default function SchedulingPage() {
           </div>
 
           <div className="p-6 rounded border border-border bg-card hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 mb-4 bg-blue-600 rounded flex items-center justify-center">
-              <Icon name="notification" className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 mb-4 bg-primary rounded flex items-center justify-center">
+              <Icon name="notification" className="w-6 h-6 text-primary-foreground" />
             </div>
             <h3 className="text-h4 font-semibold mb-2">Get Notifications</h3>
             <p className="text-muted-foreground">
@@ -82,26 +82,26 @@ export default function SchedulingPage() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-blue-50 to-zinc-50 p-8 rounded-2xl border border-blue-100">
+        <div className="bg-linear-to-br from-secondary to-background p-8 rounded-2xl border border-border">
           <h2 className="text-h3 font-bold mb-4">How It Works</h2>
           <ol className="space-y-4 text-muted-foreground">
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+              <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">1</span>
               <span>Prepare or refine your content within the secure dashboard.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+              <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">2</span>
               <span>Designate target platforms and precise content deployment times.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+              <span className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">3</span>
               <span>Ensure reliable content deployment at predetermined intervals.</span>
             </li>
           </ol>
         </div>
 
         <div className="mt-12 text-center">
-          <Button size="lg" asChild className="px-8 py-4 rounded shadow-lg bg-blue-600 hover:bg-blue-700 text-white">
+          <Button size="lg" asChild className="px-8 py-4 rounded shadow-lg border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300">
             <a href="/early-access">Request Early Access</a>
           </Button>
         </div>

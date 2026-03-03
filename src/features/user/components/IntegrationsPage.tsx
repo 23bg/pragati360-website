@@ -93,7 +93,7 @@ export default function IntegrationPage() {
                     </div>
 
                     {!currentUser?.googleAccessToken ? (
-                        <Button className="bg-blue-600" onClick={connectGoogle}>
+                        <Button className="border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300" onClick={connectGoogle}>
                             Connect
                         </Button>
                     ) : (

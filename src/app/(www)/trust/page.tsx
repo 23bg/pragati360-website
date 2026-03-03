@@ -103,10 +103,10 @@ export default async function TrustPage() {
                     <p>{t('dataCompliance.dataStored')}</p>
                     <p>{t('dataCompliance.googleApiCompliance')}</p>
                     <p className="flex gap-4">
-                        <Link href="/privacy" className="hover:text-white transition-colors">
+                        <Link href="/privacy" className="hover:text-foreground transition-colors">
                             {t('dataCompliance.privacyPolicy')}
                         </Link>
-                        <Link href="/terms" className="hover:text-white transition-colors">
+                        <Link href="/terms" className="hover:text-foreground transition-colors">
                             {t('dataCompliance.termsOfService')}
                         </Link>
                     </p>

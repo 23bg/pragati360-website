@@ -60,7 +60,7 @@ export default function AlertsPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/early-access" className="inline-flex items-center justify-center rounded bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90">
+            <Link href="/early-access" className="inline-flex items-center justify-center rounded px-8 py-4 text-base font-medium shadow-lg transition-colors border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300">
               {tButton('getEarlyAccess')}
             </Link>
           </div>

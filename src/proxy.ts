@@ -1,9 +1,5 @@
-import createMiddleware from 'next-intl/middleware'
 import { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
-import { routing } from './i18n/config'
-
-const intlMiddleware = createMiddleware(routing)
 
 function decodeJwtPayload(token: string): Record<string, unknown> | null {
     try {
@@ -18,11 +14,6 @@ function decodeJwtPayload(token: string): Record<string, unknown> | null {
         return null
     }
 }
-
-// export default function middleware(req: NextRequest) {
-//     return intlMiddleware(req);
-// }
-
 
 export default function proxy(req: NextRequest) {
     const pathname = req.nextUrl.pathname
@@ -70,7 +61,7 @@ export default function proxy(req: NextRequest) {
         return
     }
 
-    return intlMiddleware(req)
+    return NextResponse.next()
 }
 
 export const config = {

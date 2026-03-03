@@ -222,7 +222,14 @@ export function Header() {
           <Button
             asChild
             size="sm"
-            className="hidden md:inline-flex bg-white text-zinc-950 hover:bg-zinc-200"
+            className="hidden md:inline-flex border border-zinc-700 bg-zinc-900 text-zinc-100 hover:bg-zinc-800 dark:border-zinc-300 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+          >
+            <Link href="/login">Login</Link>
+          </Button>
+          <Button
+            asChild
+            size="sm"
+            className="hidden md:inline-flex border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300"
           >
             <Link href="/signup">Start Free Trial</Link>
           </Button>
@@ -231,7 +238,11 @@ export function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="bg-zinc-900 text-zinc-100 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -260,7 +271,7 @@ export function Header() {
                 <Button
                   asChild
                   size="sm"
-                  className="mt-4 bg-white text-zinc-950 hover:bg-zinc-200"
+                  className="mt-4 border border-zinc-700 bg-zinc-950 text-zinc-100 hover:bg-zinc-900 dark:border-zinc-300 dark:bg-zinc-200 dark:text-zinc-950 dark:hover:bg-zinc-300"
                 >
                   <Link href="/signup">Start Free Trial</Link>
                 </Button>

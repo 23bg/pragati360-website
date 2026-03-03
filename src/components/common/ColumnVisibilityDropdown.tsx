@@ -18,7 +18,7 @@ const ColumnVisibilityDropdown = <TData,>({ table }: ColumnVisibilityDropdownPro
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="ml-auto cursor-pointer !bg-white">
+        <Button variant="outline" className="ml-auto cursor-pointer !bg-zinc-100 !text-zinc-900 hover:!bg-zinc-200 dark:!bg-zinc-900 dark:!text-zinc-100 dark:hover:!bg-zinc-800">
           Columns <ChevronDown />
         </Button>
       </DropdownMenuTrigger>

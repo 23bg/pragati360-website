@@ -302,7 +302,7 @@ export default function PageWrapper({
               <CardContent className="p-4">
                 <div className="flex items-center gap-3">
                   {stat.icon && (
-                    <div className={`p-2 rounded-lg ${getColorClasses(stat.color || 'gray')}`}>
+                    <div className={`p-2 rounded-lg ${getColorClasses(stat.color || 'zinc')}`}>
                       {stat.icon}
                     </div>
                   )}
