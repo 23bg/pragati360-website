@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { ReduxProvider } from "@/shared/providers/ReduxProvider";
 import { Toaster } from "@/components/ui/sonner";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -57,20 +60,24 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const messages = await getMessages({ locale: "en" });
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head />
-      <body className={`min-h-screen bg-background font-sans antialiased ${dmSans.variable}`}>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
-          <ReduxProvider>
-            <main>{children}</main>
-            <Toaster duration={3000} position="bottom-right" />
-          </ReduxProvider>
+          <NextIntlClientProvider locale="en" messages={messages}>
+            <ReduxProvider>
+              <main>{children}</main>
+              <Toaster duration={3000} position="bottom-right" />
+            </ReduxProvider>
+          </NextIntlClientProvider>
         </ThemeProvider>
 
       </body>

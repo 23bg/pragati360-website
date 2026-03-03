@@ -27,9 +27,9 @@ export function BusinessView() {
         switch (status) {
             case 'ACTIVE': return 'bg-green-100 text-green-800';
             case 'DRAFT': return 'bg-yellow-100 text-yellow-800';
-            case 'INACTIVE': return 'bg-gray-100 text-gray-800';
+            case 'INACTIVE': return 'bg-zinc-100 text-zinc-800';
             case 'ARCHIVED': return 'bg-red-100 text-red-800';
-            default: return 'bg-gray-100 text-gray-800';
+            default: return 'bg-zinc-100 text-zinc-800';
         }
     };
 
@@ -37,7 +37,7 @@ export function BusinessView() {
         switch (role) {
             case 'OWNER': return 'bg-blue-100 text-blue-800';
             case 'MANAGER': return 'bg-purple-100 text-purple-800';
-            default: return 'bg-gray-100 text-gray-800';
+            default: return 'bg-zinc-100 text-zinc-800';
         }
     };
 

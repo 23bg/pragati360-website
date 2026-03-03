@@ -76,7 +76,7 @@ export default function AskImraboDialog() {
       </DialogTrigger>
 
       <DialogContent
-        className="sm:max-w-lg flex flex-col h-[600px] max-h-[90vh] bg-white dark:bg-gray-900"
+        className="sm:max-w-lg flex flex-col h-[600px] max-h-[90vh] bg-white dark:bg-zinc-900"
         aria-modal="true"
         aria-labelledby="imrabo-dialog-title"
         aria-describedby="imrabo-dialog-description"
@@ -90,13 +90,13 @@ export default function AskImraboDialog() {
 
         {/* Chat Messages */}
         <div
-          className="flex-1 overflow-y-auto border rounded-md p-4 mt-4 space-y-4 bg-gray-50 dark:bg-gray-800"
+          className="flex-1 overflow-y-auto border rounded-md p-4 mt-4 space-y-4 bg-zinc-50 dark:bg-zinc-800"
           role="log"
           aria-live="polite"
           aria-relevant="additions"
         >
           {messages.length === 0 && (
-            <p className="text-gray-500 text-center select-none">Start the conversation!</p>
+            <p className="text-zinc-500 text-center select-none">Start the conversation!</p>
           )}
 
           {messages.map((msg) => (
@@ -105,7 +105,7 @@ export default function AskImraboDialog() {
               className={`flex max-w-[80%] p-3 rounded-lg shadow-sm ${
                 msg.from === "user"
                   ? "bg-blue-600 text-white ml-auto flex-row-reverse gap-2"
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                  : "bg-zinc-200 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100"
               } items-center`}
             >
               {msg.from === "user" ? (
@@ -128,7 +128,7 @@ export default function AskImraboDialog() {
           <textarea
             id="chat-input"
             ref={textareaRef}
-            className="flex-1 rounded-md border border-gray-300 p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+            className="flex-1 rounded-md border border-zinc-300 p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-zinc-800 dark:border-zinc-600 dark:text-white"
             rows={2}
             placeholder="Type your message..."
             value={input}

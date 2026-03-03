@@ -122,15 +122,15 @@ export function UserTable() {
             </div>
           </>
         ) : (
-          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground rounded-lg border-gray-300">
+          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground rounded-lg border-zinc-300">
             <div className="text-center mb-6">
-              <div className="mx-auto h-16 w-16 text-gray-400 mb-4">
+              <div className="mx-auto h-16 w-16 text-zinc-400 mb-4">
                 <Building2 className="h-full w-full" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-zinc-900 mb-2">
                 No Users found
               </h3>
-              <p className="text-sm text-gray-600 max-w-sm">
+              <p className="text-sm text-zinc-600 max-w-sm">
                 {searchQuery
                   ? "Try adjusting your search terms."
                   : "Get started by adding a new user."}

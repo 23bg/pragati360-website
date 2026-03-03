@@ -72,7 +72,7 @@ export default function CreateUserPage() {
             backLabel="Back to Users"
             showInitialLoadingOnly
         >
-            <Card className="max-w-3xl mx-auto mt-6 bg-neutral-900 border-white/10">
+            <Card className="max-w-3xl mx-auto mt-6 bg-zinc-900 border-white/10">
                 <CardHeader>
                     <CardTitle className="text-white flex items-center gap-2">
                         <UserRound className="text-blue-400" /> Create User
@@ -85,9 +85,9 @@ export default function CreateUserPage() {
 
                         {/* Name */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Full Name *</Label>
-                            <div className="flex items-center gap-2 bg-neutral-800 rounded-lg px-3 border border-white/10">
-                                <UserRound className="text-gray-400 w-4 h-4" />
+                            <Label className="text-zinc-300">Full Name *</Label>
+                            <div className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 border border-white/10">
+                                <UserRound className="text-zinc-400 w-4 h-4" />
                                 <Input
                                     {...form.register("name")}
                                     placeholder="Enter user's full name"
@@ -103,9 +103,9 @@ export default function CreateUserPage() {
 
                         {/* Email */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Email *</Label>
-                            <div className="flex items-center gap-2 bg-neutral-800 rounded-lg px-3 border border-white/10">
-                                <Mail className="text-gray-400 w-4 h-4" />
+                            <Label className="text-zinc-300">Email *</Label>
+                            <div className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 border border-white/10">
+                                <Mail className="text-zinc-400 w-4 h-4" />
                                 <Input
                                     {...form.register("email")}
                                     placeholder="name@example.com"
@@ -121,8 +121,8 @@ export default function CreateUserPage() {
 
                         {/* Phone Number */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Phone Number</Label>
-                            <div className="flex items-center gap-2 bg-neutral-800 rounded-lg px-3 border border-white/10">
+                            <Label className="text-zinc-300">Phone Number</Label>
+                            <div className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 border border-white/10">
                                 <Input
                                     {...form.register("phoneNumber")}
                                     placeholder="+1 (555) 123-4567"
@@ -138,8 +138,8 @@ export default function CreateUserPage() {
 
                         {/* Avatar URL */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Avatar URL</Label>
-                            <div className="flex items-center gap-2 bg-neutral-800 rounded-lg px-3 border border-white/10">
+                            <Label className="text-zinc-300">Avatar URL</Label>
+                            <div className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 border border-white/10">
                                 <Input
                                     {...form.register("avatarUrl")}
                                     placeholder="https://example.com/avatar.jpg"
@@ -155,9 +155,9 @@ export default function CreateUserPage() {
 
                         {/* Password */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Password *</Label>
-                            <div className="flex items-center gap-2 bg-neutral-800 rounded-lg px-3 border border-white/10">
-                                <Shield className="text-gray-400 w-4 h-4" />
+                            <Label className="text-zinc-300">Password *</Label>
+                            <div className="flex items-center gap-2 bg-zinc-800 rounded-lg px-3 border border-white/10">
+                                <Shield className="text-zinc-400 w-4 h-4" />
                                 <Input
                                     type="password"
                                     {...form.register("password")}
@@ -174,7 +174,7 @@ export default function CreateUserPage() {
 
                         {/* Preferences */}
                         <div className="space-y-4">
-                            <Label className="text-gray-300">Preferences</Label>
+                            <Label className="text-zinc-300">Preferences</Label>
 
                             <div className="space-y-2">
                                 <div className="flex items-center space-x-2">
@@ -184,7 +184,7 @@ export default function CreateUserPage() {
                                         {...form.register("isNotificationEnable")}
                                         className="rounded"
                                     />
-                                    <Label htmlFor="isNotificationEnable" className="text-gray-300">Enable Notifications</Label>
+                                    <Label htmlFor="isNotificationEnable" className="text-zinc-300">Enable Notifications</Label>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
@@ -194,7 +194,7 @@ export default function CreateUserPage() {
                                         {...form.register("isWhatsappAlertsEnable")}
                                         className="rounded"
                                     />
-                                    <Label htmlFor="isWhatsappAlertsEnable" className="text-gray-300">Enable WhatsApp Alerts</Label>
+                                    <Label htmlFor="isWhatsappAlertsEnable" className="text-zinc-300">Enable WhatsApp Alerts</Label>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
@@ -204,15 +204,15 @@ export default function CreateUserPage() {
                                         {...form.register("isEmailAlertsEnable")}
                                         className="rounded"
                                     />
-                                    <Label htmlFor="isEmailAlertsEnable" className="text-gray-300">Enable Email Alerts</Label>
+                                    <Label htmlFor="isEmailAlertsEnable" className="text-zinc-300">Enable Email Alerts</Label>
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="preferredTheme" className="text-gray-300">Preferred Theme</Label>
+                                <Label htmlFor="preferredTheme" className="text-zinc-300">Preferred Theme</Label>
                                 <select
                                     {...form.register("preferredTheme")}
-                                    className="w-full bg-neutral-800 text-white rounded-lg px-3 py-2 border border-white/10"
+                                    className="w-full bg-zinc-800 text-white rounded-lg px-3 py-2 border border-white/10"
                                 >
                                     <option value="dark">Dark</option>
                                     <option value="light">Light</option>
@@ -223,8 +223,8 @@ export default function CreateUserPage() {
 
                         {/* Business Roles - For now, keeping it simple */}
                         <div className="space-y-2">
-                            <Label className="text-gray-300">Business Roles</Label>
-                            <p className="text-sm text-gray-500">Business roles will be assigned after user creation</p>
+                            <Label className="text-zinc-300">Business Roles</Label>
+                            <p className="text-sm text-zinc-500">Business roles will be assigned after user creation</p>
                         </div>
 
                         {/* Submit */}

@@ -87,7 +87,7 @@ export default function IntegrationPage() {
                 <div className="flex items-center justify-between p-4 rounded-lg border">
                     <div>
                         <p className="font-medium">Google</p>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-zinc-400">
                             {currentUser?.googleAccessToken ? "Connected" : "Not Connected"}
                         </p>
                     </div>

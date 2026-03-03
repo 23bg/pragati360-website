@@ -37,28 +37,28 @@ export default function UpdateUserForm({ open, setOpen }: UpdateUserFormProps) {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogContent className="bg-neutral-900 border-white/10 text-white">
+            <DialogContent className="bg-zinc-900 border-white/10 text-white">
                 <DialogHeader>
                     <DialogTitle>Edit User Name</DialogTitle>
-                    <DialogDescription className="text-gray-400">
+                    <DialogDescription className="text-zinc-400">
                         Update only the name field. All other fields remain unchanged.
                     </DialogDescription>
                 </DialogHeader>
 
                 <div className="space-y-3 mt-3">
-                    <label className="text-sm text-gray-300">Full Name</label>
+                    <label className="text-sm text-zinc-300">Full Name</label>
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full bg-neutral-800 text-white px-3 py-2 rounded-lg border border-white/10 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        className="w-full bg-zinc-800 text-white px-3 py-2 rounded-lg border border-white/10 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     />
                 </div>
 
                 <DialogFooter className="mt-6">
                     <Button
                         variant="ghost"
-                        className="text-gray-300 hover:bg-neutral-800"
+                        className="text-zinc-300 hover:bg-zinc-800"
                         onClick={() => setOpen(false)}
                     >
                         Cancel

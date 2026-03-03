@@ -51,9 +51,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               {[
-                { href: "/how-it-works", label: "How It Works" },
+                { href: "/features", label: "Features" },
                 { href: "/pricing", label: "Pricing" },
-                { href: "/trust", label: "Trust" },
+                { href: "/tools", label: "Tools" },
+                { href: "/security", label: "Security" },
                 { href: "/contact", label: "Contact" },
               ].map((item) => (
                 <li key={item.href}>
@@ -77,6 +78,8 @@ export function Footer() {
               {[
                 { href: "/privacy", label: "Privacy" },
                 { href: "/terms", label: "Terms" },
+                { href: "/refund-policy", label: "Refund Policy" },
+                { href: "/login", label: "Login" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

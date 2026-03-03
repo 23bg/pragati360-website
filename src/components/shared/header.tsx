@@ -180,12 +180,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-// Phase-1: Only English and Hindi
-const LANGUAGES = [
-  { code: "en", label: "English" },
-  { code: "hi", label: "हिंदी" },
-] as const;
-
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-zinc-900 text-white">
@@ -230,7 +224,7 @@ export function Header() {
             size="sm"
             className="hidden md:inline-flex bg-white text-zinc-950 hover:bg-zinc-200"
           >
-            <Link href="/early-access">Request Early Access</Link>
+            <Link href="/signup">Start Free Trial</Link>
           </Button>
 
           {/* Mobile Menu */}
@@ -268,7 +262,7 @@ export function Header() {
                   size="sm"
                   className="mt-4 bg-white text-zinc-950 hover:bg-zinc-200"
                 >
-                  <Link href="/early-access">Request Early Access</Link>
+                  <Link href="/signup">Start Free Trial</Link>
                 </Button>
               </SheetContent>
             </Sheet>

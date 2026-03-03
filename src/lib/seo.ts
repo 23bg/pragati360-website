@@ -24,9 +24,13 @@ export function generateMetadata({
 }: SEOProps): Metadata {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pragati360.com';
 
-  const url = ogUrl
-    ? `${baseUrl}/${locale}${ogUrl}`
-    : `${baseUrl}/${locale}`;
+  const normalizedOgUrl = ogUrl
+    ? ogUrl.startsWith('/')
+      ? ogUrl
+      : `/${ogUrl}`
+    : '';
+
+  const url = `${baseUrl}${normalizedOgUrl}`;
 
   return {
     metadataBase: new URL(baseUrl),

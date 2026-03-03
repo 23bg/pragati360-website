@@ -19,6 +19,17 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+      },
+      fontSize: {
+        h1: ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+        h2: ["30px", { lineHeight: "1.3", fontWeight: "600" }],
+        h3: ["22px", { lineHeight: "1.4", fontWeight: "600" }],
+        body: ["16px", { lineHeight: "1.6" }],
+        small: ["14px", { lineHeight: "1.5" }],
+        score: ["36px", { lineHeight: "1.1", fontWeight: "700" }],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,8 +64,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Using zinc palette for neutrals as per requirement
-        gray: colors.zinc,
+        zinc: colors.zinc,
       },
       borderRadius: {
         lg: "var(--radius)",
